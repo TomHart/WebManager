@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    build: .
+    networks:
+      - project-name
+    ports:
+      - 80:8000
+    working_dir: "/mount"
+    entrypoint: ["php", "artisan", "serve", "--host=0.0.0.0"]
+    volumes:
+      - ./:/mount
+
+networks:
+  project-name:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.29.1.0/24     
