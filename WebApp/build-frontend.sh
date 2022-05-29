@@ -1,0 +1,1 @@
+docker run --rm -it -v F:\Archlord\WebManager\WebApp:/app node bash

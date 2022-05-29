@@ -17,10 +17,11 @@ use App\Models\Character;
 Route::get('/', function () {
     dump(Character::all());
     return view('welcome');
-});
+})->name('landing');
 
 Route::get('/info', function () {
     phpinfo();
 });
 
-Route::get('/characters', [\App\Http\Controllers\CharacterController::class, 'index']);
+Route::get('/characters', [\App\Http\Controllers\CharacterController::class, 'index'])->name('characters.index');
+Route::get('/character/{$id}', [\App\Http\Controllers\CharacterController::class, 'show'])->name('characters.show');
