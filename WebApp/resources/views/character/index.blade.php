@@ -1,970 +1,652 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
-  <!-- script -->
-  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-  <script src="assets/js/scripts.js"></script>
-  <!-- end script -->
-</head>
-<body class="bg-gray-100">
-<!-- start navbar -->
-<div class="md:fixed md:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white p-6 border-b border-gray-300">
-    
-    <!-- logo -->
-    <div class="flex-none w-56 flex flex-row items-center">
-        <a href="https://therichpost.com" target="_blank">
-              <strong class="capitalize ml-1 flex-1">Jassa</strong>
-        </a>
-      <button id="sliderBtn" class="flex-none text-right text-gray-900 hidden md:block">
-        <i class="fad fa-list-ul"></i>
-      </button>
-    </div>
-    <!-- end logo -->   
-    
-    <!-- navbar content toggle -->
-    <button id="navbarToggle" class="hidden md:block md:fixed right-0 mr-6">
-      <i class="fad fa-chevron-double-down"></i>
-    </button>
-    <!-- end navbar content toggle -->
+  <!-- Tailwind is included -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">  
 
-    <!-- navbar content -->
-    <div id="navbar" class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center">
-      <!-- left -->
-      <div class="text-gray-600 md:w-full md:flex md:flex-row md:justify-evenly md:pb-10 md:mb-10 md:border-b md:border-gray-200">
-        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-envelope-open-text"></i></a>        
-        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-comments-alt"></i></a>        
-        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-check-circle"></i></a>        
-        <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i class="fad fa-calendar-exclamation"></i></a>        
-      </div>
-      <!-- end left -->      
-
-      <!-- right -->
-      <div class="flex flex-row-reverse items-center"> 
-
-        <!-- user -->
-        <div class="dropdown relative md:static">
-
-          <button class="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center">
-            <div class="w-8 h-8 overflow-hidden rounded-full">
-              <img class="w-full h-full object-cover" src="assets/img/user.svg" >
-            </div> 
-
-            <div class="ml-2 capitalize flex ">
-              <h1 class="text-sm text-gray-800 font-semibold m-0 p-0 leading-none">Jassa</h1>
-              <i class="fad fa-chevron-down ml-2 text-xs leading-none"></i>
-            </div>                        
-          </button>
-
-          <button class="hidden fixed top-0 left-0 z-10 w-full h-full menu-overflow"></button>
-
-          <div class="text-gray-500 menu hidden md:mt-10 md:w-full rounded bg-white shadow-md absolute z-20 right-0 w-40 mt-5 py-2 animated faster">
-
-            <!-- item -->
-            <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-user-edit text-xs mr-1"></i> 
-              edit my profile
-            </a>     
-            <!-- end item -->
-
-            <!-- item -->
-            <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-inbox-in text-xs mr-1"></i> 
-              my inbox
-            </a>     
-            <!-- end item -->
-
-            <!-- item -->
-            <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-badge-check text-xs mr-1"></i> 
-              tasks
-            </a>     
-            <!-- end item -->
-
-            <!-- item -->
-            <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-comment-alt-dots text-xs mr-1"></i> 
-              chats
-            </a>     
-            <!-- end item -->
-
-            <hr>
-
-            <!-- item -->
-            <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out" href="#">
-              <i class="fad fa-user-times text-xs mr-1"></i> 
-              log out
-            </a>     
-            <!-- end item -->
-
-          </div>
-        </div>
-        <!-- end user -->
-
-        <!-- notifcation -->
-        <div class="dropdown relative mr-5 md:static">
-
-          <button class="text-gray-500 menu-btn p-0 m-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none transition-all ease-in-out duration-300">
-            <i class="fad fa-bells"></i>               
-          </button>
-
-          <button class="hidden fixed top-0 left-0 z-10 w-full h-full menu-overflow"></button>
-
-          <div class="menu hidden rounded bg-white md:right-0 md:w-full shadow-md absolute z-20 right-0 w-84 mt-5 py-2 animated faster">
-            <!-- top -->
-            <div class="px-4 py-2 flex flex-row justify-between items-center capitalize font-semibold text-sm">
-              <h1>notifications</h1>
-              <div class="bg-teal-100 border border-teal-200 text-teal-500 text-xs rounded px-1">
-                <strong>5</strong>
-              </div>
-            </div>
-            <hr>
-            <!-- end top -->
-
-            <!-- body -->
-
-            <!-- item -->
-            <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out" href="#">
-
-              <div class="px-3 py-2 rounded mr-3 bg-gray-100 border border-gray-300">
-                <i class="fad fa-birthday-cake text-sm"></i>
-              </div>
-
-              <div class="flex-1 flex flex-rowbg-green-100">
-                <div class="flex-1">
-                  <h1 class="text-sm font-semibold">poll..</h1>
-                  <p class="text-xs text-gray-500">text here also</p>
-                </div>
-                <div class="text-right text-xs text-gray-500">
-                  <p>4 min ago</p>
-                </div>
-              </div>
-
-            </a>
-            <hr>
-            <!-- end item -->
-
-            <!-- item -->
-            <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out" href="#">
-
-              <div class="px-3 py-2 rounded mr-3 bg-gray-100 border border-gray-300">
-                <i class="fad fa-user-circle text-sm"></i>
-              </div>
-
-              <div class="flex-1 flex flex-rowbg-green-100">
-                <div class="flex-1">
-                  <h1 class="text-sm font-semibold">jassa..</h1>
-                  <p class="text-xs text-gray-500">text here also</p>
-                </div>
-                <div class="text-right text-xs text-gray-500">
-                  <p>78 min ago</p>
-                </div>
-              </div>
-
-            </a>
-            <hr>
-            <!-- end item -->
-
-            <!-- item -->
-            <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out" href="#">
-
-              <div class="px-3 py-2 rounded mr-3 bg-gray-100 border border-gray-300">
-                <i class="fad fa-images text-sm"></i>
-              </div>
-
-              <div class="flex-1 flex flex-rowbg-green-100">
-                <div class="flex-1">
-                  <h1 class="text-sm font-semibold">new imag..</h1>
-                  <p class="text-xs text-gray-500">text here also</p>
-                </div>
-                <div class="text-right text-xs text-gray-500">
-                  <p>65 min ago</p>
-                </div>
-              </div>
-
-            </a>
-            <hr>
-            <!-- end item -->
-
-            <!-- item -->
-            <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out" href="#">
-
-              <div class="px-3 py-2 rounded mr-3 bg-gray-100 border border-gray-300">
-                <i class="fad fa-alarm-exclamation text-sm"></i>
-              </div>
-
-              <div class="flex-1 flex flex-rowbg-green-100">
-                <div class="flex-1">
-                  <h1 class="text-sm font-semibold">time is up..</h1>
-                  <p class="text-xs text-gray-500">text here also</p>
-                </div>
-                <div class="text-right text-xs text-gray-500">
-                  <p>1 min ago</p>
-                </div>
-              </div>
-
-            </a>
-            <!-- end item -->
-
-
-            <!-- end body -->
-
-            <!-- bottom -->
-            <hr>
-            <div class="px-4 py-2 mt-2">
-              <a href="#" class="border border-gray-300 block text-center text-xs uppercase rounded p-1 hover:text-teal-500 transition-all ease-in-out duration-500">
-                view all
-              </a>
-            </div>
-            <!-- end bottom -->            
-          </div>
-        </div>
-        <!-- end notifcation -->
-
-        <!-- messages -->
-        <div class="dropdown relative mr-5 md:static">
-
-          <button class="text-gray-500 menu-btn p-0 m-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none transition-all ease-in-out duration-300">
-            <i class="fad fa-comments"></i>               
-          </button>
-
-          <button class="hidden fixed top-0 left-0 z-10 w-full h-full menu-overflow"></button>
-
-          <div class="menu hidden md:w-full md:right-0 rounded bg-white shadow-md absolute z-20 right-0 w-84 mt-5 py-2 animated faster">
-            <!-- top -->
-            <div class="px-4 py-2 flex flex-row justify-between items-center capitalize font-semibold text-sm">
-              <h1>messages</h1>
-              <div class="bg-teal-100 border border-teal-200 text-teal-500 text-xs rounded px-1">
-                <strong>3</strong>
-              </div>
-            </div>
-            <hr>
-            <!-- end top -->
-
-            <!-- body -->
-
-            <!-- item -->
-            <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out" href="#">
-
-              <div class="w-10 h-10 rounded-full overflow-hidden mr-3 bg-gray-100 border border-gray-300">
-                <img class="w-full h-full object-cover" src="assets/img/user1.jpg" alt="">
-              </div>
-
-              <div class="flex-1 flex flex-rowbg-green-100">
-                <div class="flex-1">
-                  <h1 class="text-sm font-semibold">jassa said</h1>
-                  <p class="text-xs text-gray-500">yeah i know</p>
-                </div>
-                <div class="text-right text-xs text-gray-500">
-                  <p>4 min ago</p>
-                </div>
-              </div>
-
-            </a>
-            <hr>
-            <!-- end item --> 
-
-            <!-- item -->
-            <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out" href="#">
-
-              <div class="w-10 h-10 rounded-full overflow-hidden mr-3 bg-gray-100 border border-gray-300">
-                <img class="w-full h-full object-cover" src="assets/img/user2.jpg" alt="">
-              </div>
-              <div class="flex-1 flex flex-rowbg-green-100">
-                <div class="flex-1">
-                  <h1 class="text-sm font-semibold">sull Jassa</h1>
-                  <p class="text-xs text-gray-500">for sure</p>
-                </div>
-                <div class="text-right text-xs text-gray-500">
-                  <p>1 day ago</p>
-                </div>
-              </div>
-
-            </a>
-            <hr>
-            <!-- end item -->
-
-            <!-- item -->
-            <a class="flex flex-row items-center justify-start px-4 py-4 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 transition-all duration-300 ease-in-out" href="#">
-
-              <div class="w-10 h-10 rounded-full overflow-hidden mr-3 bg-gray-100 border border-gray-300">
-                <img class="w-full h-full object-cover" src="assets/img/user3.jpg" alt="">
-              </div>
-
-              <div class="flex-1 flex flex-rowbg-green-100">
-                <div class="flex-1">
-                  <h1 class="text-sm font-semibold">mick</h1>
-                  <p class="text-xs text-gray-500">is typing ....</p>
-                </div>
-                <div class="text-right text-xs text-gray-500">
-                  <p>31 feb</p>
-                </div>
-              </div>
-
-            </a>
-            <!-- end item -->
-
-
-            <!-- end body -->
-
-            <!-- bottom -->
-            <hr>
-            <div class="px-4 py-2 mt-2">
-              <a href="#" class="border border-gray-300 block text-center text-xs uppercase rounded p-1 hover:text-teal-500 transition-all ease-in-out duration-500">
-                view all
-              </a>
-            </div>
-            <!-- end bottom -->            
-          </div>
-        </div>
-        <!-- end messages -->               
-
-
-      </div>
-      <!-- end right -->
-    </div>
-    <!-- end navbar content -->
-
-  </div>
-<!-- end navbar -->
-
-
-<!-- strat wrapper -->
-<div class="h-screen flex flex-row flex-wrap">
   
-    <!-- start sidebar -->
-  <div id="sideBar" class="relative flex flex-col flex-wrap bg-white border-r border-gray-300 p-6 flex-none w-64 md:-ml-64 md:fixed md:top-0 md:z-30 md:h-screen md:shadow-xl animated faster">
-    
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+<body>
 
-    <!-- sidebar content -->
-    <div class="flex flex-col">
-
-      <!-- sidebar toggle -->
-      <div class="text-right hidden md:block mb-4">
-        <button id="sideBarHideBtn">
-          <i class="fad fa-times-circle"></i>
-        </button>
+<div id="app">
+    <nav id="navbar-main" class="navbar is-fixed-top">
+      <div class="navbar-brand">
+        <a class="navbar-item mobile-aside-button">
+          <span class="icon"><i class="mdi mdi-forwardburger mdi-24px"></i></span>
+        </a>
+        <div class="navbar-item">
+          <div class="control"><input placeholder="Search everywhere..." class="input"></div>
+        </div>
       </div>
-      <!-- end sidebar toggle -->
-
-      <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">homes</p>
-
-      <!-- link -->
-      <a href="https://therichpost.com/best-angular-ecommerce-templates-free/" target="_blank" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-chart-pie text-xs mr-2"></i>                
-        Analytics dashboard
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="https://therichpost.com/best-angular-ecommerce-templates-free/" target="_blank" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shopping-cart text-xs mr-2"></i>
-        ecommerce dashboard
-      </a>
-      <!-- end link -->
-
-      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">apps</p>
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-envelope-open-text text-xs mr-2"></i>
-        email
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-comments text-xs mr-2"></i>
-        chat
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shield-check text-xs mr-2"></i>
-        todo
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-calendar-edit text-xs mr-2"></i>
-        calendar
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-file-invoice-dollar text-xs mr-2"></i>
-        invoice
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-folder-open text-xs mr-2"></i>
-        file manager
-      </a>
-      <!-- end link -->   
-      
-      
-      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">UI Elements</p>
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-text text-xs mr-2"></i>
-        typography
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-whistle text-xs mr-2"></i>
-        alerts
-      </a>
-      <!-- end link -->
-      
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-cricket text-xs mr-2"></i>
-        buttons
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-box-open text-xs mr-2"></i>
-        Content
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-swatchbook text-xs mr-2"></i>
-        colors
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-atom-alt text-xs mr-2"></i>
-        icons
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-club text-xs mr-2"></i>
-        card
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-cheese-swiss text-xs mr-2"></i>
-        Widgets
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-computer-classic text-xs mr-2"></i>
-        Components
-      </a>
-      <!-- end link -->
-      
-      
-
-    </div>
-    <!-- end sidebar content -->
-
-  </div>
-  <!-- end sidbar -->
-
-  <!-- strat content -->
-  <div class="bg-gray-100 flex-1 p-6 md:mt-16"> 
-
-    
-    <!-- General Report -->
-    <div class="grid grid-cols-4 gap-6 xl:grid-cols-1">
-
-
-    <!-- card -->
-    <div class="report-card">
-        <div class="card">
-            <div class="card-body flex flex-col">
-                
-                <!-- top -->
-                <div class="flex flex-row justify-between items-center">
-                    <div class="h6 text-indigo-700 fad fa-shopping-cart"></div>
-                    <span class="rounded-full text-white badge bg-teal-400 text-xs">
-                        12%
-                        <i class="fal fa-chevron-up ml-1"></i>
-                    </span>
-                </div>
-                <!-- end top -->
-
-                <!-- bottom -->
-                <div class="mt-8">
-                    <h1 class="h5 num-4"></h1>
-                    <p>items sales</p>
-                </div>                
-                <!-- end bottom -->
-    
-            </div>
-        </div>
-        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
-    </div>
-    <!-- end card -->
-
-
-    <!-- card -->
-    <div class="report-card">
-        <div class="card">
-            <div class="card-body flex flex-col">
-                
-                <!-- top -->
-                <div class="flex flex-row justify-between items-center">
-                    <div class="h6 text-red-700 fad fa-store"></div>
-                    <span class="rounded-full text-white badge bg-red-400 text-xs">
-                        6%
-                        <i class="fal fa-chevron-down ml-1"></i>
-                    </span>
-                </div>
-                <!-- end top -->
-
-                <!-- bottom -->
-                <div class="mt-8">
-                    <h1 class="h5 num-4"></h1>
-                    <p>new orders</p>
-                </div>                
-                <!-- end bottom -->
-    
-            </div>
-        </div>
-        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
-    </div>
-    <!-- end card -->
-
-
-    <!-- card -->
-    <div class="report-card">
-        <div class="card">
-            <div class="card-body flex flex-col">
-                
-                <!-- top -->
-                <div class="flex flex-row justify-between items-center">
-                    <div class="h6 text-yellow-600 fad fa-sitemap"></div>
-                    <span class="rounded-full text-white badge bg-teal-400 text-xs">
-                        72%
-                        <i class="fal fa-chevron-up ml-1"></i>
-                    </span>
-                </div>
-                <!-- end top -->
-
-                <!-- bottom -->
-                <div class="mt-8">
-                    <h1 class="h5 num-4"></h1>
-                    <p>total Products</p>
-                </div>                
-                <!-- end bottom -->
-    
-            </div>
-        </div>
-        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
-    </div>
-    <!-- end card -->
-
-
-    <!-- card -->
-    <div class="report-card">
-        <div class="card">
-            <div class="card-body flex flex-col">
-                
-                <!-- top -->
-                <div class="flex flex-row justify-between items-center">
-                    <div class="h6 text-green-700 fad fa-users"></div>
-                    <span class="rounded-full text-white badge bg-teal-400 text-xs">
-                        150%
-                        <i class="fal fa-chevron-up ml-1"></i>
-                    </span>
-                </div>
-                <!-- end top -->
-
-                <!-- bottom -->
-                <div class="mt-8">
-                    <h1 class="h5 num-4"></h1>
-                    <p>new Visitor</p>
-                </div>                
-                <!-- end bottom -->
-    
-            </div>
-        </div>
-        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
-    </div>
-    <!-- end card -->
-    
-
-</div>
-    <!-- End General Report -->
-
-    <!-- strat Analytics -->
-    <div class="mt-6 grid grid-cols-2 gap-6 xl:grid-cols-1">
-
-    <!-- update section -->
-    <div class="card bg-teal-400 border-teal-400 shadow-md text-white">
-        <div class="card-body flex flex-row">
-            
-            <!-- image -->
-            <div class="img-wrapper w-40 h-40 flex justify-center items-center">
-                <img src="assets/img/happy.svg" alt="img title">
-            </div>
-            <!-- end image -->
-
-            <!-- info -->
-            <div class="py-2 ml-10">
-                <h1 class="h6">Good Job, Jassa!</h1>
-                <p class="text-white text-xs">You've finished all of your tasks for this week.</p>
-
-                <ul class="mt-4">
-                    <li class="text-sm font-light"><i class="fad fa-check-double mr-2 mb-2"></i> Finish Dashboard Design</li>
-                    <li class="text-sm font-light"><i class="fad fa-check-double mr-2 mb-2"></i> Fix Issue #74</li>
-                    <li class="text-sm font-light"><i class="fad fa-check-double mr-2"></i> Publish version 1.0.6</li>
-                </ul>
-            </div>
-            <!-- end info -->
-
-        </div>
-    </div>
-    <!-- end update section -->
-
-    <!-- carts -->
-    <div class="flex flex-col">
-
-        <!-- alert -->
-        <div class="alert alert-dark mb-6">
-            Hi! Wait A Minute . . . . . . see more admin dashboards free
-            <a class="ml-2" target="_blank" href="https://therichpost.com">jassa</a>
-        </div>
-        <!-- end alert -->
-
-        <!-- charts -->
-        <div class="grid grid-cols-2 gap-6 h-full">
-
-            <div class="card">
-                <div class="py-3 px-4 flex flex-row justify-between">
-                    <h1 class="h6">
-                        <span class="num-4"></span>k
-                        <p>page view</p>
-                    </h1>
-
-                    <div class="bg-teal-200 text-teal-700 border-teal-300 border w-10 h-10 rounded-full flex justify-center items-center">
-                        <i class="fad fa-eye"></i>
-                    </div>
-                </div>                
-                <div class="analytics_1"></div>
-            </div>
-
-            <div class="card">
-                <div class="py-3 px-4 flex flex-row justify-between">                    
-                    <h1 class="h6">
-                        <span class="num-2"></span>k
-                        <p>Unique Users</p>
-                    </h1>
-
-                    <div class="bg-indigo-200 text-indigo-700 border-indigo-300 border w-10 h-10 rounded-full flex justify-center items-center">
-                        <i class="fad fa-users-crown"></i>
-                    </div>
-                </div>
-                <div class="analytics_1"></div>
-            </div>
-
-        </div>     
-        <!-- charts    -->
-
-    </div>
-    <!-- end charts -->
-
-
-</div>
-    <!-- end Analytics -->
-
-    <!-- Sales Overview -->
-    <div class="card mt-6">
-
-    <!-- header -->
-    <div class="card-header flex flex-row justify-between">
-        <h1 class="h6">Sales Overview</h1>
-
-        <div class="flex flex-row justify-center items-center">
-
-            <a href="">
-                <i class="fad fa-chevron-double-down mr-6"></i>
+      <div class="navbar-brand is-right">
+        <a class="navbar-item --jb-navbar-menu-toggle" data-target="navbar-menu">
+          <span class="icon"><i class="mdi mdi-dots-vertical mdi-24px"></i></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item dropdown has-divider">
+            <a class="navbar-link">
+              <span class="icon"><i class="mdi mdi-menu"></i></span>
+              <span>Sample Menu</span>
+              <span class="icon">
+                <i class="mdi mdi-chevron-down"></i>
+              </span>
             </a>
-
-            <a href="">
-                <i class="fad fa-ellipsis-v"></i>
+            <div class="navbar-dropdown">
+              <a href="#" class="navbar-item">
+                <span class="icon"><i class="mdi mdi-account"></i></span>
+                <span>My Profile</span>
+              </a>
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-settings"></i></span>
+                <span>Settings</span>
+              </a>
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-email"></i></span>
+                <span>Messages</span>
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-logout"></i></span>
+                <span>Log Out</span>
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item dropdown has-divider has-user-avatar">
+            <a class="navbar-link">
+              <div class="user-avatar">
+                <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" alt="John Doe" class="rounded-full">
+              </div>
+              <div class="is-user-name"><span>Jassa</span></div>
+              <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
             </a>
-
+            <div class="navbar-dropdown">
+              <a href="#" class="navbar-item">
+                <span class="icon"><i class="mdi mdi-account"></i></span>
+                <span>My Profile</span>
+              </a>
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-settings"></i></span>
+                <span>Settings</span>
+              </a>
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-email"></i></span>
+                <span>Messages</span>
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                <span class="icon"><i class="mdi mdi-logout"></i></span>
+                <span>Log Out</span>
+              </a>
+            </div>
+          </div>
+          <a href="https://therichpost.com" class="navbar-item has-divider desktop-icon-only">
+            <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
+            <span>About</span>
+          </a>
+          <a href="https://therichpost.com" class="navbar-item has-divider desktop-icon-only">
+            <span class="icon"><i class="mdi mdi-github-circle"></i></span>
+            <span>GitHub</span>
+          </a>
+          <a title="Log out" class="navbar-item desktop-icon-only">
+            <span class="icon"><i class="mdi mdi-logout"></i></span>
+            <span>Log out</span>
+          </a>
         </div>
-
-    </div>
-    <!-- end header -->
-
-    <!-- body -->
-    <div class="card-body grid grid-cols-2 gap-6 lg:grid-cols-1">
-
-        <div class="p-8">
-            <h1 class="h2">5,337</h1>
-            <p class="text-black font-medium">Sales this month</p>
-
-            <div class="mt-20 mb-2 flex items-center">
-                <div class="py-1 px-3 rounded bg-green-200 text-green-900 mr-3">
-                    <i class="fa fa-caret-up"></i>
+      </div>
+    </nav>
+    
+    <aside class="aside is-placed-left is-expanded">
+      <div class="aside-tools">
+        <div>
+          Admin <b class="font-black">Jassa</b>
+        </div>
+      </div>
+      <div class="menu is-menu-main">
+        <p class="menu-label">General</p>
+        <ul class="menu-list">
+          <li class="active">
+            <a href="#">
+              <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
+              <span class="menu-item-label">Dashboard</span>
+            </a>
+          </li>
+        </ul>
+        <p class="menu-label">Examples</p>
+        <ul class="menu-list">
+          <li class="--set-active-tables-html">
+            <a href="#">
+              <span class="icon"><i class="mdi mdi-table"></i></span>
+              <span class="menu-item-label">Tables</span>
+            </a>
+          </li>
+          <li class="--set-active-forms-html">
+            <a href="#">
+              <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
+              <span class="menu-item-label">Forms</span>
+            </a>
+          </li>
+          <li class="--set-active-profile-html">
+            <a href="#">
+              <span class="icon"><i class="mdi mdi-account-circle"></i></span>
+              <span class="menu-item-label">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="mdi mdi-lock"></i></span>
+              <span class="menu-item-label">Login</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown">
+              <span class="icon"><i class="mdi mdi-view-list"></i></span>
+              <span class="menu-item-label">Submenus</span>
+              <span class="icon"><i class="mdi mdi-plus"></i></span>
+            </a>
+            <ul>
+              <li>
+                <a href="#void">
+                  <span>Sub-item One</span>
+                </a>
+              </li>
+              <li>
+                <a href="#void">
+                  <span>Sub-item Two</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="menu-label">About</p>
+        <ul class="menu-list">
+          <li>
+            <a href="https://therichpost.com" onclick="alert('Coming soon'); return false" target="_blank" class="has-icon">
+              <span class="icon"><i class="mdi mdi-credit-card-outline"></i></span>
+              <span class="menu-item-label">Premium Demo</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://therichpost.com" class="has-icon">
+              <span class="icon"><i class="mdi mdi-help-circle"></i></span>
+              <span class="menu-item-label">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://therichpost.com" class="has-icon">
+              <span class="icon"><i class="mdi mdi-github-circle"></i></span>
+              <span class="menu-item-label">GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    
+    <section class="is-title-bar">
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+        <ul>
+          <li>Admin</li>
+          <li>Dashboard</li>
+        </ul>
+        <a href="https://therichpost.com/" onclick="alert('Coming soon'); return false" target="_blank" class="button blue">
+          <span class="icon"><i class="mdi mdi-credit-card-outline"></i></span>
+          <span>Premium Demo</span>
+        </a>
+      </div>
+    </section>
+    
+    <section class="is-hero-bar">
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+        <h1 class="title">
+          Dashboard
+        </h1>
+        <button class="button light">Button</button>
+      </div>
+    </section>
+    
+      <section class="section main-section">
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
+          <div class="card">
+            <div class="card-content">
+              <div class="flex items-center justify-between">
+                <div class="widget-label">
+                  <h3>
+                    Clients
+                  </h3>
+                  <h1>
+                    512
+                  </h1>
                 </div>
-                <p class="text-black"><span class="num-2 text-green-400"></span><span class="text-green-400">% more sales</span> in comparison to last month.</p>
+                <span class="icon widget-icon text-green-500"><i class="mdi mdi-account-multiple mdi-48px"></i></span>
+              </div>
             </div>
-
-            <div class="flex items-center">
-                <div class="py-1 px-3 rounded bg-red-200 text-red-900 mr-3">
-                    <i class="fa fa-caret-down"></i>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <div class="flex items-center justify-between">
+                <div class="widget-label">
+                  <h3>
+                    Sales
+                  </h3>
+                  <h1>
+                    $7,770
+                  </h1>
                 </div>
-                <p class="text-black"><span class="num-2 text-red-400"></span><span class="text-red-400">% revenue per sale</span> in comparison to last month.</p>
+                <span class="icon widget-icon text-blue-500"><i class="mdi mdi-cart-outline mdi-48px"></i></span>
+              </div>
             </div>
-
-            <a href="#" class="btn-shadow mt-6">view details</a>
-
+          </div>
+    
+          <div class="card">
+            <div class="card-content">
+              <div class="flex items-center justify-between">
+                <div class="widget-label">
+                  <h3>
+                    Performance
+                  </h3>
+                  <h1>
+                    256%
+                  </h1>
+                </div>
+                <span class="icon widget-icon text-red-500"><i class="mdi mdi-finance mdi-48px"></i></span>
+              </div>
+            </div>
+          </div>
         </div>
     
-        <div class="">
-            <div id="sealsOverview"></div>
+        <div class="card mb-6">
+          <header class="card-header">
+            <p class="card-header-title">
+              <span class="icon"><i class="mdi mdi-finance"></i></span>
+              Performance
+            </p>
+            <a href="#" class="card-header-icon">
+              <span class="icon"><i class="mdi mdi-reload"></i></span>
+            </a>
+          </header>
+          <div class="card-content">
+            <div class="chart-area">
+              <div class="h-full">
+                <div class="chartjs-size-monitor">
+                  <div class="chartjs-size-monitor-expand">
+                    <div></div>
+                  </div>
+                  <div class="chartjs-size-monitor-shrink">
+                    <div></div>
+                  </div>
+                </div>
+                <canvas id="big-line-chart" width="2992" height="1000" class="chartjs-render-monitor block" style="height: 400px; width: 1197px;"></canvas>
+              </div>
+            </div>
+          </div>
         </div>
     
-    </div>
-    <!-- end body -->
-
-</div>
-    <!-- end Sales Overview -->
-
-    <!-- start numbers -->
-    <div class="grid grid-cols-5 gap-6 xl:grid-cols-2">
-
-    <!-- card -->
-    <div class="card mt-6">
-        <div class="card-body flex items-center">
-            
-            <div class="px-3 py-2 rounded bg-indigo-600 text-white mr-3">
-                <i class="fad fa-wallet"></i>
+        <div class="notification blue">
+          <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
+            <div>
+              <span class="icon"><i class="mdi mdi-buffer"></i></span>
+              <b>Responsive table</b>
             </div>
-
-            <div class="flex flex-col">
-                <h1 class="font-semibold"><span class="num-2"></span> Sales</h1>
-                <p class="text-xs"><span class="num-2"></span> payments</p>
-            </div>
-
+            <button type="button" class="button small textual --jb-notification-dismiss">Dismiss</button>
+          </div>
         </div>
-    </div>
-    <!-- end card -->
     
-    <!-- card -->
-    <div class="card mt-6">
-        <div class="card-body flex items-center">
-            
-            <div class="px-3 py-2 rounded bg-green-600 text-white mr-3">
-                <i class="fad fa-shopping-cart"></i>
+        <div class="card has-table">
+          <header class="card-header">
+            <p class="card-header-title">
+              <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+              Clients
+            </p>
+            <a href="#" class="card-header-icon">
+              <span class="icon"><i class="mdi mdi-reload"></i></span>
+            </a>
+          </header>
+          <div class="card-content">
+            <table>
+              <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>City</th>
+                <th>Progress</th>
+                <th>Created</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Rebecca Bauch</td>
+                <td data-label="Company">Daugherty-Daniel</td>
+                <td data-label="City">South Cory</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="79">79</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Oct 25, 2021">Oct 25, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Felicita Yundt</td>
+                <td data-label="Company">Johns-Weissnat</td>
+                <td data-label="City">East Ariel</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="67">67</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Jan 8, 2021">Jan 8, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Mr. Larry Satterfield V</td>
+                <td data-label="Company">Hyatt Ltd</td>
+                <td data-label="City">Windlerburgh</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="16">16</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Dec 18, 2021">Dec 18, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Mr. Broderick Kub</td>
+                <td data-label="Company">Kshlerin, Bauch and Ernser</td>
+                <td data-label="City">New Kirstenport</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="71">71</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Sep 13, 2021">Sep 13, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Barry Weber</td>
+                <td data-label="Company">Schulist, Mosciski and Heidenreich</td>
+                <td data-label="City">East Violettestad</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="80">80</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Jul 24, 2021">Jul 24, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Bert Kautzer MD</td>
+                <td data-label="Company">Gerhold and Sons</td>
+                <td data-label="City">Mayeport</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="62">62</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Mar 30, 2021">Mar 30, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Lonzo Steuber</td>
+                <td data-label="Company">Skiles Ltd</td>
+                <td data-label="City">Marilouville</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="17">17</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Feb 12, 2021">Feb 12, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Jonathon Hahn</td>
+                <td data-label="Company">Flatley Ltd</td>
+                <td data-label="City">Billiemouth</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="74">74</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Dec 30, 2021">Dec 30, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Ryley Wuckert</td>
+                <td data-label="Company">Heller-Little</td>
+                <td data-label="City">Emeraldtown</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="54">54</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Jun 28, 2021">Jun 28, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="image-cell">
+                  <div class="image">
+                    <img src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" class="rounded-full">
+                  </div>
+                </td>
+                <td data-label="Name">Sienna Hayes</td>
+                <td data-label="Company">Conn, Jerde and Douglas</td>
+                <td data-label="City">Jonathanfort</td>
+                <td data-label="Progress" class="progress-cell">
+                  <progress max="100" value="55">55</progress>
+                </td>
+                <td data-label="Created">
+                  <small class="text-gray-500" title="Mar 7, 2021">Mar 7, 2021</small>
+                </td>
+                <td class="actions-cell">
+                  <div class="buttons right nowrap">
+                    <button class="button small green --jb-modal"  data-target="sample-modal-2" type="button">
+                      <span class="icon"><i class="mdi mdi-eye"></i></span>
+                    </button>
+                    <button class="button small red --jb-modal" data-target="sample-modal" type="button">
+                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="table-pagination">
+              <div class="flex items-center justify-between">
+                <div class="buttons">
+                  <button type="button" class="button active">1</button>
+                  <button type="button" class="button">2</button>
+                  <button type="button" class="button">3</button>
+                </div>
+                <small>Page 1 of 3</small>
+              </div>
             </div>
-
-            <div class="flex flex-col">
-                <h1 class="font-semibold"><span class="num-2"></span> Orders</h1>
-                <p class="text-xs"><span class="num-2"></span> items</p>
-            </div>
-
+          </div>
         </div>
-    </div>
-    <!-- end card -->
-
-    <!-- card -->
-    <div class="card mt-6 xl:mt-1">
-        <div class="card-body flex items-center">
-            
-            <div class="px-3 py-2 rounded bg-yellow-600 text-white mr-3">
-                <i class="fad fa-blog"></i>
-            </div>
-
-            <div class="flex flex-col">
-                <h1 class="font-semibold"><span class="num-2"></span> posts</h1>
-                <p class="text-xs"><span class="num-2"></span> active</p>
-            </div>
-
+      </section>
+    
+    <footer class="footer">
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
+        <div class="flex items-center justify-start space-x-3">
+          <div>
+            © 2021, therichpost.com
+          </div>
+          <div>
+            <p>Distributed By: <a href="https://therichpost.com/" target="_blank">Therichpost</a></p>
+          </div>
+          <a href="https://therichpost.com" style="height: 20px">
+            <img src="https://img.shields.io/github/v/release/justboil/admin-one-tailwind?color=%23999">
+          </a>
         </div>
-    </div>
-    <!-- end card -->
-
-    <!-- card -->
-    <div class="card mt-6 xl:mt-1">
-        <div class="card-body flex items-center">
-            
-            <div class="px-3 py-2 rounded bg-red-600 text-white mr-3">
-                <i class="fad fa-comments"></i>
-            </div>
-
-            <div class="flex flex-col">
-                <h1 class="font-semibold"><span class="num-2"></span> comments</h1>
-                <p class="text-xs"><span class="num-2"></span> approved</p>
-            </div>
-
-        </div>
-    </div>
-    <!-- end card -->
-
-    <!-- card -->
-    <div class="card mt-6 xl:mt-1 xl:col-span-2">
-        <div class="card-body flex items-center">
-            
-            <div class="px-3 py-2 rounded bg-pink-600 text-white mr-3">
-                <i class="fad fa-user"></i>
-            </div>
-
-            <div class="flex flex-col">
-                <h1 class="font-semibold"><span class="num-2"></span> memebrs</h1>
-                <p class="text-xs"><span class="num-2"></span> online</p>
-            </div>
-
-        </div>
-    </div>
-    <!-- end card -->
-
-</div>
-    <!-- end nmbers -->
-
-    <!-- start quick Info -->
-    <div class="grid grid-cols-3 gap-6 mt-6 xl:grid-cols-1">
-
-
-    <!-- Browser Stats -->
-    <div class="card">
-        <div class="card-header">Browser Stats</div>
-
-        <!-- brawser -->
-        <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
-            <div class="flex items-center">
-                <i class="fab fa-chrome mr-4"></i>    
-                <h1>google chrome</h1>
-            </div>                
-            <div>
-                <span class="num-2"></span>%
-            </div>
-        </div>
-        <!-- end brawser -->
-
-        <!-- brawser -->
-        <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
-            <div class="flex items-center">
-                <i class="fab fa-firefox mr-4"></i>    
-                <h1>firefox</h1>
-            </div>                
-            <div>
-                <span class="num-2"></span>%
-            </div>
-        </div>
-        <!-- end brawser -->
-
-        <!-- brawser -->
-        <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
-            <div class="flex items-center">
-                <i class="fab fa-internet-explorer mr-4"></i>    
-                <h1>internet explorer</h1>
-            </div>                
-            <div>
-                <span class="num-2"></span>%
-            </div>
-        </div>
-        <!-- end brawser -->
-
-        <!-- brawser -->
-        <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b-0">
-            <div class="flex items-center">
-                <i class="fab fa-safari mr-4"></i>    
-                <h1>safari</h1>
-            </div>                
-            <div>
-                <span class="num-2"></span>%
-            </div>
-        </div>
-        <!-- end brawser -->
-
-    </div>
-    <!-- end Browser Stats -->
-
-    <!-- Start Recent Sales -->
-    <div class="card col-span-2 xl:col-span-1">
-        <div class="card-header">Recent Sales</div>
-
-        <table class="table-auto w-full text-left">
-            <thead>
-                <tr>
-                    <th class="px-4 py-2 border-r"></th>
-                    <th class="px-4 py-2 border-r">product</th>
-                    <th class="px-4 py-2 border-r">price</th>
-                    <th class="px-4 py-2">date</th>
-                </tr>
-            </thead>
-            <tbody class="text-gray-600">
-
-                <tr>                    
-                    <td class="border border-l-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
-                    <td class="border border-l-0 px-4 py-2">Lightning to USB-C Adapter Lightning.</td>
-                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
-                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
-                </tr>
-                <tr>                    
-                    <td class="border border-l-0 px-4 py-2 text-center text-yellow-500"><i class="fad fa-circle"></i></td>
-                    <td class="border border-l-0 px-4 py-2">Apple iPhone 8.</td>
-                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
-                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
-                </tr>
-                <tr>                    
-                    <td class="border border-l-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
-                    <td class="border border-l-0 px-4 py-2">Apple MacBook Pro.</td>
-                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
-                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
-                </tr>
-                <tr>                    
-                    <td class="border border-l-0 px-4 py-2 text-center text-red-500"><i class="fad fa-circle"></i></td>
-                    <td class="border border-l-0 px-4 py-2">Samsung Galaxy S9.</td>
-                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
-                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
-                </tr>
-                <tr>                    
-                    <td class="border border-l-0 px-4 py-2 text-center text-yellow-500"><i class="fad fa-circle"></i></td>
-                    <td class="border border-l-0 px-4 py-2">Samsung Galaxy S8 256GB.</td>
-                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
-                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
-                </tr>
-                <tr>                    
-                    <td class="border border-l-0 border-b-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
-                    <td class="border border-l-0 border-b-0 px-4 py-2">apple watch.</td>
-                    <td class="border border-l-0 border-b-0 px-4 py-2">$<span class="num-2"></span></td>
-                    <td class="border border-l-0 border-b-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
-                </tr>
-                
-            </tbody>
-        </table>
-    </div>
-    <!-- End Recent Sales -->
-
-
-</div>
-    <!-- end quick Info -->
         
+      </div>
+    </footer>
+    
+    <div id="sample-modal" class="modal">
+      <div class="modal-background --jb-modal-close"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Sample modal</p>
+        </header>
+        <section class="modal-card-body">
+          <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
+          <p>This is sample modal</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button --jb-modal-close">Cancel</button>
+          <button class="button red --jb-modal-close">Confirm</button>
+        </footer>
+      </div>
+    </div>
+    <div id="sample-modal-2" class="modal">
+      <div class="modal-background --jb-modal-close"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Sample modal</p>
+        </header>
+        <section class="modal-card-body">
+          <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
+          <p>This is sample modal</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button --jb-modal-close">Cancel</button>
+          <button class="button blue --jb-modal-close">Confirm</button>
+        </footer>
+      </div>
+    </div>
+    </div>
 
-  </div>
-  <!-- end content -->
+  <!-- Scripts below are for demo only -->
 
-</div>
-<!-- end wrapper -->
-
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
