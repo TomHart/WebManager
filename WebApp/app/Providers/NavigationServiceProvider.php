@@ -37,6 +37,11 @@ class NavigationServiceProvider extends ServiceProvider
                         'icon' => 'account',
                         'title' => 'Characters',
                         'link' => route('characters.index')
+                    ],
+                    [
+                        'icon' => '',
+                        'title' => 'Items',
+                        'link' => route('items.import_form')
                     ]
                 ]
             ]);

@@ -10,4 +10,11 @@ class Character extends Model
     use HasFactory;
 
     protected $table = 'CHARDETAIL';
+    protected $primaryKey = 'CHARID';
+    protected $keyType = 'string';
+
+
+    public function items(){
+        return $this->belongsToMany(Item::class, 'CHARITEM', 'CHARID', 'ITEMTID')->withPivot('POS');
+    }
 }
