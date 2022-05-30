@@ -1,0 +1,8 @@
+
+.inventory--table {
+    max-width: 801px;
+}
+
+.inventory--table td:hover {
+    background-color: #AAA;
+}

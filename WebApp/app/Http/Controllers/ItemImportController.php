@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\ItemAttribute;
+use App\Models\ItemOption;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +13,7 @@ class ItemImportController extends Controller
 {
     public function showImportForm()
     {
-        return view('');
+        return view('test-layout');
     }
 
     public function importItems()
@@ -106,4 +107,22 @@ class ItemImportController extends Controller
 
     //     dump($items->count());
     // }
+
+
+    public function importOptions(){
+        $file = fopen(__DIR__ . '/itemoptiontable2.txt', 'rb');
+        DB::unprepared('SET IDENTITY_INSERT ITEMOPTIONS ON');
+        while(!feof($file)) {
+            $line = fgets($file);
+            $csv= str_getcsv($line, "\t");
+            if(!isset($csv[0], $csv[1])){
+                dump($csv);
+                continue;
+            }
+            ItemOption::updateOrCreate(['id' => (int)$csv[0]], ['DESCRIPTION' => $csv[1]]);
+         }
+         DB::unprepared('SET IDENTITY_INSERT ITEMOPTIONS OFF');
+
+        fclose($file);
+    }
 }

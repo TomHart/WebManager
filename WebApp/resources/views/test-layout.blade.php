@@ -7,7 +7,7 @@
     
       <section class="section main-section">
         <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
-          @include('components/card', ['title' => 'Characters', 'content' => $characters->count(), 'icon' => 'account-multiple'])
+          @include('components/card', ['title' => 'Characters', 'content' => '123', 'icon' => 'account-multiple'])
         </div>
     
         <div class="card mb-6">

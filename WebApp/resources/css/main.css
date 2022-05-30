@@ -1369,7 +1369,7 @@ body {
     display: inline-flex
 }
 
-table {
+/* table {
     width: 100%
 }
 
@@ -1518,7 +1518,7 @@ td.image-cell .image {
         height: 1.5rem;
         width: 1.5rem
     }
-}
+} */
 
 .table-pagination {
     --tw-border-opacity: 1;

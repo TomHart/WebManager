@@ -1,1 +1,1 @@
-docker run --rm -it -v F:\Archlord\WebManager\WebApp:/app node bash
+docker run --rm -it -v F:\Archlord\WebManager\WebApp:/app -w /app node npm run watch

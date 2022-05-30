@@ -30,5 +30,6 @@ Route::get('/character/{id}', [\App\Http\Controllers\CharacterController::class,
 Route::get('/items/import', [\App\Http\Controllers\ItemImportController::class, 'showImportForm'])->name('items.import_form');
 Route::get('/items/import2', [\App\Http\Controllers\ItemImportController::class, 'importItems'])->name('items.import');
 
+Route::get('/options/import', [\App\Http\Controllers\ItemImportController::class, 'importOptions'])->name('items.import');
 
 Route::get('/img', [\App\Http\Controllers\ItemImportController::class, 'getImages']);

@@ -14,7 +14,7 @@ class CharacterController extends Controller
     }
 
     public function show($id){
-        $character = Character::with('items', 'items.attributes')->findOrFail($id);
+        $character = Character::with(['items', 'items.attributes'])->findOrFail($id);
 
 
         $inventory = [

@@ -15,6 +15,6 @@ class Character extends Model
 
 
     public function items(){
-        return $this->belongsToMany(Item::class, 'CHARITEM', 'CHARID', 'ITEMTID')->withPivot('POS');
+        return $this->belongsToMany(Item::class, 'CHARITEM', 'CHARID', 'ITEMTID')->withPivot(['POS', 'STACKCOUNT', 'CONVHIST', 'OPT']);
     }
 }

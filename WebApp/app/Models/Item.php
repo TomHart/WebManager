@@ -14,6 +14,26 @@ class Item extends Model
 
 
     public function attributes(){
-        return $this->belongsToMany(ItemAttribute::class, 'ITEMATTRIBUTES', 'ATTRIBUTEID', 'ITEMID');
+        return $this->belongsToMany(ItemAttribute::class, 'ITEMATTRIBUTES', 'ATTRIBUTEID', 'ITEMID')->withPivot('VALUE');
+    }
+
+    public function getSlotCountAttribute(){
+
+        $conv = $this->pivot->CONVHIST;
+        if(empty($conv) || substr($conv, 0, 4) === '0:0:'){
+            return null;
+        }
+
+        return explode(':', $conv)[1] ?? null;
+    }
+    public function getStatsAttribute(){
+
+        $opt = $this->pivot->OPT;
+        $optIds = explode(',', $opt);
+        if(!$optIds){
+            return [];
+        }
+        
+        return ItemOption::whereIn('id', $optIds)->get()->pluck('DESCRIPTION');
     }
 }
