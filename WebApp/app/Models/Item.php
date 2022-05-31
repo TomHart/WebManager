@@ -14,7 +14,7 @@ class Item extends Model
 
 
     public function attributes(){
-        return $this->belongsToMany(ItemAttribute::class, 'ITEMATTRIBUTES', 'ATTRIBUTEID', 'ITEMID')->withPivot('VALUE');
+        return $this->belongsToMany(ItemAttribute::class, 'ITEMATTRIBUTES', 'ITEMID', 'ATTRIBUTEID')->withPivot('VALUE');
     }
 
     public function getSlotCountAttribute(){

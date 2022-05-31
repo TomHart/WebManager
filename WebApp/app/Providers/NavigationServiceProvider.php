@@ -35,6 +35,11 @@ class NavigationServiceProvider extends ServiceProvider
                 'Management' => [
                     [
                         'icon' => 'account',
+                        'title' => 'Accounts',
+                        'link' => route('accounts.index')
+                    ],
+                    [
+                        'icon' => 'account-group',
                         'title' => 'Characters',
                         'link' => route('characters.index')
                     ],

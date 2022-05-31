@@ -72,56 +72,60 @@ class ItemImportController extends Controller
 
         $attrs = ItemAttribute::all()->keyBy('id');
         DB::unprepared('SET IDENTITY_INSERT ITEMS ON');
-        DB::beginTransaction();
         foreach ($items as $id => $attributes) {
-            $item = Item::updateOrCreate(
-                ['id' => $id],
-                ['ITEMNAME' => $attributes[1]]
-            );
 
-            $item->attributes()->delete();
-            foreach ($attributes as $id => $value) {
-                $item->attributes()->save($attrs[$id], ['VALUE' => $value]);
+            try {
+                $item = Item::updateOrCreate(
+                    ['id' => $id],
+                    ['ITEMNAME' => mb_convert_encoding($attributes[1], 'UTF-8', 'UTF-8')]
+                );
+
+                $item->attributes()->delete();
+                foreach ($attributes as $id => $value) {
+                    $item->attributes()->save($attrs[$id], ['VALUE' => mb_convert_encoding($value, 'UTF-8', 'UTF-8')]);
+                }
+            } catch (Exception $e) {
+                dump($id, $e);
             }
         }
-        DB::commit();
         DB::unprepared('SET IDENTITY_INSERT ITEMS OFF');
     }
 
-    // public function getImages()
-    // {
-    //     ini_set('max_execution_time', -1);
-    //     $items = Item::all();
-    //     foreach ($items as $item) {
-    //         $file = __DIR__ . '/img/' . $item->id . '.jpg';
-    //         if (file_exists($file)) {
-    //             continue;
-    //         }
+    public function getImages()
+    {
+        ini_set('max_execution_time', -1);
+        $items = Item::all();
+        foreach ($items as $item) {
+            $file = __DIR__ . '/img/' . $item->id . '.jpg';
+            if (file_exists($file)) {
+                continue;
+            }
 
-    //         try {
-    //             file_put_contents($file, file_get_contents('http://www.archlord.drwx.eu/php4img_item.php?i=' . $item->id));
-    //         } catch (Exception $e) {
-    //             dump($e->getMessage());
-    //         }
-    //     }
+            try {
+                file_put_contents($file, file_get_contents('http://www.archlord.drwx.eu/php4img_item.php?i=' . $item->id));
+            } catch (Exception $e) {
+                dump($e->getMessage());
+            }
+        }
 
-    //     dump($items->count());
-    // }
+        dump($items->count());
+    }
 
 
-    public function importOptions(){
+    public function importOptions()
+    {
         $file = fopen(__DIR__ . '/itemoptiontable2.txt', 'rb');
         DB::unprepared('SET IDENTITY_INSERT ITEMOPTIONS ON');
-        while(!feof($file)) {
+        while (!feof($file)) {
             $line = fgets($file);
-            $csv= str_getcsv($line, "\t");
-            if(!isset($csv[0], $csv[1])){
+            $csv = str_getcsv($line, "\t");
+            if (!isset($csv[0], $csv[1])) {
                 dump($csv);
                 continue;
             }
             ItemOption::updateOrCreate(['id' => (int)$csv[0]], ['DESCRIPTION' => $csv[1]]);
-         }
-         DB::unprepared('SET IDENTITY_INSERT ITEMOPTIONS OFF');
+        }
+        DB::unprepared('SET IDENTITY_INSERT ITEMOPTIONS OFF');
 
         fclose($file);
     }

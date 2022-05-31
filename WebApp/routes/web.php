@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Character;
 
@@ -18,6 +19,12 @@ Route::get('/', function () {
     dump(Character::all());
     return view('welcome');
 })->name('landing');
+
+
+
+Route::resource('accounts', AccountsController::class);
+
+
 
 Route::get('/info', function () {
     phpinfo();

@@ -31,7 +31,7 @@
 
                             @foreach($actions as $action)
 
-                            <a href="{{route($action['route'], $row[$action['attribute']])}}" class="button small {{$action['colour']}} --jb-modal" data-target="sample-modal-2" type="button">
+                            <a href="{{route($action['route'], $row[$action['attribute']])}}" class="button small {{$action['colour']}}" type="button">
                                 <span class="icon"><i class="mdi mdi-{{$action['icon']}}"></i></span>
                             </a>
                             @endforeach

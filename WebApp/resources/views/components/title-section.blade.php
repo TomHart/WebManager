@@ -5,8 +5,8 @@
             <li>{{$section}}</li>
         </ul>
         @if(isset($button))
-            <a href="{{$button['link']}}" onclick="alert('Coming soon'); return false" target="_blank" class="button blue">
-                <span class="icon"><i class="mdi mdi-credit-card-outline"></i></span>
+            <a href="{{$button['link']}}" class="button {{$button['colour'] ?? 'blue'}}">
+                <span class="icon"><i class="mdi mdi-{{$button['icon']}}"></i></span>
                 <span>{{$button['text']}}</span>
             </a>
         @endif

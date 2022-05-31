@@ -3,9 +3,17 @@ module.exports = {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    './node_modules/tw-elements/dist/js/**/*.js'
+  ],
+  safelist: [
+    {
+      pattern: /.*/,
+    },
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
 }
