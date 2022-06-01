@@ -1,0 +1,26 @@
+TID	ItemName	Option TID	옵션내용	
+203	Fire Elemental Stone	1001	Damage +1	
+264	Embers Elemental Stone	1002	Damage +3	
+265	Blaze Elemental Stone	1003	Damage +5	
+266	Inferno Elemental Stone	1005	Damage +7	
+267	Meteor Elemental Stone	1007	Damage +9	
+202	Wind Elemental Stone	1022	Wisdom +1	
+244	Breath Elemental Stone	1023	Wisdom +3	
+245	Gale Elemental Stone	1024	Wisdom +5	
+246	Tornado Elemental Stone	1026	Wisdom +7	
+247	Hurricane Elemental Stone	1028	Wisdom +9	
+201	Water Elemental Stone	1081	Attack Speed +1%	
+260	River Elemental Stone	1082	Attack Speed +2%	
+261	Fog Elemental Stone	1083	Attack Speed +4%	
+262	Waterfall Elemental Stone	1084	Attack Speed +6%	
+263	Sea Elemental Stone	1085	Attack Speed +7%	
+200	Earth Elemental Stone	1064	Stamina +1
+252	Dust Elemental Stone	1065	Stamina +3
+253	Soil Elemental Stone	1066	Stamina +5
+254	Tremor Elemental Stone	1067	Stamina +7
+255	Terra Elemental Stone	1068	Stamina +9
+204	Magic Elemental Stone	1043	Intelligence +1
+256	Spirit Elemental Stone	1044	Intelligence +3
+257	Meditation Elemental Stone	1045	Intelligence +5
+258	Transcendence Elemental Stone	1047	Intelligence +7
+259	Nirvana Elemental Stone	1049	Intelligence +9

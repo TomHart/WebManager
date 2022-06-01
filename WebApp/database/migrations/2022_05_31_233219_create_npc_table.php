@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('npc', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('NPCS', function (Blueprint $table) {
+            $table->id('NPCID');
+            $table->string('NAME');
+            $table->string('TYPE');
+            $table->string('COORDS');
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('npc');
+        Schema::dropIfExists('NPCS');
     }
 };

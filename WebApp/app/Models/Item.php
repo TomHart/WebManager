@@ -13,27 +13,30 @@ class Item extends Model
     protected $guarded = [];
 
 
-    public function attributes(){
+    public function attributes()
+    {
         return $this->belongsToMany(ItemAttribute::class, 'ITEMATTRIBUTES', 'ITEMID', 'ATTRIBUTEID')->withPivot('VALUE');
     }
 
-    public function getSlotCountAttribute(){
+    public function getSlotCountAttribute()
+    {
 
         $conv = $this->pivot->CONVHIST;
-        if(empty($conv) || substr($conv, 0, 4) === '0:0:'){
+        if (empty($conv) || substr($conv, 0, 4) === '0:0:') {
             return null;
         }
 
         return explode(':', $conv)[1] ?? null;
     }
-    public function getStatsAttribute(){
 
+    public function getStatsAttribute()
+    {
         $opt = $this->pivot->OPT;
         $optIds = explode(',', $opt);
-        if(!$optIds){
+        if (!$optIds) {
             return [];
         }
-        
+
         return ItemOption::whereIn('id', $optIds)->get()->pluck('DESCRIPTION');
     }
 }
