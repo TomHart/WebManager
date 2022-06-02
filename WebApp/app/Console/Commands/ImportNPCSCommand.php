@@ -29,8 +29,8 @@ class ImportNPCSCommand extends Command
      */
     public function handle()
     {
-        //((new ImportNPCS())->perform());
-        ((new ImportNPCTrades())->perform());
+        ((new ImportNPCS($this->output))->perform());
+        ((new ImportNPCTrades($this->output))->perform());
         return 0;
     }
 }

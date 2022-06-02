@@ -16,6 +16,16 @@ class NPC extends Model
 
     public function trades()
     {
-        return $this->hasMany(NPCTrade::class);
+        return $this->hasMany(NPCTrade::class, 'NPC_ID', 'TEMPLATE_ID');
+    }
+
+    public function getTradeCountAttribute()
+    {
+        return $this->trades->count();
+    }
+
+    public function attributes()
+    {
+        return $this->hasMany(NPCAttribute::class, 'NPC_ID');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Action\ImportItemPrice;
 use App\Action\ImportItems;
 use Illuminate\Console\Command;
 
@@ -29,6 +30,7 @@ class ImportItemsCommand extends Command
     public function handle()
     {
         (new ImportItems($this->output))->perform();
+        (new ImportItemPrice($this->output))->perform();
         return 0;
     }
 }

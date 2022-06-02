@@ -6,10 +6,18 @@ namespace App\Action;
 
 use App\Models\NPC;
 use App\Models\NPCTrade;
+use Illuminate\Console\OutputStyle;
 use Illuminate\Support\Facades\DB;
 
 class ImportNPCTrades implements ActionInterface
 {
+    private $output;
+
+    public function __construct(OutputStyle $output)
+    {
+        $this->output = $output;
+    }
+
     public function perform()
     {
         $content = file_get_contents(resource_path('INI/NPCTradeItemList.txt'));
@@ -39,8 +47,11 @@ class ImportNPCTrades implements ActionInterface
 
     private function importTrades(array $allTrades)
     {
-        DB::raw('TRUNCATE TABLE NPCTRADES');
+        $this->output->writeln('Importing NPC Trades');
+        $bar = $this->output->createProgressBar(count($allTrades));
+        NPCTrade::truncate();
         foreach ($allTrades as $trades) {
+            $bar->advance();
             if (!isset($trades[0][0]) || $trades[0][0] !== 'Npc') {
                 dump('No template ID');
                 die;
@@ -57,5 +68,7 @@ class ImportNPCTrades implements ActionInterface
                 $tradeModel->save();
             }
         }
+        $bar->finish();
+        $this->output->writeln(PHP_EOL . 'NPC Trades Imported');
     }
 }

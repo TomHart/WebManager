@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountsController;
+use App\Http\Controllers\NPCController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Character;
 
@@ -23,6 +24,7 @@ Route::get('/', function () {
 
 
 Route::resource('accounts', AccountsController::class);
+Route::resource('npc', NPCController::class);
 
 
 

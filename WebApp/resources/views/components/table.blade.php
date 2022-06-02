@@ -23,13 +23,15 @@
                 <tr>
 
                     @foreach($attributes as $attribute)
-                    <td>{{$row[$attribute]}}</td>
+                    <td>
+                        {!!$row[$attribute]!!}
+                    </td>
                     @endforeach
 
                     <td class="actions-cell">
                         <div class="buttons right nowrap">
 
-                            @foreach($actions as $action)
+                            @foreach($actions ?? [] as $action)
 
                             <a href="{{route($action['route'], $row[$action['attribute']])}}" class="button small {{$action['colour']}}" type="button">
                                 <span class="icon"><i class="mdi mdi-{{$action['icon']}}"></i></span>
@@ -42,7 +44,7 @@
             </tbody>
         </table>
 
-        <div class="table-pagination">
+        <!-- <div class="table-pagination">
             <div class="flex items-center justify-between">
                 <div class="buttons">
                     <button type="button" class="button active">1</button>
@@ -51,6 +53,6 @@
                 </div>
                 <small>Page 1 of 3</small>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
