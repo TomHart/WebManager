@@ -18,115 +18,114 @@ class ItemImportController extends Controller
 
     public function importItems()
     {
-        ini_set('max_execution_time', -1);
-        ini_set('memory_limit', -1);
-        $str = file_get_contents(__DIR__ . '/itemtemplateall.ini');
-        $items = preg_split('/(\[[0-9]+\])\r/', $str, -1, PREG_SPLIT_DELIM_CAPTURE);
-        //dump(count($items));die;
-        $this->importAttributes(array_shift($items));
-        $data = [];
-        $items = $this->formatItems($items);
+        $content = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'npctradeitemlist.txt');
 
-        $this->importItemsToDB($items);
-    }
-
-    private function importAttributes(string $attributes)
-    {
-        $attributes = parse_ini_string($attributes);
-
-        DB::unprepared('SET IDENTITY_INSERT ITEMATTRIBUTESLIST ON');
-        foreach ($attributes as $id => $name) {
-            $attr = ItemAttribute::updateOrCreate(
-                ['id' => $id],
-                ['ATTRIBUTENAME' => $name]
-            );
-        }
-        DB::unprepared('SET IDENTITY_INSERT ITEMATTRIBUTESLIST OFF');
-    }
-
-    private function formatItems(array $items)
-    {
-        $newItems = [];
-        $items = array_chunk($items, 2);
-        foreach ($items as $values) {
-            try {
-                $itemId = (int)str_replace(['[', ']'], '', $values[0]);
-
-                if (array_key_exists($itemId, $newItems)) {
-                    dump($itemId, $values);
-                    die;
-                }
-
-                $newItems[$itemId] = parse_ini_string($values[1], true, INI_SCANNER_RAW);
-            } catch (Exception $e) {
-                dump($e);
-                dump($values[1]);
-            }
+        $ctx = hash_init('md5', 0, '1111');
+        hash_update($ctx, $content);
+        $final = hash_final($ctx);
+        $key = $this->cryptoDeriveKey($final);
+        dump($key);
+        $count = count($key);
+        $maxchars = 2;
+        $newKey = '';
+        for ($i = 0; $i < $count; $i++) {
+            $newKey .= str_pad(dechex($key[$i]), $maxchars, "0", STR_PAD_LEFT);
         }
 
-        return $newItems;
-    }
-
-    private function importItemsToDB(array $items)
-    {
-
-        $attrs = ItemAttribute::all()->keyBy('id');
-        DB::unprepared('SET IDENTITY_INSERT ITEMS ON');
-        foreach ($items as $id => $attributes) {
-
+        $opts = OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING;
+        //Convert key hex string to a string for openssl_decrypt
+        //Leave it as it is for openssl command line.
+        $key = $this->hexToStr($newKey);
+        $cipher = 'rc4-hmac-md5';
+        $encrypted = $content;
+        foreach (openssl_get_cipher_methods() as $cipher) {
             try {
-                $item = Item::updateOrCreate(
-                    ['id' => $id],
-                    ['ITEMNAME' => mb_convert_encoding($attributes[1], 'UTF-8', 'UTF-8')]
-                );
+                $decrypted = openssl_decrypt($encrypted, $cipher, $key, $opts);
 
-                $item->attributes()->delete();
-                foreach ($attributes as $id => $value) {
-                    $item->attributes()->save($attrs[$id], ['VALUE' => mb_convert_encoding($value, 'UTF-8', 'UTF-8')]);
-                }
-            } catch (Exception $e) {
-                dump($id, $e);
-            }
-        }
-        DB::unprepared('SET IDENTITY_INSERT ITEMS OFF');
-    }
-
-    public function getImages()
-    {
-        ini_set('max_execution_time', -1);
-        $items = Item::all();
-        foreach ($items as $item) {
-            $file = __DIR__ . '/img/' . $item->id . '.jpg';
-            if (file_exists($file)) {
-                continue;
-            }
-
-            try {
-                file_put_contents($file, file_get_contents('http://www.archlord.drwx.eu/php4img_item.php?i=' . $item->id));
+                dump($decrypted);
             } catch (Exception $e) {
                 dump($e->getMessage());
             }
         }
-
-        dump($items->count());
     }
 
-
-    public function importOptions()
+    function cryptoDeriveKey($key)
     {
-        $file = fopen(__DIR__ . '/itemoptiontable2.txt', 'rb');
-        DB::unprepared('SET IDENTITY_INSERT ITEMOPTIONS ON');
-        while (!feof($file)) {
-            $line = fgets($file);
-            $csv = str_getcsv($line, "\t");
-            if (!isset($csv[0], $csv[1])) {
-                dump($csv);
-                continue;
-            }
-            ItemOption::updateOrCreate(['id' => (int)$csv[0]], ['DESCRIPTION' => $csv[1]]);
-        }
-        DB::unprepared('SET IDENTITY_INSERT ITEMOPTIONS OFF');
 
-        fclose($file);
+        //Put the hash key into an array
+        $hashKey1 = str_split($key, 2);
+        $count = count($hashKey1);
+        $hashKeyInt = array();
+
+        for ($i = 0; $i < $count; $i++) {
+            $hashKeyInt[$i] = hexdec($hashKey1[$i]);
+        }
+        $hashKey = $hashKeyInt;
+
+        //Let n be the required derived key length, in bytes.  CALG_RC4 = 40 bits key or 88 salt bytes
+        $n = 40 / 8;
+
+        //Let k be the length of the hash value that is represented by the input parameter hBaseData
+        $k = 16;
+
+        //Step 1 Form a 64-byte buffer by repeating the constant 0x36 64 times   
+        $arraya = array_fill(0, 64, 0x36);
+
+        //Set the first k bytes of the buffer to the result of an XOR operation of the first k bytes of the buffer with the hash value 
+        for ($i = 0; $i < $k; $i++) {
+            $arraya[$i] = $arraya[$i] ^ $hashKey[$i];
+        }
+
+        //Hash the result of step 1 by using the same hash algorithm as hBaseData
+        $arrayPacka = pack('c*', ...$arraya);
+        $hashArraya = md5($arrayPacka);
+
+        //Put the hash string back into the array
+        $hashKeyArraya = str_split($hashArraya, 2);
+        $count = count($hashKeyArraya);
+        $hashKeyInta = array();
+        for ($i = 0; $i < $count; $i++) {
+            $hashKeyInta[$i] = hexdec($hashKeyArraya[$i]);
+        }
+
+        //Step 2 Form a 64-byte buffer by repeating the constant 0x5C 64 times. 
+        $arrayb = array_fill(0, 64, 0x5C);
+
+        //Set the first k bytes of the buffer to the result of an XOR operation of the first k bytes of the buffer with the hash value
+        for ($i = 0; $i < $k; $i++) {
+            $arrayb[$i] =  $arrayb[$i] ^ $hashKey[$i];
+        }
+
+        //Hash the result of step 2 by using the same hash algorithm as hBaseData    
+        $arrayPackb = pack('c*', ...$arrayb);
+        $hashArrayb = md5($arrayPackb);
+
+        //Put the hash string back into the array
+        $hashKeyArrayb = str_split($hashArrayb, 2);
+        $count = count($hashKeyArrayb);
+        $hashKeyIntb = array();
+        for ($i = 0; $i < $count; $i++) {
+            $hashKeyIntb[$i] = hexdec($hashKeyArrayb[$i]);
+        }
+
+        //Concatenate the result of step 3 with the result of step 4.
+        $combined = array_merge($hashKeyInta, $hashKeyIntb);
+
+        //Use the first n bytes of the result of step 5 as the derived key.
+        $finalKey = array();
+        for ($i = 0; $i < $n; $i++) {
+            $finalKey[$i] =  $combined[$i];
+        }
+        $key = $finalKey;
+
+        return $key;
+    }
+    function hexToStr($hex)
+    {
+        $string = '';
+        for ($i = 0; $i < strlen($hex) - 1; $i += 2) {
+            $string .= chr(hexdec($hex[$i] . $hex[$i + 1]));
+        }
+        return $string;
     }
 }

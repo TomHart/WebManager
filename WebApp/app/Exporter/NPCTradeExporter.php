@@ -20,15 +20,18 @@ class NPCTradeExporter
 
     private function exportNpc(NPC $npc)
     {
-        $content = sprintf("Npc\t%d\t<%s> %s%s", $npc->TEMPLATE_ID, $npc->TYPE, $npc->NAME, PHP_EOL);
+        $EOL = "\r\n";
+        $content = sprintf("Npc\t%d\t<%s> %s%s", $npc->TEMPLATE_ID, $npc->TYPE, $npc->NAME, $EOL);
 
-        $content .= sprintf("Sell\t%d%s", 1, PHP_EOL);
-        $content .= sprintf("Buy\t%d%s", 1, PHP_EOL);
-        $content .= sprintf("BuyOther\t%d%s", 1, PHP_EOL);
+        $content .= sprintf("Sell\t%d%s", 1, $EOL);
+        $content .= sprintf("Buy\t%d%s", 1, $EOL);
+        $content .= sprintf("BuyOther\t%d%s", 1, $EOL);
 
         foreach ($npc->trades as $trade) {
-            $content .= sprintf("Item\t%d\t%d%s", $trade->ITEM_ID, $trade->COUNT, PHP_EOL);
+            $content .= sprintf("Item\t%d\t%d%s", $trade->ITEM_ID, $trade->COUNT, $EOL);
         }
+
+        $content .= sprintf("-End%s", $EOL);
         return $content;
     }
 }
