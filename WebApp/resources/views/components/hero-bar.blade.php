@@ -4,7 +4,7 @@
             {{$title}}
         </h1>
         @if(isset($button))
-        <button class="button light">Button</button>
+            <a href="{{$button['link']}}" class="button {{$button['colour'] ?? ''}}">{{$button['text']}}</a>
         @endif
     </div>
 </section>

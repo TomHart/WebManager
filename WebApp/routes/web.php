@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 
 Route::resource('accounts', AccountsController::class);
+Route::get('/npc/export', [\App\Http\Controllers\NPCController::class, 'export'])->name('npc.export');
 Route::resource('npc', NPCController::class);
 
 

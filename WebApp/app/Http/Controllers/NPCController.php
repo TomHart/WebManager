@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exporter\NPCExporter;
+use App\Exporter\NPCTradeExporter;
 use App\Models\NPC;
 use Illuminate\Http\Request;
+use ZipArchive;
 
 class NPCController extends Controller
 {
@@ -60,5 +63,41 @@ class NPCController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function export()
+    {
+        $npcs = NPC::with(['trades', 'trades.item'])->get();
+
+        $exporters = [
+            new NPCExporter(),
+            new NPCTradeExporter()
+        ];
+
+        $files = [];
+        foreach ($exporters as $exporter) {
+            $files = array_merge($files, $exporter->export($npcs));
+        }
+
+        $zip = new ZipArchive();
+        $zipFileName = "INI.zip";
+
+        if (!$zip->open($zipFileName, ZIPARCHIVE::CREATE)) {
+            die("Could not open archive");
+        }
+
+        foreach ($files as $name => $file) {
+            $tmpFile = tempnam(sys_get_temp_dir(), 'INI');
+            file_put_contents($tmpFile, $file);
+            $zip->addFile($tmpFile, $name);
+        }
+        $zip->close();
+
+        header('Content-Type: application/zip');
+        header('Content-disposition: attachment; filename=' . $zipFileName);
+        header('Content-Length: ' . filesize($zipFileName));
+        readfile($zipFileName);
+
+        unlink($zipFileName);
     }
 }

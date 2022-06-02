@@ -1,7 +1,14 @@
 @extends('layouts.dashboard')
 @section('content')
     @include('components/title-section', ['category' => 'Management', 'section' => 'NPCs'])
-    @include('components/hero-bar', ['title' => 'NPCs'])
+    @include('components/hero-bar', [
+      'title' => 'NPCs', 
+      'button' => [
+        'text'  => 'Export',
+        'link' => route('npc.export'),
+        'colour' => 'blue'
+      ]
+    ])
     
     
     
