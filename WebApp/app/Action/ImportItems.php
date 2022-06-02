@@ -8,7 +8,7 @@ use App\Models\Item;
 use App\Models\ItemAttribute;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\Console\Output\OutputInterface;
+use Illuminate\Console\OutputStyle;
 use Exception;
 
 class ImportItems implements ActionInterface
@@ -16,7 +16,7 @@ class ImportItems implements ActionInterface
     private $output;
     private $file = 'INI/itemtemplateall.ini';
 
-    public function __construct(OutputInterface $output)
+    public function __construct(OutputStyle $output)
     {
         $this->output = $output;
     }
@@ -95,8 +95,6 @@ class ImportItems implements ActionInterface
         $progressBar->start();
         $attrs = ItemAttribute::all()->keyBy('id');
         DB::unprepared('SET IDENTITY_INSERT ITEMS ON');
-        $count = 0;
-        DB::beginTransaction();
         foreach ($items as $id => $attributes) {
             try {
                 $item = Item::updateOrCreate(
@@ -113,15 +111,7 @@ class ImportItems implements ActionInterface
             } finally {
                 $progressBar->advance();
             }
-
-            if($count++ >= 500){
-                $this->output->writeln('Committing');
-                $count = 0;
-                DB::commit();
-                DB::beginTransaction();
-            }
         }
-        DB::commit();
         DB::unprepared('SET IDENTITY_INSERT ITEMS OFF');
         $progressBar->finish();
     }
