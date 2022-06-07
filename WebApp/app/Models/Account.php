@@ -11,7 +11,9 @@ class Account extends Model
 
     protected $table = 'AMT_ACCOUNT';
 
-    protected $guarded = [];
+    protected $fillable = [
+        'account_id', 'password', 'password_confirmation'
+    ];
 
     public $timestamps = false;
 

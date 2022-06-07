@@ -25,7 +25,8 @@ class CreateAccountRequest extends FormRequest
     {
         return [
             'account_id' => ['required', 'unique:AMT_MASTER,ACCOUNTID'],
-            'password' => ['required', 'confirmed']
+            'email_address' => ['required', 'email:rfc,dns,filter', 'unique:AMT_MASTER,EMAIL'],
+            'password' => ['required', 'confirmed', 'min:8', 'max:32']
         ];
     }
 }

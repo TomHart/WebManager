@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\AccountsController;
+use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ItemImportController;
 use App\Http\Controllers\NPCController;
+use App\Http\Controllers\User\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Character;
 
@@ -16,30 +20,28 @@ use App\Models\Character;
 |
 */
 
-Route::get('/', function () {
-    dump(Character::all());
-    return view('welcome');
-})->name('landing');
-
-
+Route::get('/', [IndexController::class, 'index'])->name('landing');
 
 Route::resource('accounts', AccountsController::class);
-Route::get('/npc/export', [\App\Http\Controllers\NPCController::class, 'export'])->name('npc.export');
+Route::get('/npc/export', [NPCController::class, 'export'])->name('npc.export');
 Route::resource('npc', NPCController::class);
 
 
 
-Route::get('/info', function () {
-    phpinfo();
-});
+Route::get('/login', function () {})->name('login');
 
-Route::get('/characters', [\App\Http\Controllers\CharacterController::class, 'index'])->name('characters.index');
-Route::get('/character/{id}', [\App\Http\Controllers\CharacterController::class, 'show'])->name('characters.show');
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.submit');
+
+Route::resource('accounts', AccountsController::class);
+
+Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
+Route::get('/character/{id}', [CharacterController::class, 'show'])->name('characters.show');
 
 
-Route::get('/items/import', [\App\Http\Controllers\ItemImportController::class, 'showImportForm'])->name('items.import_form');
-Route::get('/items/import2', [\App\Http\Controllers\ItemImportController::class, 'importItems'])->name('items.import');
+Route::get('/items/import', [ItemImportController::class, 'showImportForm'])->name('items.import_form');
+Route::get('/items/import2', [ItemImportController::class, 'importItems'])->name('items.import');
 
-Route::get('/options/import', [\App\Http\Controllers\ItemImportController::class, 'importOptions'])->name('items.import');
+Route::get('/options/import', [ItemImportController::class, 'importOptions'])->name('items.import');
 
-Route::get('/img', [\App\Http\Controllers\ItemImportController::class, 'getImages']);
+Route::get('/img', [ItemImportController::class, 'getImages']);

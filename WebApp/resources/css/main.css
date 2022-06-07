@@ -8,7 +8,6 @@
 
 html {
     -moz-tab-size: 4;
-    -o-tab-size: 4;
     tab-size: 4
 }
 
@@ -31,7 +30,6 @@ hr {
 }
 
 abbr[title] {
-    -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted
 }
 
@@ -130,7 +128,6 @@ button {
 }
 
 button:focus {
-    outline: 1px dotted;
     outline: 5px auto -webkit-focus-ring-color
 }
 
@@ -292,7 +289,7 @@ video {
 .navbar-brand {
     display: flex;
     align-items: stretch;
-    flex: 1 1 0%;
+    flex: 1 1 0;
     height: 3.5rem
 }
 
@@ -891,14 +888,18 @@ body {
     background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
     font-size: 1rem;
     line-height: 1.5rem;
-    padding-top: 3.5rem
+}
+
+body.dashboard {
+    padding-top: 3.5rem;
 }
 
 @media (min-width:1024px) {
-    body {
+    body.dashboard {
         padding-left: 15rem
     }
 }
+
 
 #app {
     width: 100vw;
@@ -976,7 +977,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex: 1 1 0%;
+    flex: 1 1 0;
     height: 3.5rem;
     padding-left: .75rem;
     padding-right: .75rem;
@@ -1256,7 +1257,6 @@ body {
 .is-hero-bar h1 {
     font-weight: 600;
     font-size: 1.875rem;
-    line-height: 2.25rem;
     line-height: 1.25
 }
 
@@ -1321,7 +1321,6 @@ body {
 
 .widget-label h3 {
     font-size: 1.125rem;
-    line-height: 1.75rem;
     line-height: 1.25;
     --tw-text-opacity: 1;
     color: rgba(107, 114, 128, var(--tw-text-opacity))
@@ -1330,7 +1329,6 @@ body {
 .widget-label h1 {
     font-weight: 600;
     font-size: 1.875rem;
-    line-height: 2.25rem;
     line-height: 1.25
 }
 
@@ -1588,7 +1586,6 @@ progress::-ms-fill {
 }
 
 .modal-background {
-    --tw-bg-opacity: 1;
     background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
     --tw-bg-opacity: 0.8;
     position: absolute;
