@@ -28,17 +28,17 @@ class RegisterController extends Controller
      */
     public function store(CreateAccountRequest $request)
     {
-        $account = (new Account())->fill($request->all());
-        $account->save();
-
-        (new AccountMaster())->fill([
-            'ACCOUNTID' => $account->ACCOUNTID,
-            'EMAIL' => $request->get('email_address'),
-            'SOCIALNO' => 1,
-            'CREATION_DATE' => now(),
-            'SMS_YN' => 'N',
-            'EMAIL_YN' => 'N'
-        ])->save();
+//        $account = (new Account())->fill($request->all());
+//        $account->save();
+//
+//        (new AccountMaster())->fill([
+//            'ACCOUNTID' => $account->ACCOUNTID,
+//            'EMAIL' => $request->get('email_address'),
+//            'SOCIALNO' => 1,
+//            'CREATION_DATE' => now(),
+//            'SMS_YN' => 'N',
+//            'EMAIL_YN' => 'N'
+//        ])->save();
 
         return redirect()->route('login')->with('account', 'added');
     }

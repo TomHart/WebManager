@@ -5,7 +5,9 @@ use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ItemImportController;
 use App\Http\Controllers\NPCController;
+use App\Http\Controllers\User\LoginController;
 use App\Http\Controllers\User\RegisterController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\Character;
 
@@ -22,17 +24,27 @@ use App\Models\Character;
 
 Route::get('/', [IndexController::class, 'index'])->name('landing');
 
-Route::resource('accounts', AccountsController::class);
-Route::get('/npc/export', [NPCController::class, 'export'])->name('npc.export');
-Route::resource('npc', NPCController::class);
 
-
-
-Route::get('/login', function () {})->name('login');
+/*
+ * Auth Routes
+ */
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'performLogin'])->name('login.submit');
 
 Route::get('/register', [RegisterController::class, 'create'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.submit');
 
+Route::get('/logout', static function () {
+    Auth::logout();
+    return redirect()->back();
+})->name('logout');
+
+/*
+ * Admin Routes
+ */
+Route::resource('accounts', AccountsController::class);
+Route::get('/npc/export', [NPCController::class, 'export'])->name('npc.export');
+Route::resource('npc', NPCController::class);
 Route::resource('accounts', AccountsController::class);
 
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');

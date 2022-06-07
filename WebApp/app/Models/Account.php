@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Account extends Model
+class Account extends Authenticatable
 {
     use HasFactory;
 
@@ -17,12 +17,26 @@ class Account extends Model
 
     public $timestamps = false;
 
+    public function loginStatus()
+    {
+        return $this->hasOne(LoginStatus::class, 'ACCOUNTID', 'ACCOUNTID');
+    }
+
+    public function getAuthIdentifierName(): string
+    {
+        return 'ACCOUNTID';
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->PASSWORD;
+    }
 
     public function setAccountIdAttribute($value)
     {
         $this->attributes['ACCOUNTID'] = $value;
     }
-    
+
     public function setPasswordAttribute($value)
     {
         $this->attributes['PASSWORD'] = $value;

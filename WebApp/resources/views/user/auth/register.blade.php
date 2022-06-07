@@ -37,7 +37,7 @@
 
                 <div class="mt-6 text-grey-dark">
                     Already have an account?
-                    <a class="text-blue-600 hover:underline" href="#">
+                    <a class="text-blue-600 hover:underline" href="{{route('login')}}">
                         Log in
                     </a>
                 </div>
