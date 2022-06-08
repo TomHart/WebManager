@@ -54,8 +54,8 @@ class Item extends Model
     public function getStatsAttribute()
     {
         $opt = $this->pivot->OPT;
-        $optIds = explode(',', $opt);
-        if (!$optIds) {
+        $optIds = array_filter(explode(',', $opt));
+        if (empty($optIds)) {
             return [];
         }
 

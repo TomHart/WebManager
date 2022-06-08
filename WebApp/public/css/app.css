@@ -9,7 +9,7 @@
 html {
     -moz-tab-size: 4;
     -o-tab-size: 4;
-    tab-size: 4;
+       tab-size: 4;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%
 }
@@ -26,7 +26,7 @@ hr {
 
 abbr[title] {
     -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted
+            text-decoration: underline dotted
 }
 
 b,
@@ -124,7 +124,6 @@ button {
 }
 
 button:focus {
-    outline: 1px dotted;
     outline: 5px auto -webkit-focus-ring-color
 }
 
@@ -296,7 +295,7 @@ video {
 .navbar-brand {
     display: flex;
     align-items: stretch;
-    flex: 1 1 0%;
+    flex: 1 1 0;
     height: 3.5rem
 }
 
@@ -967,7 +966,7 @@ body.dashboard {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex: 1 1 0%;
+    flex: 1 1 0;
     height: 3.5rem;
     padding-left: .75rem;
     padding-right: .75rem;
@@ -1247,7 +1246,6 @@ body.dashboard {
 .is-hero-bar h1 {
     font-weight: 600;
     font-size: 1.875rem;
-    line-height: 2.25rem;
     line-height: 1.25
 }
 
@@ -1312,7 +1310,6 @@ body.dashboard {
 
 .widget-label h3 {
     font-size: 1.125rem;
-    line-height: 1.75rem;
     line-height: 1.25;
     --tw-text-opacity: 1;
     color: rgba(107, 114, 128, var(--tw-text-opacity))
@@ -1321,7 +1318,6 @@ body.dashboard {
 .widget-label h1 {
     font-weight: 600;
     font-size: 1.875rem;
-    line-height: 2.25rem;
     line-height: 1.25
 }
 
@@ -1830,11 +1826,27 @@ footer {
 
 .inventory--table {
     max-width: 801px;
+    width: auto;
 }
 
 .inventory--table td:hover {
     background-color: #AAA;
 }
+
+.inventory--table td {
+    background-color: #333;
+    padding: 0;
+    position: relative;
+}
+
+.inventory--table--stackcount {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    line-height: 1em;
+}
+
 /*
 ! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
 *//*
@@ -41923,6 +41935,10 @@ textarea.form-control.is-invalid {
 .hover\:bg-blue-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+}
+.hover\:text-blue-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;

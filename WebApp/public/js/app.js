@@ -2161,11 +2161,12 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require('./chart.sample.min');
 
-__webpack_require__(/*! ./chart.sample.min */ "./resources/js/chart.sample.min.js");
 
 __webpack_require__(/*! ./main.min */ "./resources/js/main.min.js");
+
+__webpack_require__(/*! ./components/toggle-link */ "./resources/js/components/toggle-link.js");
 
 /***/ }),
 
@@ -2200,125 +2201,59 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/chart.sample.min.js":
-/*!******************************************!*\
-  !*** ./resources/js/chart.sample.min.js ***!
-  \******************************************/
-/***/ (() => {
+/***/ "./resources/js/components/toggle-link.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/toggle-link.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 
-setTimeout(function () {
-  var randomChartData = function randomChartData(r) {
-    for (var o = [], a = 0; a < r; a++) {
-      o.push(Math.round(200 * Math.random()));
-    }
+var links = document.getElementsByClassName('toggle-link');
 
-    return o;
-  },
-      chartColors = {
-    "default": {
-      primary: "#00D1B2",
-      info: "#209CEE",
-      danger: "#FF3860"
-    }
-  },
-      ctx = document.getElementById("big-line-chart").getContext("2d");
+var _iterator = _createForOfIteratorHelper(links),
+    _step;
 
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      datasets: [{
-        fill: !1,
-        borderColor: chartColors["default"].primary,
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0,
-        pointBackgroundColor: chartColors["default"].primary,
-        pointBorderColor: "rgba(255,255,255,0)",
-        pointHoverBackgroundColor: chartColors["default"].primary,
-        pointBorderWidth: 20,
-        pointHoverRadius: 4,
-        pointHoverBorderWidth: 15,
-        pointRadius: 4,
-        data: randomChartData(9)
-      }, {
-        fill: !1,
-        borderColor: chartColors["default"].info,
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0,
-        pointBackgroundColor: chartColors["default"].info,
-        pointBorderColor: "rgba(255,255,255,0)",
-        pointHoverBackgroundColor: chartColors["default"].info,
-        pointBorderWidth: 20,
-        pointHoverRadius: 4,
-        pointHoverBorderWidth: 15,
-        pointRadius: 4,
-        data: randomChartData(9)
-      }, {
-        fill: !1,
-        borderColor: chartColors["default"].danger,
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0,
-        pointBackgroundColor: chartColors["default"].danger,
-        pointBorderColor: "rgba(255,255,255,0)",
-        pointHoverBackgroundColor: chartColors["default"].danger,
-        pointBorderWidth: 20,
-        pointHoverRadius: 4,
-        pointHoverBorderWidth: 15,
-        pointRadius: 4,
-        data: randomChartData(9)
-      }],
-      labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09"]
-    },
-    options: {
-      maintainAspectRatio: !1,
-      legend: {
-        display: !1
-      },
-      responsive: !0,
-      tooltips: {
-        backgroundColor: "#f5f5f5",
-        titleFontColor: "#333",
-        bodyFontColor: "#666",
-        bodySpacing: 4,
-        xPadding: 12,
-        mode: "nearest",
-        intersect: 0,
-        position: "nearest"
-      },
-      scales: {
-        yAxes: [{
-          barPercentage: 1.6,
-          gridLines: {
-            drawBorder: !1,
-            color: "rgba(29,140,248,0.0)",
-            zeroLineColor: "transparent"
-          },
-          ticks: {
-            padding: 20,
-            fontColor: "#9a9a9a"
-          }
-        }],
-        xAxes: [{
-          barPercentage: 1.6,
-          gridLines: {
-            drawBorder: !1,
-            color: "rgba(225,78,202,0.1)",
-            zeroLineColor: "transparent"
-          },
-          ticks: {
-            padding: 20,
-            fontColor: "#9a9a9a"
-          }
-        }]
+try {
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    var link = _step.value;
+    link.addEventListener('click', function (e) {
+      if (e.target.dataset.disabled === 'true') {
+        return;
       }
-    }
-  });
-}, 100);
+
+      e.preventDefault();
+      e.target.dataset.disabled = 'true';
+      var text = e.target.innerHTML;
+      e.target.innerHTML = e.target.dataset.waitText;
+      axios.post(e.target.dataset.link, JSON.parse(e.target.dataset.data)).then(function (res) {
+        var icon = e.target.previousElementSibling;
+        icon.classList.remove('mdi-check');
+        icon.classList.remove('mdi-close');
+        icon.classList.add(res.data.value ? 'mdi-check' : 'mdi-close');
+        e.target.innerHTML = text;
+        e.target.dataset.disabled = 'false';
+      })["catch"](function (err) {
+        console.error(err);
+        e.target.innerHTML = text;
+        e.target.dataset.disabled = 'false';
+      });
+    });
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
+}
 
 /***/ }),
 
@@ -2332,7 +2267,6 @@ setTimeout(function () {
 
 
 Array.from(document.getElementsByClassName("dropdown")).forEach(function (e) {
-  console.log(e);
   e.addEventListener("click", function (e) {
     var t;
     e.currentTarget.classList.contains("navbar-item") ? e.currentTarget.classList.toggle("active") : (t = e.currentTarget.getElementsByClassName("mdi")[1], e.currentTarget.parentNode.classList.toggle("active"), t.classList.toggle("mdi-plus"), t.classList.toggle("mdi-minus"));
@@ -19651,6 +19585,30 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

@@ -15,10 +15,18 @@
             ])
             @include('components.card', [
                 'title' => 'Is Admin',
-                'content' => $account->is_admin_html,
-                'icon' => 'padlock'
+                'content' => $account->is_admin,
+                'icon' => 'lock',
+                'toggle'    => [
+                    'allowed'   => $account->is_admin,
+                    'route' => route('accounts.toggle-admin', $account->ACCOUNTID)
+                ]
             ])
-            {{--            @include('components.card', ['title' => 'Gold', 'content' => number_format($account->INVENMONEY), 'icon' => 'bitcoin'])--}}
+            @include('components.card', [
+                'title' => 'Email',
+                'content' => $account->master->EMAIL,
+                'icon' => 'email'
+            ])
             {{--            @include('components.card', ['title' => 'Items', 'content' => number_format($account->items->count()), 'icon' => 'bag-personal'])--}}
         </div>
     </section>

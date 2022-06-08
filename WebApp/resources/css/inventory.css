@@ -1,8 +1,23 @@
 
 .inventory--table {
     max-width: 801px;
+    width: auto;
 }
 
 .inventory--table td:hover {
     background-color: #AAA;
+}
+
+.inventory--table td {
+    background-color: #333;
+    padding: 0;
+    position: relative;
+}
+
+.inventory--table--stackcount {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    line-height: 1em;
 }

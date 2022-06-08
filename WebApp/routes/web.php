@@ -43,7 +43,10 @@ Route::get('/logout', static function () {
  * Admin Routes
  */
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 Route::resource('accounts', AccountsController::class);
+Route::post('/accounts/{account}/toggleAdmin', [AccountsController::class, 'toggleAdmin'])->name('accounts.toggle-admin');
+
 Route::get('/npc/export', [NPCController::class, 'export'])->name('npc.export');
 Route::resource('npc', NPCController::class);
 

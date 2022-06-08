@@ -9,6 +9,7 @@ use App\Models\AccountMaster;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class AccountsController extends Controller
 {
@@ -22,11 +23,27 @@ class AccountsController extends Controller
         return view('admin.accounts.show', ['account' => $account->load(['loginStatus', 'master', 'characters'])]);
     }
 
+    public function toggleAdmin(Account $account): JsonResponse
+    {
+        $status = $account->loginStatus;
+        if (!$status) {
+            return new JsonResponse([
+                'value' => 0
+            ]);
+        }
+
+        $status->ACCOUNTLV = $account->is_admin ? null : 92;
+        $status->save();
+
+        return new JsonResponse([
+            'value' => $account->is_admin
+        ]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -38,7 +55,6 @@ class AccountsController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
@@ -49,7 +65,6 @@ class AccountsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

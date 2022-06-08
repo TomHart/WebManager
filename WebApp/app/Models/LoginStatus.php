@@ -39,6 +39,8 @@ class LoginStatus extends Model
 {
     use HasFactory;
     protected $table = 'LOGINSTATUS';
+    protected $primaryKey = 'ACCOUNTID';
+    protected $keyType = 'string';
 
     public $timestamps = false;
 }
