@@ -2266,31 +2266,80 @@ try {
 "use strict";
 
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 Array.from(document.getElementsByClassName("dropdown")).forEach(function (e) {
   e.addEventListener("click", function (e) {
     var t;
     e.currentTarget.classList.contains("navbar-item") ? e.currentTarget.classList.toggle("active") : (t = e.currentTarget.getElementsByClassName("mdi")[1], e.currentTarget.parentNode.classList.toggle("active"), t.classList.toggle("mdi-plus"), t.classList.toggle("mdi-minus"));
   });
-}), Array.from(document.getElementsByClassName("mobile-aside-button")).forEach(function (e) {
+});
+Array.from(document.getElementsByClassName("mobile-aside-button")).forEach(function (e) {
   e.addEventListener("click", function (e) {
     e = e.currentTarget.getElementsByClassName("icon")[0].getElementsByClassName("mdi")[0];
     document.documentElement.classList.toggle("aside-mobile-expanded"), e.classList.toggle("mdi-forwardburger"), e.classList.toggle("mdi-backburger");
   });
-}), Array.from(document.getElementsByClassName("--jb-navbar-menu-toggle")).forEach(function (e) {
+});
+Array.from(document.getElementsByClassName("--jb-navbar-menu-toggle")).forEach(function (e) {
   e.addEventListener("click", function (e) {
     var t = e.currentTarget.getElementsByClassName("icon")[0].getElementsByClassName("mdi")[0];
     document.getElementById(e.currentTarget.getAttribute("data-target")).classList.toggle("active"), t.classList.toggle("mdi-dots-vertical"), t.classList.toggle("mdi-close");
   });
-}), Array.from(document.getElementsByClassName("--jb-modal")).forEach(function (e) {
+});
+Array.from(document.getElementsByClassName("--jb-modal")).forEach(function (e) {
   e.addEventListener("click", function (e) {
     e = e.currentTarget.getAttribute("data-target");
-    document.getElementById(e).classList.add("active"), document.documentElement.classList.add("clipped");
+    var dom = document.getElementById(e);
+    dom.classList.add("active"), document.documentElement.classList.add("clipped");
+    var iframes = dom.querySelectorAll('iframe');
+
+    var _iterator = _createForOfIteratorHelper(iframes),
+        _step;
+
+    try {
+      var _loop = function _loop() {
+        var iframe = _step.value;
+
+        if (!iframe.dataset.src) {
+          return "continue";
+        }
+
+        iframe.src = iframe.dataset.src;
+        iframe.addEventListener('load', function () {
+          if (iframe.previousElementSibling.dataset.iframeLoaded === 'remove') {
+            var loadingMessage = iframe.previousElementSibling;
+            loadingMessage.parentNode.removeChild(loadingMessage);
+          }
+
+          var height = iframe.contentDocument.body.scrollHeight;
+          var parent = iframe.parentElement;
+          parent.style.height = height + 'px';
+          iframe.style.visibility = 'visible';
+        });
+      };
+
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var _ret = _loop();
+
+        if (_ret === "continue") continue;
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
   });
-}), Array.from(document.getElementsByClassName("--jb-modal-close")).forEach(function (e) {
+});
+Array.from(document.getElementsByClassName("--jb-modal-close")).forEach(function (e) {
   e.addEventListener("click", function (e) {
     e.currentTarget.closest(".modal").classList.remove("active"), document.documentElement.classList.remove("clipped");
   });
-}), Array.from(document.getElementsByClassName("--jb-notification-dismiss")).forEach(function (e) {
+});
+Array.from(document.getElementsByClassName("--jb-notification-dismiss")).forEach(function (e) {
   e.addEventListener("click", function (e) {
     e.currentTarget.closest(".notification").classList.add("hidden");
   });

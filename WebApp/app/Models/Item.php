@@ -39,26 +39,26 @@ class Item extends Model
     {
         return $this->belongsToMany(ItemAttribute::class, 'ITEMATTRIBUTES', 'ITEMID', 'ATTRIBUTEID')->withPivot('VALUE');
     }
-
-    public function getSlotCountAttribute()
-    {
-
-        $conv = $this->pivot->CONVHIST;
-        if (empty($conv) || substr($conv, 0, 4) === '0:0:') {
-            return null;
-        }
-
-        return explode(':', $conv)[1] ?? null;
-    }
-
-    public function getStatsAttribute()
-    {
-        $opt = $this->pivot->OPT;
-        $optIds = array_filter(explode(',', $opt));
-        if (empty($optIds)) {
-            return [];
-        }
-
-        return ItemOption::whereIn('id', $optIds)->get()->pluck('DESCRIPTION');
-    }
+//
+//    public function getSlotCountAttribute()
+//    {
+//
+//        $conv = $this->pivot->CONVHIST;
+//        if (empty($conv) || substr($conv, 0, 4) === '0:0:') {
+//            return null;
+//        }
+//
+//        return explode(':', $conv)[1] ?? null;
+//    }
+//
+//    public function getStatsAttribute()
+//    {
+//        $opt = $this->pivot->OPT;
+//        $optIds = array_filter(explode(',', $opt));
+//        if (empty($optIds)) {
+//            return [];
+//        }
+//
+//        return ItemOption::whereIn('id', $optIds)->get()->pluck('DESCRIPTION');
+//    }
 }

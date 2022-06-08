@@ -5,26 +5,8 @@
             <p class="modal-card-title">{{$item->ITEMNAME}} ID: {{$item->id}}</p>
         </header>
         <section class="modal-card-body">
-
-            @if($item->pivot->STACKCOUNT > 0)
-            <p><em>Count</em>: {{$item->pivot->STACKCOUNT}}</p>
-            @endif
-
-            @if($item->slotCount !== null)
-            <p><em>Slots</em>: {{$item->slotCount}}</p>
-            @endif
-
-            <p><em>Stats</em>:</p>
-
-            @foreach($item->stats as $stat)
-            <p>{{$stat}}</p>
-            @endforeach
-
-            <p><em>Item Attributes</em>:</p>
-
-            @foreach($item->attributes as $attr)
-            <p>{{$attr->ATTRIBUTENAME}}: {{$attr->pivot->VALUE}}</p>
-            @endforeach
+            <p data-iframe-loaded="remove">Loading</p>
+            <iframe data-src="{{route('items.iframe', $item->pivot->ITEMSEQ)}}" style="width:100%; height:100%;visibility: hidden"></iframe>
         </section>
         <footer class="modal-card-foot">
             <button class="button blue --jb-modal-close">Close</button>

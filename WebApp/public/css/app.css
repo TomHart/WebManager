@@ -1839,6 +1839,11 @@ footer {
     position: relative;
 }
 
+.inventory--table tbody tr:hover td,
+.inventory--table tr:nth-child(odd) td {
+    background-color: #333;
+}
+
 .inventory--table--stackcount {
     position: absolute;
     bottom: 0;

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AccountsController;
 use App\Http\Controllers\Admin\CharacterController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ItemImportController;
+use App\Http\Controllers\Admin\ItemsController;
 use App\Http\Controllers\Admin\NPCController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\User\LoginController;
@@ -56,6 +57,7 @@ Route::get('/character/{id}', [CharacterController::class, 'show'])->name('chara
 
 Route::get('/items/import', [ItemImportController::class, 'showImportForm'])->name('items.import_form');
 Route::get('/items/import2', [ItemImportController::class, 'importItems'])->name('items.import');
+Route::get('/character/item/{id}', [ItemsController::class, 'iframe'])->name('items.iframe');
 
 Route::get('/options/import', [ItemImportController::class, 'importOptions'])->name('items.import');
 

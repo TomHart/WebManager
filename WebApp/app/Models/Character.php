@@ -96,7 +96,7 @@ class Character extends Model
 
     public function items(): BelongsToMany
     {
-        return $this->belongsToMany(Item::class, 'CHARITEM', 'CHARID', 'ITEMTID')->withPivot(['POS', 'STACKCOUNT', 'CONVHIST', 'OPT']);
+        return $this->belongsToMany(Item::class, 'CHARITEM', 'CHARID', 'ITEMTID')->withPivot(['ITEMSEQ', 'POS', 'STACKCOUNT', 'CONVHIST', 'OPT']);
     }
 
     public function master(): HasOne
