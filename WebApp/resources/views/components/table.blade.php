@@ -4,28 +4,25 @@
             <span class="icon"><i class="mdi mdi-{{$title['icon']}}"></i></span>
             {{$title['text']}}
         </p>
-        <a href="#" class="card-header-icon">
-            <span class="icon"><i class="mdi mdi-reload"></i></span>
-        </a>
     </header>
     <div class="card-content">
         <table>
             <thead>
-                <tr>
-                    @foreach($columns as $column)
+            <tr>
+                @foreach($columns as $column)
                     <th>{{$column}}</th>
-                    @endforeach
-                    <th></th>
-                </tr>
+                @endforeach
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                @foreach($content as $row)
+            @foreach($content as $row)
                 <tr>
 
                     @foreach($attributes as $attribute)
-                    <td>
-                        {!!$row[$attribute]!!}
-                    </td>
+                        <td>
+                            {!!$row[$attribute]!!}
+                        </td>
                     @endforeach
 
                     <td class="actions-cell">
@@ -33,14 +30,20 @@
 
                             @foreach($actions ?? [] as $action)
 
-                            <a href="{{route($action['route'], $row[$action['attribute']])}}" class="button small {{$action['colour']}}" type="button">
-                                <span class="icon"><i class="mdi mdi-{{$action['icon']}}"></i></span>
-                            </a>
+                                <a href="{{route($action['route'], $row[$action['attribute']])}}"
+                                   class="button small {{$action['colour']}}" type="button">
+                                    @if(isset($action['icon']))
+                                        <span class="icon"><i class="mdi mdi-{{$action['icon']}}"></i></span>
+                                    @endif
+                                    @if(isset($action['text']))
+                                        {{$action['text']}}
+                                    @endif
+                                </a>
                             @endforeach
                         </div>
                     </td>
                 </tr>
-                @endforeach
+            @endforeach
             </tbody>
         </table>
 

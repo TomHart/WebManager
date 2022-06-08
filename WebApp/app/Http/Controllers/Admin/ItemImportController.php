@@ -1,13 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Item;
-use App\Models\ItemAttribute;
-use App\Models\ItemOption;
+use App\Http\Controllers\Controller;
 use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ItemImportController extends Controller
 {
@@ -68,10 +64,10 @@ class ItemImportController extends Controller
         //Let k be the length of the hash value that is represented by the input parameter hBaseData
         $k = 16;
 
-        //Step 1 Form a 64-byte buffer by repeating the constant 0x36 64 times   
+        //Step 1 Form a 64-byte buffer by repeating the constant 0x36 64 times
         $arraya = array_fill(0, 64, 0x36);
 
-        //Set the first k bytes of the buffer to the result of an XOR operation of the first k bytes of the buffer with the hash value 
+        //Set the first k bytes of the buffer to the result of an XOR operation of the first k bytes of the buffer with the hash value
         for ($i = 0; $i < $k; $i++) {
             $arraya[$i] = $arraya[$i] ^ $hashKey[$i];
         }
@@ -88,7 +84,7 @@ class ItemImportController extends Controller
             $hashKeyInta[$i] = hexdec($hashKeyArraya[$i]);
         }
 
-        //Step 2 Form a 64-byte buffer by repeating the constant 0x5C 64 times. 
+        //Step 2 Form a 64-byte buffer by repeating the constant 0x5C 64 times.
         $arrayb = array_fill(0, 64, 0x5C);
 
         //Set the first k bytes of the buffer to the result of an XOR operation of the first k bytes of the buffer with the hash value
@@ -96,7 +92,7 @@ class ItemImportController extends Controller
             $arrayb[$i] =  $arrayb[$i] ^ $hashKey[$i];
         }
 
-        //Hash the result of step 2 by using the same hash algorithm as hBaseData    
+        //Hash the result of step 2 by using the same hash algorithm as hBaseData
         $arrayPackb = pack('c*', ...$arrayb);
         $hashArrayb = md5($arrayPackb);
 

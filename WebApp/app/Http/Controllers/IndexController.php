@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\View\View;
 
 class IndexController extends Controller
 {
-    public function index(){
-        dump(Auth::user()->loginStatus);
+    public function index(): View
+    {
         return view('welcome');
     }
 }

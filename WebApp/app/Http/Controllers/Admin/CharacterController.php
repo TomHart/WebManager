@@ -1,21 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Character;
-use App\Models\Item;
-use Illuminate\Support\Collection;
 
 class CharacterController extends Controller
 {
     public function index(){
-        return view('character.index', ['characters' => Character::all()]);
+        return view('admin.character.index', ['characters' => Character::all()]);
     }
 
     public function show($id){
         $character = Character::with(['items', 'items.attributes'])->findOrFail($id);
-
 
         $inventory = [
             [
@@ -49,6 +46,6 @@ class CharacterController extends Controller
             $inventory[(int)$pos[0]][(int)$pos[1]][(int)$pos[2]] = $item;
         }
 
-        return view('character.show', ['character' => $character, 'items' => $inventory]);
+        return view('admin.character.show', ['character' => $character, 'items' => $inventory]);
     }
 }

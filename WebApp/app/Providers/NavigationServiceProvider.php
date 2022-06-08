@@ -29,7 +29,7 @@ class NavigationServiceProvider extends ServiceProvider
                     [
                         'icon' => 'desktop-mac',
                         'title' => 'Dashboard',
-                        'link' => route('landing')
+                        'link' => route('dashboard')
                     ]
                 ],
                 'Management' => [

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Exporter\NPCExporter;
 use App\Exporter\NPCTradeExporter;
+use App\Http\Controllers\Controller;
 use App\Models\NPC;
 use Illuminate\Http\Request;
 use ZipArchive;

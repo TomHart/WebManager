@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Auth\UnhashedSessionGuard;
 use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -33,5 +34,8 @@ class AppServiceProvider extends ServiceProvider
                 return new UnhashedSessionGuard('sessionExtended', $provider, app()->make('session.store'), request());
             }
         );
+
+        Blade::directive('isAdmin', fn() => "<?php if(auth()->user() && auth()->user()->is_admin): ?>");
+        Blade::directive('endIsAdmin', fn() => '<?php endif; ?>');
     }
 }
