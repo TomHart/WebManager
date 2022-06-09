@@ -2,7 +2,7 @@
 <?php
 
 define('LARAVEL_START', microtime(true));
-
+const WINDOWS_EOL = "\r\n";
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

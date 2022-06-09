@@ -21,7 +21,11 @@ class NPCTradeExporter
 
     private function exportNpc(NPC $npc): string
     {
-        $content = sprintf("Npc\t%d\t<%s> %s%s", $npc->TEMPLATE_ID, $npc->TYPE, $npc->NAME, WINDOWS_EOL);
+        $templateId = $npc->events()->where('FUNCTION_ID', 9)->first()->TEMPLATE ?? null;
+        if (!$templateId) {
+            return '';
+        }
+        $content = sprintf("Npc\t%d\t<%s> %s%s", $templateId, $npc->TYPE, $npc->NAME, WINDOWS_EOL);
 
         $content .= sprintf("Sell\t%d%s", 1, WINDOWS_EOL);
         $content .= sprintf("Buy\t%d%s", 1, WINDOWS_EOL);

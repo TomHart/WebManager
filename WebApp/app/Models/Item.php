@@ -31,6 +31,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Item wherePRICE($value)
  * @method static Builder|Item whereUpdatedAt($value)
  * @mixin Eloquent
+ * @property string|null $DESCRIPTION
+ * @method static Builder|Item whereDESCRIPTION($value)
  */
 class Item extends Model
 {

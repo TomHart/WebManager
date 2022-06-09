@@ -85,6 +85,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static Builder|Character whereTITLE($value)
  * @method static Builder|Character whereTRANSFORMDATE($value)
  * @mixin Eloquent
+ * @property-read CharacterMaster|null $master
  */
 class Character extends Model
 {

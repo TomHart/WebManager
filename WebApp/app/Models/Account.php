@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -24,6 +25,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static Builder|Account whereACCOUNTID($value)
  * @method static Builder|Account wherePASSWORD($value)
  * @mixin Builder
+ * @property-read Collection|Character[] $characters
+ * @property-read int|null $characters_count
+ * @property-read bool $is_admin
+ * @property-read string $is_admin_html
+ * @property-read AccountMaster|null $master
  */
 class Account extends Authenticatable
 {

@@ -21,7 +21,7 @@
                                   ))}}">
                                 {{$column}}
                             </a>
-                            @if(($order ?? null) === Str::slug($column))
+                            @if(($sort ?? null) === Str::slug($column))
                                 <i class="mdi mdi-chevron-{{(($order ?? null) === 'desc') ? 'down' : 'up'}}"></i>
                             @endif
                         @else

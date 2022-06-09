@@ -23,9 +23,13 @@ class NPCExporter
     {
         $content = sprintf('[%d]%s', $npc->NPCID, WINDOWS_EOL);
 
-        foreach ($npc->attributes as $attribute) {
-            $content .= sprintf('%s=%s%s', $attribute->ATTRIBUTE_NAME, $attribute->VALUE, WINDOWS_EOL);
-        }
+        $content .= 'ModuleData1=AgpmCharacter' . WINDOWS_EOL;
+        $content .= sprintf('Name=<%s> %s%s', $npc->TYPE, $npc->NAME, WINDOWS_EOL);
+        $content .= sprintf('TID=%s%s', $npc->TID, WINDOWS_EOL);
+        $content .= sprintf('Position=%s%s', $npc->COORDS, WINDOWS_EOL);
+        $content .= sprintf('Degree=%s%s', $npc->DEGREES, WINDOWS_EOL);
+        $content .= NPCEventExporter::export($npc->events);
+        $content .= sprintf('EnumEnd=0%s', WINDOWS_EOL);
         return $content;
     }
 }
