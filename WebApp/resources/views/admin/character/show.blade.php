@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@section('title', $character->CHARID)
 @section('content')
     @include('components/title-section', ['category' => 'Management', 'section' => 'Characters'])
     @include('components/hero-bar', ['title' => $character->CHARID])
@@ -22,7 +23,7 @@
                                 @if($item)
                                     <a href="#{{$item->pivot->POS}}" class="--jb-modal"
                                        data-target="inventory-POS-@if($item){{$item->pivot->POS}}@endif">
-                                        <img src="{{asset('items/' . $item->id . '.jpg')}}"/>
+                                        <img src="{{asset('items/' . $item->id . '.jpg')}}" alt="Item image"/>
 
                                         @if($item->pivot->STACKCOUNT > 0)
                                             <span class="inventory--table--stackcount">
@@ -33,7 +34,7 @@
 
                                     @include('components/modal/item', ['item' => $item, 'idPrefix' => 'inventory-POS-'])
                                 @else
-                                    <img src="{{asset('items/_empty.png')}}"/>
+                                    <img src="{{asset('items/_empty.png')}}" alt="Item image"/>
                                 @endif
                             </td>
                         @endforeach

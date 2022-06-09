@@ -12,12 +12,14 @@ use Illuminate\Console\OutputStyle;
 use Exception;
 use Illuminate\Support\Collection;
 
-class ImportItemPrice implements ActionInterface
+class ImportItemDescription implements ActionInterface
 {
-    private $file = 'INI/ITEMDATATABLE.txt';
+    private $output;
+    private $file = 'INI/ItemTooltipDesc.txt';
 
     public function __construct(OutputStyle $output)
     {
+        $this->output = $output;
     }
 
     public function perform()
@@ -33,14 +35,19 @@ class ImportItemPrice implements ActionInterface
             ->flatten()
             ->keyBy('id');
 
+        $bar = $this->output->createProgressBar(count($items));
+        $bar->start();
         foreach ($items as $itemId => $item) {
+            $bar->advance();
             if (!isset($itemModels[$itemId])) {
                 dump("Skipping $itemId");
                 continue;
             }
-            $itemModels[$itemId]->PRICE = (int)$item[20] ?? null;
+            $itemModels[$itemId]->DESCRIPTION = str_replace('\n', PHP_EOL, mb_convert_encoding($item[2], 'UTF-8', 'UTF-8')) ?? null;
             $itemModels[$itemId]->save();
         }
+        $bar->finish();
+        $this->output->writeln('');
     }
 
     private function getItems()

@@ -4,6 +4,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+<title>@yield('title') @hasSection('title') - @endif Archlord Admin</title>
 @yield('styles')
 <body class="dashboard">
 

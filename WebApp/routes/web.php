@@ -43,22 +43,25 @@ Route::get('/logout', static function () {
 /*
  * Admin Routes
  */
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::middleware('auth')->group(static function () {
 
-Route::resource('accounts', AccountsController::class);
-Route::post('/accounts/{account}/toggleAdmin', [AccountsController::class, 'toggleAdmin'])->name('accounts.toggle-admin');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/npc/export', [NPCController::class, 'export'])->name('npc.export');
-Route::resource('npc', NPCController::class);
+    Route::resource('accounts', AccountsController::class);
+    Route::post('/accounts/{account}/toggleAdmin', [AccountsController::class, 'toggleAdmin'])->name('accounts.toggle-admin');
 
-Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
-Route::get('/character/{id}', [CharacterController::class, 'show'])->name('characters.show');
+    Route::get('/npc/export', [NPCController::class, 'export'])->name('npc.export');
+    Route::resource('npc', NPCController::class);
+
+    Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
+    Route::get('/character/{id}', [CharacterController::class, 'show'])->name('characters.show');
 
 
-Route::get('/items/import', [ItemImportController::class, 'showImportForm'])->name('items.import_form');
-Route::get('/items/import2', [ItemImportController::class, 'importItems'])->name('items.import');
-Route::get('/character/item/{id}', [ItemsController::class, 'iframe'])->name('items.iframe');
+    Route::get('/items/import', [ItemImportController::class, 'showImportForm'])->name('items.import_form');
+    Route::get('/items/import2', [ItemImportController::class, 'importItems'])->name('items.import');
+    Route::get('/character/item/{id}', [ItemsController::class, 'iframe'])->name('items.iframe');
 
-Route::get('/options/import', [ItemImportController::class, 'importOptions'])->name('items.import');
+    Route::get('/options/import', [ItemImportController::class, 'importOptions'])->name('items.import');
 
-Route::get('/img', [ItemImportController::class, 'getImages']);
+    Route::get('/img', [ItemImportController::class, 'getImages']);
+});

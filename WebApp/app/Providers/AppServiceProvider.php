@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Auth\UnhashedSessionGuard;
 use Illuminate\Auth\EloquentUserProvider;
+use Illuminate\Pagination\AbstractPaginator;
+use Illuminate\Pagination\PaginationServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -17,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        AbstractPaginator::defaultView('components.table-pagination');
     }
 
     /**

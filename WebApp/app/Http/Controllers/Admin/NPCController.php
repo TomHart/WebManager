@@ -7,13 +7,20 @@ use App\Exporter\NPCTradeExporter;
 use App\Http\Controllers\Controller;
 use App\Models\NPC;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use ZipArchive;
 
 class NPCController extends Controller
 {
-    public function index()
+    public function index(Request $request): View
     {
-        return view('npc.index', ['entries' => NPC::with('trades')->get()->sortBy('TYPE')]);
+        $entries = NPC::sortable()->paginate();
+
+        return view('admin.npc.index', [
+            'entries' => $entries,
+            'sort' => $request->query('sort', array_key_first(NPC::$sort)),
+            'order' => $request->query('order', 'asc')
+        ]);
     }
 
     public function create()
@@ -26,17 +33,16 @@ class NPCController extends Controller
         //
     }
 
-    public function show(NPC $npc)
+    public function show(NPC $npc): View
     {
         $npc->load(['trades', 'trades.item']);
-        return view('npc.show', ['npc' => $npc]);
+        return view('admin.npc.show', ['npc' => $npc]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
      */
     public function edit($id)
     {
@@ -46,9 +52,8 @@ class NPCController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param int $id
      */
     public function update(Request $request, $id)
     {
@@ -58,8 +63,7 @@ class NPCController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
      */
     public function destroy($id)
     {

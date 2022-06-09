@@ -10,7 +10,24 @@
             <thead>
             <tr>
                 @foreach($columns as $column)
-                    <th>{{$column}}</th>
+                    <th>
+                        @if(isset($routeName))
+                            <a href="{{route($routeName, array_merge(
+                                        Request::except(['page']),
+                                        [
+                                            'sort' => Str::slug($column),
+                                            'order' => ($order ?? null) === 'desc' || ($order ?? null) !== Str::slug($column) ? 'asc' : 'desc'
+                                        ]
+                                  ))}}">
+                                {{$column}}
+                            </a>
+                            @if(($order ?? null) === Str::slug($column))
+                                <i class="mdi mdi-chevron-{{(($order ?? null) === 'desc') ? 'down' : 'up'}}"></i>
+                            @endif
+                        @else
+                            {{$column}}
+                        @endif
+                    </th>
                 @endforeach
                 <th></th>
             </tr>
@@ -29,7 +46,6 @@
                         <div class="buttons right nowrap">
 
                             @foreach($actions ?? [] as $action)
-
                                 <a href="{{route($action['route'], $row[$action['attribute']])}}"
                                    class="button small {{$action['colour']}}" type="button">
                                     @if(isset($action['icon']))
@@ -46,16 +62,9 @@
             @endforeach
             </tbody>
         </table>
-
-        <!-- <div class="table-pagination">
-            <div class="flex items-center justify-between">
-                <div class="buttons">
-                    <button type="button" class="button active">1</button>
-                    <button type="button" class="button">2</button>
-                    <button type="button" class="button">3</button>
-                </div>
-                <small>Page 1 of 3</small>
-            </div>
-        </div> -->
+        <br/>
+        @if(method_exists($content, 'appends'))
+            {{ $content->appends(Request::except('page'))->links() }}
+        @endif
     </div>
 </div>

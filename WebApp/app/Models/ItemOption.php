@@ -2,24 +2,27 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\ItemOption
  *
  * @property int $id
  * @property string $DESCRIPTION
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|ItemOption newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ItemOption newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ItemOption query()
- * @method static \Illuminate\Database\Eloquent\Builder|ItemOption whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ItemOption whereDESCRIPTION($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ItemOption whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ItemOption whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @method static Builder|ItemOption newModelQuery()
+ * @method static Builder|ItemOption newQuery()
+ * @method static Builder|ItemOption query()
+ * @method static Builder|ItemOption whereCreatedAt($value)
+ * @method static Builder|ItemOption whereDESCRIPTION($value)
+ * @method static Builder|ItemOption whereId($value)
+ * @method static Builder|ItemOption whereUpdatedAt($value)
+ * @mixin Eloquent
  */
 class ItemOption extends Model
 {
