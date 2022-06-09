@@ -89,7 +89,7 @@ class ItemImportController extends Controller
 
         //Set the first k bytes of the buffer to the result of an XOR operation of the first k bytes of the buffer with the hash value
         for ($i = 0; $i < $k; $i++) {
-            $arrayb[$i] =  $arrayb[$i] ^ $hashKey[$i];
+            $arrayb[$i] = $arrayb[$i] ^ $hashKey[$i];
         }
 
         //Hash the result of step 2 by using the same hash algorithm as hBaseData
@@ -110,12 +110,13 @@ class ItemImportController extends Controller
         //Use the first n bytes of the result of step 5 as the derived key.
         $finalKey = array();
         for ($i = 0; $i < $n; $i++) {
-            $finalKey[$i] =  $combined[$i];
+            $finalKey[$i] = $combined[$i];
         }
         $key = $finalKey;
 
         return $key;
     }
+
     function hexToStr($hex)
     {
         $string = '';

@@ -36,7 +36,7 @@ class NPC extends Model
 {
     use HasFactory;
 
-    protected $table = "NPCS";
+    protected $table = 'NPCS';
     protected $guarded = [];
     protected $primaryKey = 'NPCID';
     public $timestamps = false;

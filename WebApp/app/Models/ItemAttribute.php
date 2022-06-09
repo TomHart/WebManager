@@ -27,6 +27,7 @@ use Illuminate\Support\Carbon;
 class ItemAttribute extends Model
 {
     use HasFactory;
+
     protected $table = 'ITEMATTRIBUTESLIST';
 
     protected $guarded = [];

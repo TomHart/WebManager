@@ -62,6 +62,7 @@ use Illuminate\Database\Eloquent\Model;
 class AccountMaster extends Model
 {
     use HasFactory;
+
     protected $table = 'AMT_MASTER';
     public $timestamps = false;
     protected $guarded = [];

@@ -6,10 +6,11 @@ namespace App\Exporter;
 
 use App\Models\NPC;
 use Illuminate\Database\Eloquent\Collection;
+use JetBrains\PhpStorm\ArrayShape;
 
 class NPCTradeExporter
 {
-    public function export(Collection $npcs)
+    #[ArrayShape(['NPCTradeItemList.txt' => "string"])] public function export(Collection $npcs): array
     {
         return [
             'NPCTradeItemList.txt' => $npcs->map(function (NPC $npc) {
@@ -18,20 +19,19 @@ class NPCTradeExporter
         ];
     }
 
-    private function exportNpc(NPC $npc)
+    private function exportNpc(NPC $npc): string
     {
-        $EOL = "\r\n";
-        $content = sprintf("Npc\t%d\t<%s> %s%s", $npc->TEMPLATE_ID, $npc->TYPE, $npc->NAME, $EOL);
+        $content = sprintf("Npc\t%d\t<%s> %s%s", $npc->TEMPLATE_ID, $npc->TYPE, $npc->NAME, WINDOWS_EOL);
 
-        $content .= sprintf("Sell\t%d%s", 1, $EOL);
-        $content .= sprintf("Buy\t%d%s", 1, $EOL);
-        $content .= sprintf("BuyOther\t%d%s", 1, $EOL);
+        $content .= sprintf("Sell\t%d%s", 1, WINDOWS_EOL);
+        $content .= sprintf("Buy\t%d%s", 1, WINDOWS_EOL);
+        $content .= sprintf("BuyOther\t%d%s", 1, WINDOWS_EOL);
 
         foreach ($npc->trades as $trade) {
-            $content .= sprintf("Item\t%d\t%d%s", $trade->ITEM_ID, $trade->COUNT, $EOL);
+            $content .= sprintf("Item\t%d\t%d%s", $trade->ITEM_ID, $trade->COUNT, WINDOWS_EOL);
         }
 
-        $content .= sprintf("-End%s", $EOL);
+        $content .= sprintf("-End%s", WINDOWS_EOL);
         return $content;
     }
 }

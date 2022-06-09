@@ -7,11 +7,13 @@ use App\Models\Character;
 
 class CharacterController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.character.index', ['characters' => Character::all()]);
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $character = Character::with(['items', 'items.attributes'])->findOrFail($id);
 
         $inventory = [
@@ -41,7 +43,7 @@ class CharacterController extends Controller
             ],
         ];
 
-        foreach($character->items()->where('STATUS', 2)->get() as $item){
+        foreach ($character->items()->where('STATUS', 2)->get() as $item) {
             $pos = explode(',', $item->pivot->POS);
             $inventory[(int)$pos[0]][(int)$pos[1]][(int)$pos[2]] = $item;
         }

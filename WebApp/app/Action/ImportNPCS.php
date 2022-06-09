@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 class ImportNPCS implements ActionInterface
 {
     use ParseIniTrait;
+
     private $output;
 
     public function __construct(OutputStyle $output)

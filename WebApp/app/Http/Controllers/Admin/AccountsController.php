@@ -53,7 +53,7 @@ class AccountsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param int $id
      */
     public function update(Request $request, $id)

@@ -6,24 +6,25 @@ namespace App\Exporter;
 
 use App\Models\NPC;
 use Illuminate\Database\Eloquent\Collection;
+use JetBrains\PhpStorm\ArrayShape;
 
 class NPCExporter
 {
-    public function export(Collection $npcs)
+    #[ArrayShape(['NPC.INI' => "string"])] public function export(Collection $npcs): array
     {
         return [
-            'NPC.INI' => $content = $npcs->map(function (NPC $npc) {
+            'NPC.INI' => $npcs->map(function (NPC $npc) {
                 return $this->exportNpc($npc);
             })->join('')
         ];
     }
 
-    private function exportNpc(NPC $npc)
+    private function exportNpc(NPC $npc): string
     {
-        $content = sprintf('[%d]%s', $npc->NPCID, PHP_EOL);
+        $content = sprintf('[%d]%s', $npc->NPCID, WINDOWS_EOL);
 
         foreach ($npc->attributes as $attribute) {
-            $content .= sprintf('%s=%s%s', $attribute->ATTRIBUTE_NAME, $attribute->VALUE, PHP_EOL);
+            $content .= sprintf('%s=%s%s', $attribute->ATTRIBUTE_NAME, $attribute->VALUE, WINDOWS_EOL);
         }
         return $content;
     }

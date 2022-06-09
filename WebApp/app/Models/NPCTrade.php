@@ -6,6 +6,7 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 
 /**
@@ -39,22 +40,22 @@ class NPCTrade extends Model
     protected $table = "NPC_TRADES";
     protected $guarded = [];
 
-    public function npc()
+    public function npc(): BelongsTo
     {
         return $this->belongsTo(NPC::class);
     }
 
-    public function item()
+    public function item(): BelongsTo
     {
         return $this->belongsTo(Item::class, 'ITEM_ID');
     }
 
-    public function getImgHtmlAttribute()
+    public function getImgHtmlAttribute(): string
     {
         return sprintf('<img alt="Item image" src="%s" style="display:inline"/> %s', asset(sprintf('items/%d.jpg', $this->ITEM_ID)), $this->item->ITEMNAME);
     }
 
-    public function getCostAttribute()
+    public function getCostAttribute(): string
     {
         return number_format($this->COUNT * $this->item->PRICE);
     }
