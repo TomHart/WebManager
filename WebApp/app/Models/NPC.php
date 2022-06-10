@@ -68,6 +68,11 @@ class NPC extends Model
             ->where('FUNCTION_ID', 9);
     }
 
+    public function getTradeTemplateIdAttribute(): ?int
+    {
+        return $this->trades->first()->NPC_ID ?? null;
+    }
+
     public function events(): HasMany
     {
         return $this->hasMany(NPCEvent::class, 'NPC_ID');

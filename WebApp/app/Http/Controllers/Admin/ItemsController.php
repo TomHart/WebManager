@@ -3,20 +3,29 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateAccountRequest;
 use App\Models\Account;
-use App\Models\AccountMaster;
 use App\Models\CharacterItem;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Item;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ItemsController extends Controller
 {
     public function iframe(CharacterItem $id): View
     {
         return view('admin.items.iframe', ['item' => $id]);
+    }
+
+    public function index(Request $request)
+    {
+        $builder = (new Item())->newModelQuery();
+        foreach ($request->query('query') as $key => $value) {
+            $builder->where($key, 'LIKE', '%' . $value . '%');
+        }
+
+        $builder->limit(max($request->query('limit', 10), 25));
+        return new JsonResponse($builder->get());
     }
 
     public function show(Account $account): View

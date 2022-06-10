@@ -16,7 +16,7 @@
                                         Request::except(['page']),
                                         [
                                             'sort' => Str::slug($column),
-                                            'order' => ($order ?? null) === 'desc' || ($order ?? null) !== Str::slug($column) ? 'asc' : 'desc'
+                                            'order' => ($order ?? null) === 'desc' || ($sort ?? null) !== Str::slug($column) ? 'asc' : 'desc'
                                         ]
                                   ))}}">
                                 {{$column}}

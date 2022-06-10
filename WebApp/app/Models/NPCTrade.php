@@ -42,7 +42,7 @@ class NPCTrade extends Model
 
     public function npc(): BelongsTo
     {
-        return $this->belongsTo(NPC::class);
+        return $this->belongsTo(NPC::class, 'NPC_ID');
     }
 
     public function item(): BelongsTo
@@ -52,7 +52,7 @@ class NPCTrade extends Model
 
     public function getImgHtmlAttribute(): string
     {
-        return sprintf('<img alt="Item image" src="%s" style="display:inline"/> %s', asset(sprintf('items/%d.jpg', $this->ITEM_ID)), $this->item->ITEMNAME);
+        return sprintf('<img alt="Item image" src="%s" style="display:inline"/> %s', asset(sprintf('img/items/%d.jpg', $this->ITEM_ID)), $this->item->ITEMNAME);
     }
 
     public function getCostAttribute(): string

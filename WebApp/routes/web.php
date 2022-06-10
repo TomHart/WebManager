@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CharacterController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ItemImportController;
 use App\Http\Controllers\Admin\ItemsController;
+use App\Http\Controllers\Admin\NPC\TradesController;
 use App\Http\Controllers\Admin\NPCController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\User\LoginController;
@@ -52,11 +53,14 @@ Route::middleware('auth')->group(static function () {
 
     Route::get('/npc/export', [NPCController::class, 'export'])->name('npc.export');
     Route::resource('npc', NPCController::class);
+    Route::get('/npc/{npc}/trades/add', [TradesController::class, 'showAddTradeForm'])->name('npc.trades.add-trade.form');
+    Route::post('/npc/{npc}/trades/add', [TradesController::class, 'store'])->name('npc.trades.add-trade.submit');
 
     Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
     Route::get('/character/{id}', [CharacterController::class, 'show'])->name('characters.show');
 
 
+    Route::resource('items', ItemsController::class);
     Route::get('/items/import', [ItemImportController::class, 'showImportForm'])->name('items.import_form');
     Route::get('/items/import2', [ItemImportController::class, 'importItems'])->name('items.import');
     Route::get('/character/item/{id}', [ItemsController::class, 'iframe'])->name('items.iframe');
