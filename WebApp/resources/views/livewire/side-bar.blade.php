@@ -9,17 +9,17 @@
     <div class="menu is-menu-main">
         @foreach($sideBar as $section => $links)
 
-        <p class="menu-label">{{$section}}</p>
-        <ul class="menu-list">
-            @foreach($links as $link)
-            <li class="active">
-                <a href="{{$link['link']}}">
-                    <span class="icon"><i class="mdi mdi-{{$link['icon']}}"></i></span>
-                    <span class="menu-item-label">{{$link['title']}}</span>
-                </a>
-            </li>
-            @endforeach
-        </ul>
+            <p class="menu-label">{{$section}}</p>
+            <ul class="menu-list">
+                @foreach($links as $link)
+                    <li class="@if(isset($link['active']) && $link['active']) active @endif">
+                        <a href="{{$link['link']}}">
+                            <span class="icon"><i class="mdi mdi-{{$link['icon']}}"></i></span>
+                            <span class="menu-item-label">{{$link['title']}}</span>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
 
         @endforeach
 
@@ -73,7 +73,8 @@
         <p class="menu-label">About</p>
         <ul class="menu-list">
             <li>
-                <a href="https://therichpost.com" onclick="alert('Coming soon'); return false" target="_blank" class="has-icon">
+                <a href="https://therichpost.com" onclick="alert('Coming soon'); return false" target="_blank"
+                   class="has-icon">
                     <span class="icon"><i class="mdi mdi-credit-card-outline"></i></span>
                     <span class="menu-item-label">Premium Demo</span>
                 </a>
