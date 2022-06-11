@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Models\NPC
@@ -39,6 +40,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 class NPC extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'NPCS';
     protected $guarded = [];
@@ -48,6 +50,7 @@ class NPC extends Model
     public static array $sort = [
         'name' => 'NAME',
         'type' => 'TYPE',
+        'events' => 'events_count',
         'trades' => 'trades_count'
     ];
 
@@ -55,6 +58,7 @@ class NPC extends Model
     {
         return NPC
             ::withCount('trades')
+            ->withCount('events')
             ->orderBy(self::$sort[request()->query('sort')] ?? 'NAME', request()->query('order', 'asc'));
     }
 

@@ -15,24 +15,39 @@
     <section class="section main-section">
         <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
             @include('components/card', ['title' => 'Trades', 'content' => number_format($npc->trades->count()), 'icon' => 'cart'])
+            @include('components/card', ['title' => 'Events', 'content' => number_format($npc->events->count()), 'icon' => 'cursor-default-click'])
         </div>
 
         @include('components/table', [
             'title' => [
-                'text' => 'Trades',
-                'icon' => 'cart'
+                'text' => 'Events',
+                'icon' => 'cursor-default-click'
             ],
-            'content' => $npc->trades,
+            'content' => $npc->events,
             'columns' => [
-                'Item',
-                'Count',
-                'Cost'
+                'Function'
             ],
             'attributes' => [
-                'imgHtml',
-                'COUNT',
-                'cost'
+                'FunctionNameHuman'
             ]
         ])
+
+        {{--        @include('components/table', [--}}
+        {{--            'title' => [--}}
+        {{--                'text' => 'Trades',--}}
+        {{--                'icon' => 'cart'--}}
+        {{--            ],--}}
+        {{--            'content' => $npc->trades,--}}
+        {{--            'columns' => [--}}
+        {{--                'Item',--}}
+        {{--                'Count',--}}
+        {{--                'Cost'--}}
+        {{--            ],--}}
+        {{--            'attributes' => [--}}
+        {{--                'imgHtml',--}}
+        {{--                'COUNT',--}}
+        {{--                'cost'--}}
+        {{--            ]--}}
+        {{--        ])--}}
     </section>
 @stop

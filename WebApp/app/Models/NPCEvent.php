@@ -91,6 +91,57 @@ class NPCEvent extends Model
         return $this->belongsTo(NPC::class, 'NPCID', 'NPC_ID');
     }
 
+    public function getFunctionNameAttribute(): string
+    {
+        return [
+                0 => 'NONE',
+                1 => 'SPAWN',
+                2 => 'FACTOR',
+                3 => 'VEHICLE',
+                4 => 'SCHEDULE',
+                5 => 'HIDDEN',
+                6 => 'SHOP',
+                7 => 'INFORMATION',
+                8 => 'TELEPORT',
+                9 => 'NPCTRADE',
+                10 => 'CONVERSATION',
+                11 => 'NATURE',
+                12 => 'STATUS',
+                13 => 'ACTION',
+                14 => 'SKILL',
+                15 => 'SHRINE',
+                16 => 'UVU_REWARD',
+                17 => 'ITEM_REPAIR',
+                18 => 'MASTERY_SPECIALIZE',
+                19 => 'BINDING',
+                20 => 'BANK',
+                21 => 'NPCDAILOG',
+                22 => 'ITEMCONVERT',
+                23 => 'GUILD',
+                24 => 'PRODUCT',
+                25 => 'SKILLMASTER',
+                26 => 'REFINERY',
+                27 => 'QUEST',
+                28 => 'AUCTION',
+                29 => 'CHAR_CUSTOMIZE',
+                30 => 'POINTLIGHT',
+                31 => 'REMISSION',
+                32 => 'WANTEDCRIMINAL',
+                33 => 'SIEGEWAR_NPC',
+                34 => 'TAX',
+                35 => 'GUILD_WAREHOUSE',
+                36 => 'ARCHLORD',
+                37 => 'GAMBLE',
+                38 => 'GACHA',
+                39 => 'WORLD_CHAMPIONSHIP'
+            ][$this->FUNCTION_ID] ?? $this->FUNCTION_ID;
+    }
+
+    public function getFunctionNameHumanAttribute(): string
+    {
+        return str_replace('Npc', 'NPC', ucwords(strtolower(str_replace(['_', 'NPC'], [' ', 'NPC '], $this->function_name))));
+    }
+
     public static function hydrateFromIni(int $id, array $data): ?self
     {
         $model = self::updateOrCreate(

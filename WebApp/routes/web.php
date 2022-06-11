@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AccountsController;
 use App\Http\Controllers\Admin\CharacterController;
+use App\Http\Controllers\Admin\CharacterTypesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ItemImportController;
 use App\Http\Controllers\Admin\ItemsController;
@@ -68,4 +69,6 @@ Route::middleware('auth')->group(static function () {
     Route::get('/options/import', [ItemImportController::class, 'importOptions'])->name('items.import');
 
     Route::get('/img', [ItemImportController::class, 'getImages']);
+
+    Route::resource('character-types', CharacterTypesController::class);
 });

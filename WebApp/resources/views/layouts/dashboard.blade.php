@@ -16,7 +16,6 @@
 <div id="app">
     <livewire:top-bar/>
     <livewire:side-bar/>
-    <livewire:counter/>
     @yield('content')
 </div>
 

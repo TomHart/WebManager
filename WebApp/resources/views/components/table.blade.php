@@ -46,15 +46,28 @@
                         <div class="buttons right nowrap">
 
                             @foreach($actions ?? [] as $action)
-                                <a href="{{route($action['route'], $row[$action['attribute']])}}"
-                                   class="button small {{$action['colour']}}" type="button">
-                                    @if(isset($action['icon']))
-                                        <span class="icon"><i class="mdi mdi-{{$action['icon']}}"></i></span>
-                                    @endif
-                                    @if(isset($action['text']))
-                                        {{$action['text']}}
-                                    @endif
-                                </a>
+
+                                @if(isset($action['_method']))
+                                    <form method="POST"
+                                          action="{{route($action['route'], $row[$action['attribute']])}}">
+                                        <input type="hidden" name="_method" value="{{$action['_method']}}"/>
+                                        <button class="button small {{$action['colour']}}">
+                                            <span class="icon"><i class="mdi mdi-{{$action['icon']}}"></i></span>
+                                        </button>
+                                        @csrf
+                                    </form>
+                                @else
+
+                                    <a href="{{route($action['route'], $row[$action['attribute']])}}"
+                                       class="button small {{$action['colour']}}" type="button">
+                                        @if(isset($action['icon']))
+                                            <span class="icon"><i class="mdi mdi-{{$action['icon']}}"></i></span>
+                                        @endif
+                                        @if(isset($action['text']))
+                                            {{$action['text']}}
+                                        @endif
+                                    </a>
+                                @endif
                             @endforeach
                         </div>
                     </td>

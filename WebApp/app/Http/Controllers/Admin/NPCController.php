@@ -6,6 +6,7 @@ use App\Exporter\NPCExporter;
 use App\Exporter\NPCTradeExporter;
 use App\Http\Controllers\Controller;
 use App\Models\NPC;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use ZipArchive;
@@ -23,9 +24,9 @@ class NPCController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(): View
     {
-        //
+        return view('admin.npc.add-edit');
     }
 
     public function store(Request $request)
@@ -41,12 +42,10 @@ class NPCController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param int $id
      */
-    public function edit($id)
+    public function edit(NPC $npc): View
     {
-        //
+        return view('admin.npc.add-edit', ['npc' => $npc]);
     }
 
     /**
@@ -62,12 +61,12 @@ class NPCController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param int $id
      */
-    public function destroy($id)
+    public function destroy(NPC $npc): RedirectResponse
     {
-        //
+        $npc->delete();
+
+        return redirect()->route('npc.index');
     }
 
     public function export()

@@ -3,10 +3,17 @@
     @include('components/title-section', ['category' => 'Management', 'section' => 'NPCs'])
     @include('components/hero-bar', [
       'title' => 'NPCs',
-      'button' => [
-        'text'  => 'Export',
-        'link' => route('npc.export'),
-        'colour' => 'blue'
+      'buttons' => [
+          [
+            'text'  => 'Export',
+            'link' => route('npc.export'),
+            'colour' => 'blue'
+          ],
+          [
+            'text'  => 'Add',
+            'link' => route('npc.create'),
+            'colour' => 'blue'
+          ]
       ]
     ])
 
@@ -25,13 +32,17 @@
             'routeName' => 'npc.index',
             'content' => $entries,
             'columns' => [
+                'ID',
                 'Name',
                 'Type',
+                'Events',
                 'Trades'
             ],
             'attributes' => [
+                'NPCID',
                 'NAME',
                 'TYPE',
+                'events_count',
                 'trades_count'
             ],
             'actions' => [
@@ -40,6 +51,19 @@
                     'attribute' => 'NPCID',
                     'icon' => 'eye',
                     'colour' => 'blue'
+                ],
+                [
+                    'route' => 'npc.edit',
+                    'attribute' => 'NPCID',
+                    'icon' => 'pencil',
+                    'colour' => 'blue'
+                ],
+                [
+                    'route' => 'npc.destroy',
+                    'attribute' => 'NPCID',
+                    'icon' => 'trash-can',
+                    'colour' => 'red',
+                    '_method'   => 'DELETE'
                 ]
             ]
         ])

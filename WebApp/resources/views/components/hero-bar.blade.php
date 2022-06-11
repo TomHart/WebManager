@@ -3,8 +3,10 @@
         <h1 class="title">
             {{$title}}
         </h1>
-        @if(isset($button))
-            <a href="{{$button['link']}}" class="button {{$button['colour'] ?? ''}}">{{$button['text']}}</a>
+        @if(isset($buttons) && !empty($buttons))
+            @foreach($buttons as $button)
+                <a href="{{$button['link']}}" class="button {{$button['colour'] ?? ''}}">{{$button['text']}}</a>
+            @endforeach
         @endif
     </div>
 </section>
