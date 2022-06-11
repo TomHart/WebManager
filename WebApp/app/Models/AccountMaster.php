@@ -58,6 +58,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|AccountMaster whereSOCIALNO($value)
  * @method static Builder|AccountMaster whereZIPCODE($value)
  * @mixin Eloquent
+ * @mixin IdeHelperAccountMaster
  */
 class AccountMaster extends Model
 {

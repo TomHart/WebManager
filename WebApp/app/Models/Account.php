@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,7 +16,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @property string|null $ACCOUNTID
  * @property string|null $PASSWORD
+ * @property-read Collection|Character[] $characters
+ * @property-read int|null $characters_count
+ * @property-read bool $is_admin
+ * @property-read string $is_admin_html
  * @property-read LoginStatus|null $loginStatus
+ * @property-read AccountMaster|null $master
  * @property-write mixed $account_id
  * @property-write mixed $password
  * @property-write mixed $password_confirmation
@@ -24,12 +30,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static Builder|Account query()
  * @method static Builder|Account whereACCOUNTID($value)
  * @method static Builder|Account wherePASSWORD($value)
- * @mixin Builder
- * @property-read Collection|Character[] $characters
- * @property-read int|null $characters_count
- * @property-read bool $is_admin
- * @property-read string $is_admin_html
- * @property-read AccountMaster|null $master
+ * @mixin Eloquent
+ * @mixin IdeHelperAccount
  */
 class Account extends Authenticatable
 {

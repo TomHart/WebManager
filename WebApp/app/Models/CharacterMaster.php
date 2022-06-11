@@ -28,6 +28,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|CharacterMaster whereSLOT($value)
  * @method static Builder|CharacterMaster whereWORLD($value)
  * @mixin Eloquent
+ * @mixin IdeHelperCharacterMaster
  */
 class CharacterMaster extends Model
 {

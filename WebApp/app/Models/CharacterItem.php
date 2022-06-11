@@ -63,6 +63,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static Builder|CharacterItem whereUSECOUNT($value)
  * @method static Builder|CharacterItem whereWORLD($value)
  * @mixin Eloquent
+ * @mixin IdeHelperCharacterItem
  */
 class CharacterItem extends Model
 {

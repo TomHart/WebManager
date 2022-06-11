@@ -14,7 +14,7 @@ use Illuminate\Support\Carbon;
  *
  * @property int $id
  * @property int $NPC_ID
- * @property int|null $FUNCTION
+ * @property int|null $FUNCTION_ID
  * @property int|null $EVENT_ID
  * @property int|null $COND_START
  * @property int|null $COND_TYPE
@@ -27,12 +27,15 @@ use Illuminate\Support\Carbon;
  * @property int|null $COND_AREA_BOX_SUP
  * @property int|null $COND_END
  * @property int|null $DIALOG_START
+ * @property int|null $NPC_TRADE_START
  * @property int|null $TEMPLATE
+ * @property int|null $NPC_TRADE_END
  * @property int|null $DIALOG_END
  * @property int|null $QUEST_GROUP_ID
  * @property int|null $QUEST_END
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property-read NPC|null $npc
  * @method static Builder|NPCEvent newModelQuery()
  * @method static Builder|NPCEvent newQuery()
  * @method static Builder|NPCEvent query()
@@ -50,14 +53,17 @@ use Illuminate\Support\Carbon;
  * @method static Builder|NPCEvent whereDIALOGEND($value)
  * @method static Builder|NPCEvent whereDIALOGSTART($value)
  * @method static Builder|NPCEvent whereEVENTID($value)
- * @method static Builder|NPCEvent whereFUNCTION($value)
+ * @method static Builder|NPCEvent whereFUNCTIONID($value)
  * @method static Builder|NPCEvent whereId($value)
  * @method static Builder|NPCEvent whereNPCID($value)
+ * @method static Builder|NPCEvent whereNPCTRADEEND($value)
+ * @method static Builder|NPCEvent whereNPCTRADESTART($value)
  * @method static Builder|NPCEvent whereQUESTEND($value)
  * @method static Builder|NPCEvent whereQUESTGROUPID($value)
  * @method static Builder|NPCEvent whereTEMPLATE($value)
  * @method static Builder|NPCEvent whereUpdatedAt($value)
  * @mixin Eloquent
+ * @mixin IdeHelperNPCEvent
  */
 class NPCEvent extends Model
 {

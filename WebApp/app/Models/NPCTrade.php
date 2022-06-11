@@ -18,8 +18,8 @@ use Illuminate\Support\Carbon;
  * @property int $COUNT
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property-read mixed $cost
- * @property-read mixed $img_html
+ * @property-read string $cost
+ * @property-read string $img_html
  * @property-read Item|null $item
  * @property-read NPC|null $npc
  * @method static Builder|NPCTrade newModelQuery()
@@ -32,6 +32,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|NPCTrade whereNPCID($value)
  * @method static Builder|NPCTrade whereUpdatedAt($value)
  * @mixin Eloquent
+ * @mixin IdeHelperNPCTrade
  */
 class NPCTrade extends Model
 {

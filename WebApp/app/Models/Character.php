@@ -48,6 +48,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property string|null $BSLastKilledTime 배틀스퀘어 마지막 죽은 시간
  * @property-read Collection|Item[] $items
  * @property-read int|null $items_count
+ * @property-read CharacterMaster|null $master
  * @method static Builder|Character newModelQuery()
  * @method static Builder|Character newQuery()
  * @method static Builder|Character query()
@@ -85,7 +86,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static Builder|Character whereTITLE($value)
  * @method static Builder|Character whereTRANSFORMDATE($value)
  * @mixin Eloquent
- * @property-read CharacterMaster|null $master
+ * @mixin IdeHelperCharacter
  */
 class Character extends Model
 {

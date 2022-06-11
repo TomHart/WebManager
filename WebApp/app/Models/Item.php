@@ -18,21 +18,20 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property int|null $PRICE
+ * @property string|null $DESCRIPTION
  * @property-read Collection|ItemAttribute[] $attributes
  * @property-read int|null $attributes_count
- * @property-read mixed $slot_count
- * @property-read mixed $stats
  * @method static Builder|Item newModelQuery()
  * @method static Builder|Item newQuery()
  * @method static Builder|Item query()
  * @method static Builder|Item whereCreatedAt($value)
+ * @method static Builder|Item whereDESCRIPTION($value)
  * @method static Builder|Item whereITEMNAME($value)
  * @method static Builder|Item whereId($value)
  * @method static Builder|Item wherePRICE($value)
  * @method static Builder|Item whereUpdatedAt($value)
  * @mixin Eloquent
- * @property string|null $DESCRIPTION
- * @method static Builder|Item whereDESCRIPTION($value)
+ * @mixin IdeHelperItem
  */
 class Item extends Model
 {

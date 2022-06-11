@@ -34,6 +34,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|LoginStatus whereSERVERUID($value)
  * @method static Builder|LoginStatus whereSTATUS($value)
  * @mixin Eloquent
+ * @mixin IdeHelperLoginStatus
  */
 class LoginStatus extends Model
 {

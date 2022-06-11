@@ -17,27 +17,24 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property string $NAME
  * @property string $TYPE
  * @property string $COORDS
- * @property int|null $TEMPLATE_ID
- * @property-read Collection|NPCAttribute[] $attributes
- * @property-read int|null $attributes_count
- * @property-read mixed $trade_count
+ * @property int|null $TID
+ * @property string|null $DEGREES
+ * @property-read Collection|NPCEvent[] $events
+ * @property-read int|null $events_count
+ * @property-read int|null $trade_template_id
  * @property-read Collection|NPCTrade[] $trades
  * @property-read int|null $trades_count
  * @method static Builder|NPC newModelQuery()
  * @method static Builder|NPC newQuery()
  * @method static Builder|NPC query()
  * @method static Builder|NPC whereCOORDS($value)
+ * @method static Builder|NPC whereDEGREES($value)
  * @method static Builder|NPC whereNAME($value)
  * @method static Builder|NPC whereNPCID($value)
- * @method static Builder|NPC whereTEMPLATEID($value)
+ * @method static Builder|NPC whereTID($value)
  * @method static Builder|NPC whereTYPE($value)
  * @mixin Eloquent
- * @property int|null $TID
- * @property string|null $DEGREES
- * @property-read Collection|NPCEvent[] $events
- * @property-read int|null $events_count
- * @method static Builder|NPC whereDEGREES($value)
- * @method static Builder|NPC whereTID($value)
+ * @mixin IdeHelperNPC
  */
 class NPC extends Model
 {

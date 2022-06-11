@@ -23,6 +23,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|ItemOption whereId($value)
  * @method static Builder|ItemOption whereUpdatedAt($value)
  * @mixin Eloquent
+ * @mixin IdeHelperItemOption
  */
 class ItemOption extends Model
 {
