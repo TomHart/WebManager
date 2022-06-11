@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CharacterTypesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ItemImportController;
 use App\Http\Controllers\Admin\ItemsController;
+use App\Http\Controllers\Admin\NPC\EventsController;
 use App\Http\Controllers\Admin\NPC\TradesController;
 use App\Http\Controllers\Admin\NPCController;
 use App\Http\Controllers\IndexController;
@@ -56,6 +57,7 @@ Route::middleware('auth')->group(static function () {
     Route::resource('npc', NPCController::class);
     Route::get('/npc/{npc}/trades/add', [TradesController::class, 'showAddTradeForm'])->name('npc.trades.add-trade.form');
     Route::post('/npc/{npc}/trades/add', [TradesController::class, 'store'])->name('npc.trades.add-trade.submit');
+    Route::resource('npc-events', EventsController::class);
 
     Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
     Route::get('/character/{id}', [CharacterController::class, 'show'])->name('characters.show');

@@ -29,6 +29,14 @@
             ],
             'attributes' => [
                 'FunctionNameHuman'
+            ],
+            'actions' => [
+                [
+                    'route' => 'npc-events.show',
+                    'attribute' => 'id',
+                    'icon' => 'eye',
+                    'colour' => 'blue'
+                ]
             ]
         ])
 

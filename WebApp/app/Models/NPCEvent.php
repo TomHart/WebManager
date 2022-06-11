@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\NPCEventFunctionTypes;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -88,53 +90,12 @@ class NPCEvent extends Model
 
     public function npc(): BelongsTo
     {
-        return $this->belongsTo(NPC::class, 'NPCID', 'NPC_ID');
+        return $this->belongsTo(NPC::class, 'NPC_ID', 'NPCID');
     }
 
     public function getFunctionNameAttribute(): string
     {
-        return [
-                0 => 'NONE',
-                1 => 'SPAWN',
-                2 => 'FACTOR',
-                3 => 'VEHICLE',
-                4 => 'SCHEDULE',
-                5 => 'HIDDEN',
-                6 => 'SHOP',
-                7 => 'INFORMATION',
-                8 => 'TELEPORT',
-                9 => 'NPCTRADE',
-                10 => 'CONVERSATION',
-                11 => 'NATURE',
-                12 => 'STATUS',
-                13 => 'ACTION',
-                14 => 'SKILL',
-                15 => 'SHRINE',
-                16 => 'UVU_REWARD',
-                17 => 'ITEM_REPAIR',
-                18 => 'MASTERY_SPECIALIZE',
-                19 => 'BINDING',
-                20 => 'BANK',
-                21 => 'NPCDAILOG',
-                22 => 'ITEMCONVERT',
-                23 => 'GUILD',
-                24 => 'PRODUCT',
-                25 => 'SKILLMASTER',
-                26 => 'REFINERY',
-                27 => 'QUEST',
-                28 => 'AUCTION',
-                29 => 'CHAR_CUSTOMIZE',
-                30 => 'POINTLIGHT',
-                31 => 'REMISSION',
-                32 => 'WANTEDCRIMINAL',
-                33 => 'SIEGEWAR_NPC',
-                34 => 'TAX',
-                35 => 'GUILD_WAREHOUSE',
-                36 => 'ARCHLORD',
-                37 => 'GAMBLE',
-                38 => 'GACHA',
-                39 => 'WORLD_CHAMPIONSHIP'
-            ][$this->FUNCTION_ID] ?? $this->FUNCTION_ID;
+        return NPCEventFunctionTypes::tryFrom($this->FUNCTION_ID)->name;
     }
 
     public function getFunctionNameHumanAttribute(): string
@@ -144,7 +105,7 @@ class NPCEvent extends Model
 
     public static function hydrateFromIni(int $id, array $data): ?self
     {
-        $model = self::updateOrCreate(
+        return self::updateOrCreate(
             [
                 'NPC_ID' => $id,
                 'FUNCTION_ID' => $data['Function'],
@@ -165,7 +126,20 @@ class NPCEvent extends Model
                 'QUEST_END' => $data['QuestEnd'] ?? null
             ]
         );
+    }
 
-        return $model;
+    public function trades(): HasMany
+    {
+        return $this->hasMany(NPCTrade::class, 'NPC_ID', 'TEMPLATE');
+    }
+
+    public function isEventType(NPCEventFunctionTypes $type): bool
+    {
+        return $this->eventType() === $type;
+    }
+
+    public function eventType(): NPCEventFunctionTypes
+    {
+        return NPCEventFunctionTypes::tryFrom($this->FUNCTION_ID);
     }
 }

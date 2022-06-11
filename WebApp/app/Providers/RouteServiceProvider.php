@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\NPCEvent;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -19,12 +20,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/home';
 
-    /**
-     * Define your route model bindings, pattern filters, and other route configuration.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         $this->configureRateLimiting();
 
@@ -36,6 +32,8 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
         });
+
+        Route::model('npc_event', NPCEvent::class);
     }
 
     /**
