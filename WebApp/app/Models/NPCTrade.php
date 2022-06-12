@@ -41,6 +41,8 @@ class NPCTrade extends Model
     protected $table = "NPC_TRADES";
     protected $guarded = [];
 
+    protected $with = ['item'];
+
     public function npc(): BelongsTo
     {
         return $this->belongsTo(NPC::class, 'NPC_ID');

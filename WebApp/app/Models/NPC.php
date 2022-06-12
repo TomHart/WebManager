@@ -37,7 +37,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @mixin Eloquent
  * @mixin IdeHelperNPC
  */
-class NPC extends Model
+class NPC extends Model implements HasTrades
 {
     use HasFactory;
     use SoftDeletes;

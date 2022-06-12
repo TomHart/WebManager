@@ -11,27 +11,9 @@
 
         @switch($event->eventType())
             @case(\App\NPCEventFunctionTypes::NPCTRADE)
-                Trade
+                <livewire:npc-trade-table :model="$event"/>
                 @break
         @endswitch
 
-
-        @include('components/table', [
-            'title' => [
-                'text' => 'Trades',
-                'icon' => 'cart'
-            ],
-            'content' => $event->trades,
-            'columns' => [
-                'Item',
-                'Count',
-                'Cost'
-            ],
-            'attributes' => [
-                'imgHtml',
-                'COUNT',
-                'cost'
-            ]
-        ])
     </section>
 @stop

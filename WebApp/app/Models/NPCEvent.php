@@ -67,7 +67,7 @@ use Illuminate\Support\Carbon;
  * @mixin Eloquent
  * @mixin IdeHelperNPCEvent
  */
-class NPCEvent extends Model
+class NPCEvent extends Model implements HasTrades
 {
     use HasFactory;
 

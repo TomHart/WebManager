@@ -44,10 +44,6 @@ class EventsController extends Controller
 
     public function show(NPCEvent $event): View
     {
-//        dump($event->isEventType(NPCEventFunctionTypes::NPCTRADE));
-//        dump($event->trades);
-//        dump($event);
-//        dump($event->npc);
         return view('admin.npc.events.show', ['event' => $event]);
     }
 
