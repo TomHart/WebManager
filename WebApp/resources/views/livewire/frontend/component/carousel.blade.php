@@ -1,6 +1,10 @@
 <div class="carousel">
-    <a wire:click="move('left')">Left</a>
-    <a wire:click="move('right')">Right</a>
+    <button class="carousel__nav carousel__nav--left" wire:click="move('left')">
+        <i class="mdi mdi-chevron-left"></i>
+    </button>
+    <button class="carousel__nav carousel__nav--right" wire:click="move('right')">
+        <i class="mdi mdi-chevron-right"></i>
+    </button>
     <div class="carousel__wrapper" style="width: {{count($files)}}00vw; transform: translate({{$offset}}vw, 0);">
         @foreach($files as $file)
             <div class="carousel__slide" style="background-image: url({{asset($file)}})">
@@ -11,4 +15,16 @@
             </div>
         @endforeach
     </div>
+    <script>
+        document.addEventListener('livewire:load', function () {
+            @this.on('moved', () => {
+                setTimeout(() => {
+                    @this.move('right');
+                }, 5000);
+            });
+            setTimeout(() => {
+                @this.move('right');
+            }, 5000);
+        });
+    </script>
 </div>

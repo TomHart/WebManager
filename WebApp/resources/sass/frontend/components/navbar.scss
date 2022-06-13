@@ -1,4 +1,4 @@
-$backgroundColour: #020202;
+$navBackgroundColour: #020202 !default;
 $height: 80px;
 $linkColour: #AAAAAA;
 $linkBorderWidth: 2px;
@@ -6,7 +6,10 @@ $linkBorderWidth: 2px;
 .navbar {
     min-height: $height;
     display: flex;
-    background: $backgroundColour;
+    background-color: $navBackgroundColour;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0.125rem 0.25rem #000;
 
     &__links {
         list-style: none;

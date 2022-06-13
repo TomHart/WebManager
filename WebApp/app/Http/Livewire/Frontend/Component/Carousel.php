@@ -48,5 +48,7 @@ class Carousel extends Component
                 $this->offset += -100;
                 break;
         }
+
+        $this->emit('moved');
     }
 }

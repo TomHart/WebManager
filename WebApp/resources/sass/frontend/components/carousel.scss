@@ -1,15 +1,54 @@
+$navBackgroundColour: #020202 !default;
 
 .carousel {
     overflow-x: hidden;
+    position: relative;
+    width: 100vw;
+    border-bottom: solid 3px $navBackgroundColour;
+    box-shadow: 0 0.125rem 0.25rem #000;
+    z-index: 5;
 
     &__wrapper {
         transition: transform 200ms;
     }
 
     &__slide {
+        box-sizing: border-box;
         width: 100vw;
         min-height: 300px;
         height: 25vh;
         float: left;
+        padding: 1rem 10rem;
+        display: flex;
+        align-items: center;
+        background-position: center;
+
+        &__link {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem 3rem;
+            color: white;
+            border-radius: 0.35rem;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        color: white;
+        z-index: 1;
+        appearance: none;
+        background: none;
+        border: none;
+        font-size: 5rem;
+        cursor: pointer;
+
+        &--left {
+            left: 1rem;
+        }
+
+        &--right {
+            right: 1rem;
+        }
     }
 }
