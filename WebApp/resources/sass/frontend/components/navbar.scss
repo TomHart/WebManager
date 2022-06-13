@@ -1,0 +1,53 @@
+$backgroundColour: #020202;
+$height: 80px;
+$linkColour: #AAAAAA;
+$linkBorderWidth: 2px;
+
+.navbar {
+    min-height: $height;
+    display: flex;
+    background: $backgroundColour;
+
+    &__links {
+        list-style: none;
+        margin: 0;
+        display: flex;
+    }
+
+    &__link {
+        height: calc(100% - #{$linkBorderWidth});
+        border-bottom: solid $linkBorderWidth $linkColour;
+        align-items: center;
+        display: flex;
+        margin-right: 2rem;
+
+        &--active {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-bottom-color: lighten($linkColour, 20);
+
+            a {
+                color: lighten($linkColour, 20);
+            }
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-bottom-color: lighten($linkColour, 50);
+
+            a {
+                color: lighten($linkColour, 50);
+            }
+        }
+
+        a {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            padding: 0 1rem;
+            color: $linkColour;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+        }
+    }
+}

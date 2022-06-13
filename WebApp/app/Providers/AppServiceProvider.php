@@ -38,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
         );
 
         Blade::directive('isAdmin', fn() => "<?php if(auth()->user() && auth()->user()->is_admin): ?>");
+        Blade::directive('elseIsAdmin', fn() => '<?php else: ?>');
         Blade::directive('endIsAdmin', fn() => '<?php endif; ?>');
     }
 }

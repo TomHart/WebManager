@@ -1,0 +1,12 @@
+@import 'tailwindcss/tailwind.css';
+@import 'frontend/components/navbar.scss';
+@import 'frontend/components/carousel.scss';
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+$mainBackground: #E6E6E6;
+
+body {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: $mainBackground;
+}

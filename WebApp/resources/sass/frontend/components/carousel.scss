@@ -1,0 +1,15 @@
+
+.carousel {
+    overflow-x: hidden;
+
+    &__wrapper {
+        transition: transform 200ms;
+    }
+
+    &__slide {
+        width: 100vw;
+        min-height: 300px;
+        height: 25vh;
+        float: left;
+    }
+}
