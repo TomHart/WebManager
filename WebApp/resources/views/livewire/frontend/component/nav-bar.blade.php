@@ -1,25 +1,25 @@
-<div class="navbar">
-    <ul class="navbar__links">
-        <li class="navbar__link navbar__link--active">
+<div class="frontend-navbar">
+    <ul class="frontend-navbar__links">
+        <li class="frontend-navbar__link frontend-navbar__link--active">
             <a href="{{route('landing')}}">
                 Home
             </a>
         </li>
 
         @isAdmin
-        <li class="navbar__link">
+        <li class="frontend-navbar__link">
             <a href="{{route('dashboard')}}">
                 Dashboard
             </a>
         </li>
-        <li class="navbar__link">
+        <li class="frontend-navbar__link">
             <a href="{{route('logout')}}">
                 Logout
             </a>
         </li>
         @elseIsAdmin
         @if(Route::has('login'))
-            <li class="navbar__link">
+            <li class="frontend-navbar__link">
                 <a href="{{route('login')}}">
                     Login
                 </a>

@@ -5950,7 +5950,7 @@ TID	ItemName	Level	SuitableLevelMin	SuitableLevelMax	Class	Race	Gender	Type	SubT
 6004	Talisman of Awakening PLUS<3 days>							12	0																																																																										658	1													3			4320	30		2	1																		
 6005	Talisman of Awakening PLUS<14 days>							12	0																																																																										658	1													3			20160	30		2	1																		
 6006	Talisman of Awakening PLUS control<1 day>							12	0																																																																										658	1													2		1440		30	1	2	1																		
-6007	Lens Stone+							12	0											10	10	50000																																																													659	1													4				50	1	2	1																		
+6007	Lens Stone+							12	0											1	1	50000																																																													659	1													4				50	1	2	1																		
 6008	Angel Wings<1 day>							12	0																																																																										628	1													3			1440	40		2	1																		
 6009	Angel Wings<3 days>							12	0																																																																										628	1													3			4320	40		2	1																		
 6010	Angel Wings<14 days>							12	0																																																																										628	1													3			20160	40		2	1																		

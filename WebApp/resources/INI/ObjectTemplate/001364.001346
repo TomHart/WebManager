@@ -1,0 +1,23 @@
+[1364]
+ModuleData1=ApmObject
+Name=던전계단_이음새_마무리
+ObjectType=769
+ModuleData2=AgcmObject
+Category=공용던전 1
+ObjectType=768
+COLLISION_DFF=Dun_ObjA_stair_obj_a_coll.rws
+RidableMaterialType=0
+OCTREE_MAXBBOX=-15:5.990648:-0.000062:-15:5.990648:1599.998901:15:5.990648:-0.000062:15:5.990648:1599.998901
+DFF=0:Dun_ObjA_stair_obj_a.rws
+BSPHERE=0:0:-6.999861:799.99939:800.960144
+DID_NOT_FINISH_KOREA=0
+DID_NOT_FINISH_CHINA=0
+DID_NOT_FINISH_WESTERN=0
+DID_NOT_FINISH_JAPAN=0
+ModuleData3=ApmEventManager
+ModuleData4=AgcmEventEffect
+EnumEnd=0
+ModuleData5=AgcmPreLODManager
+EnumEnd=0
+ModuleData6=AgcmGeometryDataManager
+EnumEnd=0

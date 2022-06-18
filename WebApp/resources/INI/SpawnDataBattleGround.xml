@@ -1,9 +1,340 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
+<?xml version="1.0" standalone="no" ?>
 <BattleGroundSpawnData>
-	<AbilityControl></AbilityControl>
-	<SpawnList></SpawnList>
-	<AddSkill>
-		<Looser CastHalt=0 RaceHalt=0></Looser>
-	</AddSkill>
+	<AbilityControl>
+		<Group SpawnGroup="fbo001">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo002">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo003">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo004">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo005">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo006">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo007">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo008">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo009">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo010">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo011">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo012">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo013">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo014">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo015">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo016">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo017">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo018">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo019">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbo020">
+			<Skill TID="955" Delay="60" Count="2"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd001">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd002">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd003">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd004">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd005">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd006">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd007">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd008">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd009">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd010">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd011">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd012">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd013">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd014">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd015">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd016">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd017">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd018">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbd019">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm001">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm002">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm003">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm004">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm005">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm006">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm007">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm008">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm009">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm010">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm011">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm012">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm013">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm014">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm015">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm016">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm017">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm018">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm019">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbm020">
+			<Skill TID="955" Delay="60" Count="2"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh001">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh002">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh003">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh004">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh005">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh006">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh007">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh008">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh009">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh010">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh011">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh012">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh013">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh014">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh015">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh016">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh017">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh018">
+			<Skill TID="954" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh019">
+			<Skill TID="955" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbh020">
+			<Skill TID="955" Delay="60" Count="2"></Skill>
+		</Group>
+		<Group SpawnGroup="fbc001">
+			<Skill TID="956" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbc002">
+			<Skill TID="956" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbc003">
+			<Skill TID="956" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbc004">
+			<Skill TID="956" Delay="60" Count="3"></Skill>
+		</Group>
+		<Group SpawnGroup="fbc005">
+			<Skill TID="956" Delay="60" Count="2"></Skill>
+		</Group>
+		<Group SpawnGroup="fbc006">
+			<Skill TID="956" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fho002">
+			<Skill TID="956" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fhh002">
+			<Skill TID="956" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fhm002">
+			<Skill TID="956" Delay="60" Count="1"></Skill>
+		</Group>
+		<Group SpawnGroup="fhd002">
+			<Skill TID="956" Delay="60" Count="1"></Skill>
+		</Group>
+	</AbilityControl>
+	<SpawnList>
+		<Group>
+			<SpawnGroup Name="fbc001" Notice="Notice_06"></SpawnGroup>
+			<SpawnGroup Name="fbc002" Notice="Notice_07"></SpawnGroup>
+			<SpawnGroup Name="fbc003" Notice="Notice_08"></SpawnGroup>
+			<SpawnGroup Name="fbc004" Notice="Notice_09"></SpawnGroup>
+			<SpawnGroup Name="fbc005" Notice="Notice_10"></SpawnGroup>
+			<SpawnGroup Name="fbc006" Notice="Notice_11"></SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="fho001">
+			</SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="fho002" Notice="Notice_12">
+				<Boss TID="442" KillNotice="Notice_14"></Boss>
+			</SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="fhh001">
+			</SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="fhh002">
+				<Boss TID="448" KillNotice="Notice_14"></Boss>
+			</SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="fhm001">
+			</SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="fhm002">
+				<Boss TID="447" KillNotice="Notice_14"></Boss>
+			</SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="fhd001">
+			</SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="fhd002">
+				<Boss TID="1921" KillNotice="Notice_14"></Boss>
+			</SpawnGroup>
+		</Group>
+		<Group>
+			<SpawnGroup Name="mge001" Event="1" Notice="Notice_08"></SpawnGroup>
+			<SpawnGroup Name="mge002" Event="1" Notice="Notice_09"></SpawnGroup>
+			<SpawnGroup Name="mge003" Event="1" Notice="Notice_10"></SpawnGroup>
+			<SpawnGroup Name="mge004" Event="1" Notice="Notice_11"></SpawnGroup>
+			<SpawnGroup Name="mge005" Event="1" Notice="Notice_12"></SpawnGroup>
+			<SpawnGroup Name="mge006" Event="1" Notice="Notice_15"></SpawnGroup>
+			<SpawnGroup Name="mge007" Event="1" Notice="Notice_16"></SpawnGroup>
+			<SpawnGroup Name="mge008" Event="1" Notice="Notice_17"></SpawnGroup>
+			<SpawnGroup Name="mge009" Event="1" Notice="Notice_18"></SpawnGroup>
+			<SpawnGroup Name="mge010" Event="1" Notice="Notice_19"></SpawnGroup>
+			<SpawnGroup Name="mge011" Event="1" Notice="Notice_20"></SpawnGroup>
+			<SpawnGroup Name="mge012" Event="1" Notice="Notice_21"></SpawnGroup>
+			<SpawnGroup Name="mge013" Event="1" Notice="Notice_22"></SpawnGroup>
+			<SpawnGroup Name="mge014" Event="1" Notice="Notice_23"></SpawnGroup>
+			<SpawnGroup Name="mge015" Event="1" Notice="Notice_24"></SpawnGroup>
+			<SpawnGroup Name="mge016" Event="1" Notice="Notice_25"></SpawnGroup>
+			<SpawnGroup Name="mge017" Event="1" Notice="Notice_26"></SpawnGroup>
+			<SpawnGroup Name="mge018" Event="1" Notice="Notice_27">
+				<Boss TID="376" KillNotice="Notice_28"></Boss>
+			</SpawnGroup>
+		</Group>
+	</SpawnList>
 </BattleGroundSpawnData>

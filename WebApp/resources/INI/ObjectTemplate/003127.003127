@@ -1,0 +1,22 @@
+[3127]
+ModuleData1=ApmObject
+Name=a
+ObjectType=1
+ModuleData2=AgcmObject
+Category=º£Æ² ½ºÄù¾î 1
+ObjectType=0
+RidableMaterialType=0
+OCTREE_MAXBBOX=-400.000153:5536.267578:-400.000153:-400.000153:5536.267578:400.000122:400.000122:5536.267578:-400.000153:400.000122:5536.267578:400.000122
+DFF=0:0905_b_s_062.rws
+BSPHERE=0:-663.97699:2080.330078:663.979004:4535.569824
+DID_NOT_FINISH_KOREA=1
+DID_NOT_FINISH_CHINA=1
+DID_NOT_FINISH_WESTERN=1
+DID_NOT_FINISH_JAPAN=1
+ModuleData3=ApmEventManager
+ModuleData4=AgcmEventEffect
+EnumEnd=0
+ModuleData5=AgcmPreLODManager
+EnumEnd=0
+ModuleData6=AgcmGeometryDataManager
+EnumEnd=0

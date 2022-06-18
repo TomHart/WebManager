@@ -2,60 +2,60 @@
 <NpcDialog>
 	<MessageBox>
 		<Group_1> <!--chaotic_move.lua-->
-			<Message_2>按下[确认]键进行移动.</Message_2>
-			<Message_5>没有传送需要的道具.</Message_5>
-			<Message_4>变身状态和骑乘中无法使用传送门.请解除变身和骑乘坐骑后使用.</Message_4>
+			<Message_2>Pres [CONFIRM] to move!</Message_2>
+			<Message_5>No item is required to Teleport</Message_5>
+			<Message_4>You can't Teleport while Mounted or during Transformation!</Message_4>
 		</Group_1>
 		<Group_2> <!--chaotic_turn.lua & town_turn.lua-->
-			<Message_6>(警告) - 变身状态和骑乘中无法使用传送门.请解除变身和骑乘坐骑后使用.</Message_6>
-			<Message_7>点击[确认]按钮返回村庄.</Message_7>
+			<Message_6>[Warning]You can't Teleport while Mounted or during Transformation!</Message_6>
+			<Message_7>Press [Confirm] button to return to town.</Message_7>
 		</Group_2>
 		<Group_11> <!--酒农肺靛 搬沥傈-->
-			<Message_1>霸王争夺战, 于每月最后一周的周末进行.</Message_1>
+			<Message_1>The Battle of the ArchLord's takes place on the last weekend of each month.</Message_1>
 		</Group_11>
 		<Group_5> <!--support_event.lua-->
-			<Message_1>升级支援活动对应等级.</Message_1>
-			<Message_2>请解除变身状态再试.</Message_2>
-			<Message_3>当前等级的支援礼物道具已经提供.</Message_3>
-			<Message_4>活动对象的帐号和角色不符合支援条件.</Message_4>
-			<Message_5>包裹空间不足无法放入.</Message_5>
-			<Message_6>提供升级支援的礼物道具.</Message_6>
+			<Message_1>Your level is not eligible to recieve a support gift.</Message_1>
+			<Message_2>Please cancel your transformation and try again.</Message_2>
+			<Message_3>Support gift items for the current level have already been given.</Message_3>
+			<Message_4>Your character is not eligible to recieve a support gift.</Message_4>
+			<Message_5>There is not enough space in your inventory.</Message_5>
+			<Message_6>You have recieved your gift!</Message_6>
 		</Group_5>
 		<Group_6> <!--christmas_event.lua-->
-			<Message_1>背包里没有空格无法进行</Message_1>
-			<Message_2>道具兑换完成.</Message_2>
-			<Message_3>无法进行道具兑换. 请确认所持道具数量后再试.</Message_3>
-			<Message_4>确定兑换吗?</Message_4>
+			<Message_1>Your Bag is full, item can't be claimed.</Message_1>
+			<Message_2>Item Exchanged successfully.</Message_2>
+			<Message_3>Exchange Failed! You do not have the required items.</Message_3>
+			<Message_4>Are you sure you want to exchange?</Message_4>
 		</Group_6>
 		<Group_7> <!--epic_move.lua-->
-			<Message_1>变身状态下无法移动到史诗区域. 请解除变身状态后再使用.</Message_1>
-			<Message_2>点击'确认'键进行移动.</Message_2>
-			<Message_4>套装道具无法在史诗区域内使用. 请脱下后再使用.</Message_4>
-			<Message_5>其他队伍正在进行任务中. 剩余时间%d分钟.</Message_5>
-			<Message_6>任务必须由队长进行接受.</Message_6>
+			<Message_1>This action can't be performed during Transformation</Message_1>
+			<Message_2>Press [Confirm] to Teleport</Message_2>
+			<Message_4>Item's with a [Set Effect] can't be used in the [Epic Zone]. Please unequip them!</Message_4>
+			<Message_5>A Battle has already begun! Time remaining: %d m</Message_5>
+			<Message_6>Only the Party Leader can accept the Quest.</Message_6>
 		</Group_7>
 	</MessageBox>
 	<Menu>
 		<Menu_29>
-			<TITLE>执政官</TITLE>
-			<Dialog>霸王殿是一个力量聚集之地. 只要将他掌握, 必可成为霸王. 联合众人的力量挑战霸王吧! 决定霸王之战, 会于每月最后一周的周末进行.</Dialog>
+			<TITLE>ArchLord's Hall</TITLE>
+			<Dialog>The Archlord Hall is a place where power gathers. As long as you master it, you will definitely become the Archlord. Join the forces of everyone to challenge the Archlord! The battle to decide the Archlord will be held on the weekend of the last week of every month.</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>1</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>移动至霸王殿.</TEXT>
+	        		<TEXT>Move to ArchLord's Hall</TEXT>
 			</Button>
 		</Menu_29>
 		<Menu_112>
-			<TITLE>传送向导</TITLE>
-			<Dialog>害怕死亡吗? 如果你不惧怕死亡，那么我已经准备好带领您进入一个新的世界. 不过你这实力去那里是明摆着是送死. 你可要小心.</Dialog>
+			<TITLE>Teleport Manager</TITLE>
+			<Dialog>Do you fear Death? Does the unknowing nature of Death not tremble your inner soul? If so I am ready to guide you to into the New World.\nOh but don't worry, it's surely a Death sentence for the likes of you!</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>1</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>天国地狱入口</TEXT>
+				<TEXT>Heavenly Abyss Entrance</TEXT>
 			</Button>
 			<Button>
 				<EID>10</EID>
@@ -65,14 +65,14 @@
 			</Button>
 		</Menu_112>
 		<Menu_113>
-			<TITLE>天国地狱王座</TITLE>
-			<Dialog>一双血红的眼睛正在盯着你看，虽然已经感到精疲力尽，但前面还有不得不面对的战斗，那个挑战可能就在那片骸骨的方向.</Dialog>
+			<TITLE>Throne of the Heavenly Abyss</TITLE>
+			<Dialog>Exhausted, you notice a pair of bloodshot eyes gazing into your inner soul.\nThe reality dawns upon thyself that this battle will lead you no further than being returned to that of crumbled bones.</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>1</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>天国地狱王座入口</TEXT>
+				<TEXT>Entrance to the Throne of the Heavenly Abyss</TEXT>
 			</Button>
 			<Button>
 				<EID>10</EID>
@@ -82,297 +82,303 @@
 			</Button>
 		</Menu_113>	
 		<Menu_12>
-			<TITLE>活动进行中</TITLE>
-			<Dialog>1级到80级升级过程的支援活动.</Dialog>
+			<TITLE>Event in progress</TITLE>
+			<Dialog>Level 1~80 support gifts..</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>1</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>升级支援活动 [1~40]</TEXT>
+				<TEXT>Support Gift [1~40]</TEXT>
 			</Button>
 			<Button>
 				<EID>2</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>升级支援活动 [41~80]</TEXT>
+				<TEXT>Support Gift [41~80]</TEXT>
+			</Button>
+			<Button>
+				<EID>300</EID>
+				<STEP>0</STEP>
+				<ItemTID></ItemTID>
+				<TEXT>ALReborn Test Pack</TEXT>
 			</Button>
 			<Button>
 				<EID>0</EID>
 				<STEP>0</STEP>
-				<TEXT>退出</TEXT>
+				<TEXT>Exit</TEXT>
 			</Button>
 		</Menu_12>
 		<Menu_13>
-			<TITLE>升级支援活动</TITLE>
-			<Dialog>1到40级霸王用户升级支援道具礼物.请使用.</Dialog>
+			<TITLE>Support Gift</TITLE>
+			<Dialog>Lv. 1~40 support gifts.</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>101</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>1~5级支援礼物</TEXT>
+				<TEXT>Lv.1~5 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>106</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>6~10级支援礼物</TEXT>
+				<TEXT>Lv.6~10 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>111</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>11~15级支援礼物</TEXT>
+				<TEXT>Lv.11~15 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>116</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>16~20级支援礼物</TEXT>
+				<TEXT>Lv.16~20 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>121</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>21~25级支援礼物</TEXT>
+				<TEXT>Lv.21~25 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>126</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>26~30级支援礼物</TEXT>
+				<TEXT>Lv.26~30 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>131</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>31~35级支援礼物</TEXT>
+				<TEXT>Lv.31~35 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>136</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>36~40级支援礼物</TEXT>
+				<TEXT>Lv.36~40 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>0</EID>
 				<STEP>0</STEP>
-				<TEXT>退出</TEXT>
+				<TEXT>Exit</TEXT>
 			</Button>
 		</Menu_13>
 		<Menu_14>
-			<TITLE>升级支援活动</TITLE>
-			<Dialog>41到80级霸王用户升级支援道具礼物.请使用.</Dialog>
+			<TITLE>Support Gift</TITLE>
+			<Dialog>Level 41~80 support gifts.</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>141</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>41~45级支援礼物</TEXT>
+				<TEXT>41~45 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>146</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>46~50级支援礼物</TEXT>
+				<TEXT>46~50 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>151</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>51~55级支援礼物</TEXT>
+				<TEXT>51~55 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>156</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>56~60级支援礼物</TEXT>
+				<TEXT>56~60 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>161</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>61~65级支援礼物</TEXT>
+				<TEXT>61~65 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>166</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>66~70级支援礼物</TEXT>
+				<TEXT>66~70 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>171</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>71~75级支援礼物</TEXT>
+				<TEXT>71~75 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>176</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>76~80级支援礼物</TEXT>
+				<TEXT>76~80 Gift</TEXT>
 			</Button>
 			<Button>
 				<EID>0</EID>
 				<STEP>0</STEP>
-				<TEXT>退出</TEXT>
+				<TEXT>Exit</TEXT>
 			</Button>
 		</Menu_14>
 		<Menu_1>
-			<TITLE>传送门列表</TITLE>
-			<Dialog>混沌领域传送门列表.选择混沌领域列表中可以移动的区域进行使用.需要消耗混沌领域移动道具一个.</Dialog>
+			<TITLE>Chaos Portal</TITLE>
+			<Dialog>Chaos Realm Portal. Select a moveable area in the Chaos Realm to use. Teleporting you would need a chaos teleportation passport .</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>1</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>悲鸣森林 [31~40]</TEXT>
+				<TEXT>Forest of Scream[31~40]</TEXT>
 			</Button>
 			<Button>
 				<EID>2</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>冰冻大地 [41~47]</TEXT>
+				<TEXT>Land of Ice[41~47]</TEXT>
 			</Button>
 			<Button>
 				<EID>3</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>地下监狱1层 [48~55]</TEXT>
+				<TEXT>Doungeon 1F[48~55]</TEXT>
 			</Button>
 			<Button>
 				<EID>4</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>地下监狱2层 [56~60]</TEXT>
+				<TEXT>Dungeon 2F[56~60]</TEXT>
 			</Button>
 			<Button>
 				<EID>5</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>痛苦森林 [61~68]</TEXT>
+				<TEXT>Forest of Pain[61~68]</TEXT>
 			</Button>
 			<Button>
 				<EID>6</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>绝望之塔 [69~70]</TEXT>
+				<TEXT>Tower of Despair[69~70]</TEXT>
 			</Button>
 			<Button>
 				<EID>8</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>退出</TEXT>
+				<TEXT>Exit</TEXT>
 			</Button>
 		</Menu_1>
 		<Menu_2>
-			<TITLE>传送门列表</TITLE>
-			<Dialog>混沌领域传送门列表.点击[返回]键移动到最近停留的村庄.</Dialog>
+			<TITLE>Portal list</TITLE>
+			<Dialog>Chaos Realm Teleport List. Click the [Back] button to move to the nearest town.</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>1</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>返回</TEXT>
+				<TEXT>Back</TEXT>
 			</Button>
 			<Button>
 				<EID>2</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>退出</TEXT>>
+				<TEXT>Exit</TEXT>>
 			</Button>
 		</Menu_2>
 		<Menu_36>
-			<TITLE>圣诞节圣诞少女</TITLE>
-			<Dialog>圣诞节快乐. 不管有多辛苦.圣诞节是个好日子. 如果你有圣诞铃铛. 我们有好东西和你换. 你要换什么吗?</Dialog>
+			<TITLE>Festival of Xmas</TITLE>
+			<Dialog>Merry Christmas. No matter how hard it is. Christmas is a good day. If you have Christmas bells. We have something good to exchange for you. Do you want it?</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>90</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>圣诞饰品</TEXT>
+	        		<TEXT>Xmas Bells</TEXT>
 			</Button>
 			<Button>
 				<EID>91</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>鲁道夫宠物箱</TEXT>
+	        		<TEXT>Rudolph pet box</TEXT>
 			</Button>
 			<Button>
 				<EID>92</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>圣诞礼盒</TEXT>
+	        		<TEXT>Xmas gift box</TEXT>
 			</Button>
 			<Button>
 				<EID>0</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>离开</TEXT>
+				<TEXT>Exit</TEXT>
 			</Button>
 		</Menu_36>
 		<Menu_37>
-			<TITLE>圣诞饰品</TITLE>
-			<Dialog>再换一个圣诞饰品! 圣诞铃铛10个.15个.20个分别可以兑换圣诞袜.圣诞帽, 圣诞手套. 你确定要兑换吗?</Dialog>
+			<TITLE>Xmas Bells</TITLE>
+			<Dialog>Gather around! Come, come! Exchange your [Christmas Bell]'s!\nExchange 10 [Christmas Bell] for [Christmas Stocking]\nExchange 15 [Christmas Bell] for [Christmas Hat]\nExchange 20 [Christmas Bell] for [Christmas Gloves]</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>93</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>圣诞袜</TEXT>
+	        		<TEXT>Xmas Stockings</TEXT>
 			</Button>
 			<Button>
 				<EID>94</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>圣诞帽</TEXT>
+	        		<TEXT>Xmas Hat</TEXT>
 			</Button>
 			<Button>
 				<EID>95</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>圣诞手套</TEXT>
+	        		<TEXT>Xmas Gloves</TEXT>
 			</Button>
 			<Button>
 				<EID>0</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>离开</TEXT>
+				<TEXT>Exit</TEXT>
 			</Button>
 		</Menu_37>
 		<Menu_38>
-			<TITLE>鲁道夫宠物箱</TITLE>
-			<Dialog>收集了更多的圣诞饰品吗? 收集三种圣诞饰品各一件可以兑换可爱的红鼻子鲁道夫哟.</Dialog>
+			<TITLE>Rudolph pet box</TITLE>
+			<Dialog>Collect all three of the Xmas Ornaments and exchange them for a Rudolph Pet Box</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>96</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>兑换</TEXT>
+	        		<TEXT>Exchange</TEXT>
 			</Button>
 			<Button>
 				<EID>0</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>离开</TEXT>
+				<TEXT>Exit</TEXT>
 			</Button>
 		</Menu_38>
 		<Menu_39>
-			<TITLE>圣诞礼盒</TITLE>
-			<Dialog>你收集了一些圣诞铃铛吗?可以用50个圣诞铃铛兑换圣诞礼盒.</Dialog>
+			<TITLE>Xmas gift box</TITLE>
+			<Dialog>Did you collect some Xmas bells? 50 Xmas bells can be exchanged for a Xmas gift box.</Dialog>
 			<UIType>1</UIType>
 			<Button>
 				<EID>97</EID>
 	       			 <STEP>0</STEP>
 	        		<ItemTID></ItemTID>
-	        		<TEXT>兑换</TEXT>
+	        		<TEXT>Exchange</TEXT>
 			</Button>
 			<Button>
 				<EID>0</EID>
 				<STEP>0</STEP>
 				<ItemTID></ItemTID>
-				<TEXT>离开</TEXT>
+				<TEXT>Exit</TEXT>
 			</Button>
 		</Menu_39>
 	</Menu>

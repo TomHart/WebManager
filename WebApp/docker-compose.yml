@@ -8,13 +8,13 @@ services:
         entrypoint: [ "php", "artisan", "serve", "--host=0.0.0.0" ]
         volumes:
             - ./:/mount
-        links:
-            - libretranslate
+    #     links:
+    #         - libretranslate
 
-    libretranslate:
-        image: libretranslate/libretranslate
-        environment:
-            - LT_LOAD_ONLY=en,ko
-            - LT_DEBUG=True
-        ports:
-            - "5000:5000"
+    # libretranslate:
+    #     image: libretranslate/libretranslate
+    #     environment:
+    #         - LT_LOAD_ONLY=en,ko
+    #         - LT_DEBUG=True
+    #     ports:
+    #         - "5000:5000"

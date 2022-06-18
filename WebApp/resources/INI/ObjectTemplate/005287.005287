@@ -1,0 +1,23 @@
+[5287]
+ModuleData1=ApmObject
+Name=살라만다석상_보조02
+ObjectType=769
+ModuleData2=AgcmObject
+Category=01_불꽃의 지옥
+ObjectType=768
+COLLISION_DFF=0902_epic_1st_0056_coll.rws
+RidableMaterialType=0
+OCTREE_MAXBBOX=-691.886047:721.57019:-195.110336:-691.886047:721.57019:573.680969:575.347595:721.57019:-195.110336:575.347595:721.57019:573.680969
+DFF=0:0902_epic_1st_0056.rws
+BSPHERE=0:-66.313499:312.169006:190.082993:795.804016
+DID_NOT_FINISH_KOREA=1
+DID_NOT_FINISH_CHINA=1
+DID_NOT_FINISH_WESTERN=1
+DID_NOT_FINISH_JAPAN=1
+ModuleData3=ApmEventManager
+ModuleData4=AgcmEventEffect
+EnumEnd=0
+ModuleData5=AgcmPreLODManager
+EnumEnd=0
+ModuleData6=AgcmGeometryDataManager
+EnumEnd=0

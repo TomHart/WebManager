@@ -1,3 +1,35 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
-<SystemMessage></SystemMessage>
+<?xml version="1.0" encoding="Big5" standalone="yes"?> 
+<SystemMessage>
+<BattleGround> 
+<Notice_01 Color="0x00ffdc">种族战开始%d分前. 种族战开始的1分前, 所有种族战场的怪会被消灭.</Notice_01> 
+<Notice_02 Color="0xff1493">种族战开始. 从种族要塞的召唤开始进行. 1分后会从浑沌中心召唤出怪物. 1分后会召唤出种族英雄.</Notice_02> 
+<Notice_03 Color="0x00ffdc">种族战离结束还剩下%d分.</Notice_03> 
+<Notice_04 Color="0xff1493">种族战结束.</Notice_04> 
+<Notice_05 Color="0x00ffdc">种族战场的怪被消灭.</Notice_05> 
+<Notice_06 Color="0xff0000">浑沌中心的第一只怪被成功召唤.</Notice_06> 
+<Notice_07 Color="0x00ffdc">浑沌中心的第二只怪被成功召唤.</Notice_07> 
+<Notice_08 Color="0xff0000">浑沌中心的第三只怪被成功召唤.</Notice_08> 
+<Notice_09 Color="0x00ffdc">浑沌中心的第四只怪被成功召唤.</Notice_09> 
+<Notice_10 Color="0xff0000">浑沌中心的第五只怪被成功召唤.</Notice_10> 
+<Notice_11 Color="0x00ffdc">浑沌中心的第六只怪被成功召唤.</Notice_11> 
+<Notice_12 Color="0xc8ffc8">要塞的英雄以及守护者被成功召唤.</Notice_12> 
+<Notice_13 Color="0x00ffdc">因%s, %s被销灭.</Notice_13> 
+<Notice_14 Color="0x00ffdc">%s种族战胜%s种族.</Notice_14> 
+</BattleGround> 
+<ClassSociety> 
+<Notice_01>对方拒绝.</Notice_01> 
+<Notice_02>无法委任.</Notice_02> 
+<Notice_03>以委任.</Notice_03> 
+<Notice_04>同意继承公会.</Notice_04> 
+<Notice_05>无法使用该功能.</Notice_05> 
+</ClassSociety> 
+<Epic>
+<Notice_01 Color="0xff0000">任务执行时间剩余%d分钟.</Notice_01>
+<Notice_02 Color="0xff0000">愤怒咆哮已被召唤.</Notice_02>
+<Notice_03 Color="0xff0000">寂静尖啸已被召唤.</Notice_03>
+<Notice_04 Color="0xff0000">痛苦悲鸣已被召唤.</Notice_04>
+<Notice_05 Color="0xff0000">天国地狱君主已被召唤.</Notice_05>
+<Notice_06 Color="0xff0000">恶魔领主大恶魔已被召唤.</Notice_06>
+<Notice_07 Color="0xff0000">天国地狱王座讨伐成功.</Notice_07>
+</Epic>	
+</SystemMessage>

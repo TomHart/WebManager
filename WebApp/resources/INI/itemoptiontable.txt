@@ -12,7 +12,7 @@ tid	Description	Body	Legs	Weapon	Shield	Head	Ring	Necklace	Boots	Gloves	Refinery
 11	Resistance +2%												2		1	1	500							2																																																									○										
 12	Resistance +3%												2		1	1	400							3																																																									○										
 13	Resistance +4%												2		1	1	100							4																																																									○										
-14	Resistance +5a%												2		1	1	50							5																																																									○										
+14	Resistance +5%												2		1	1	50							5																																																									○										
 15	Resistance +6%												2		1	1	5							6																																																									○										
 16	Skill Block +2%												3		1	1	500								2																																																								○										
 17	Skill Block +3%												3		1	1	400								3																																																								○										

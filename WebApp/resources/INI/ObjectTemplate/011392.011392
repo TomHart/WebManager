@@ -1,0 +1,24 @@
+[11392]
+ModuleData1=ApmObject
+Name=bs_부유석_02_원본
+ObjectType=1
+ModuleData2=AgcmObject
+Category=베틀 스퀘어 1
+ObjectType=0
+RidableMaterialType=0
+OCTREE_MAXBBOX=-308.0065:1314.299805:-308.006653:-308.0065:1314.299805:308.0065:308.006683:1314.299805:-308.006653:308.006683:1314.299805:308.0065
+DFF=0:0905_b_s_013.rws
+ANIMATION=0:0:0:0:0905_b_s_013_ani2.rws
+ANIM_SPEED=0:0:0.500000
+BSPHERE=0:39.0308:91.014198:-52.722099:1453.420044
+DID_NOT_FINISH_KOREA=1
+DID_NOT_FINISH_CHINA=1
+DID_NOT_FINISH_WESTERN=1
+DID_NOT_FINISH_JAPAN=1
+ModuleData3=ApmEventManager
+ModuleData4=AgcmEventEffect
+EnumEnd=0
+ModuleData5=AgcmPreLODManager
+EnumEnd=0
+ModuleData6=AgcmGeometryDataManager
+EnumEnd=0

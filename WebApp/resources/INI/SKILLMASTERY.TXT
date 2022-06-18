@@ -1,395 +1,395 @@
-Human Knight			
-	Battle	Dual Slash		
-		Linear Blow		
-		Shield Bash		
-		Triple Slash		
-		Blade Sting		
-		Stun Shock		
-		Swing shot		
-		Axe Smash		
-		Strike Of Death		
-		Hook		
-		Big Wheel		
-		Dragon Divide		
-		Normal Attack		
-	Enchant	Speed Attack		
-		Combat Echo		
-		Power Blade		
-		Power Axe		
-		Bludgeon		
-		Brute Force		
-		Faith Defender		
-		Stun Protection		
-	Special	Bellow		
-		Resistance		
-		Sprint		
-		Immortal Calling		
-		Paint With Blood		
-		Razor Sharp		
-		Sacrifice		
-		Spirit Shield		
-	Passive	Supreme Damage		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Defense Hold		
-		Health Burst		
-		Spirit Snap		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+휴먼 전사				
+	Battle	듀얼 슬래시		
+		리니어 블로우		
+		실드 어택		
+		트리플 슬래시		
+		블레이드 스팅		
+		스턴 스매셔		
+		스윙 암즈		
+		브리드 액스		
+		데스 모멘트		
+		후크		
+		빅 휠		
+		드래곤 디바이드		
+		일반공격		
+	Enchant	퀵커		
+		컴뱃 에코		
+		굿 블레이드		
+		굿 액스		
+		굿 블런트		
+		굿 암즈		
+		페이스 디펜더		
+		스턴 프로텍트		
+	Special	샤우팅		
+		네가티브		
+		스프린트		
+		이모탈 콜링		
+		블러드 페인트		
+		샤프 어태커		
+		세크리파이스		
+		스피리트 실드		
+	Passive	대미지 맥시마		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		홀드 디펜스		
+		헬스 번		
+		스피리트 스냅		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-Human Archer				
-	Battle	Dual Shot		
-		Piercing Shot		
-		Magic Arrow		
-		Triple Shot		
-		Chain Action		
-		Blinding Strike		
-		Fire Shot		
-		Charge Shot		
-		Sniper Shot		
-		Burst Shot		
-		Arrow Hail		
-		Phoenix		
-		Normal Attack		
-	Enchant	Forces of Nature		
-		Animal Soul		
-		Power Bow		
-		Power Crossbow		
-		Snare Shot		
-	Special	Rock skin		
-		Sharp Shooter		
-		Wind Arrow		
-		Far Sight		
-		Poison Shot		
-		Soul Breath		
-		Helpless		
-		Heavy Hand		
-	Passive	Dash		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Critical Hit		
-		Sure Sight		
-		Mana Gain		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+휴먼 궁수				
+	Battle	듀얼샷		
+		피어스샷		
+		마나체이서		
+		트리플샷		
+		체인 액션		
+		블링크샷		
+		파이어샷		
+		파워샷		
+		스나이프샷		
+		스틸바스터		
+		멀티플 애로우		
+		피닉스샷		
+		일반공격		
+	Enchant	네이쳐샷		
+		소울 오브 애니멀		
+		굿 보우		
+		굿 크로스보우		
+		스네어샷		
+	Special	우드스킨		
+		샤프 슈터		
+		윈드 애로우		
+		리얼 레인지		
+		포이즌 애로우		
+		브레스 소울		
+		헬프리스		
+		헤비 핸드		
+	Passive	스커드		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		크리티컬 히트		
+		퍼펙트 골드		
+		퍼슈어링		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-Human Mage				
-	Battle	Flame Core		
-		Blaze Wall		
-		Magic Bolt		
-		Water Spout		
-		Napalm Flame		
-		Mass Snare		
-		Whirlwind		
-		Hell Typhoon		
-		Earthquake		
-		Acid Rain		
-		Whirlpool		
-		Soul Chaos		
-		Normal Attack		
-		Force		
-	Enchant	Vital Conversion		
-		Geo Shards		
-		Power Staff		
-		Power Wand		
-		Wind Quake		
-	Special	Penetrate Defense		
-		Demolition Song		
-		Grind Pull		
-		Stunner		
-		Reflection		
-		Death Mark		
-		Confusion		
-		Expert Skill		
-	Passive	Hawk Eye		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Critical Spells		
-		Mana Effect		
-		Physical Gain		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+휴먼 마법사				
+	Battle	플레임 코어		
+		블레이즈 월		
+		매직 볼트		
+		워터 스파우트		
+		네이팜 플레임		
+		멀티플 스프린터		
+		윈드 스매쉬		
+		헬 타이푼		
+		어스퀘이크		
+		애시드 레인		
+		휠 기어		
+		소울 케오스		
+		일반공격		
+		포스		
+	Enchant	바이탈 컨버젼		
+		지오 샤드		
+		굿 스태프		
+		굿 완드		
+		윈드 쉐이크		
+	Special	루즈 디펜스		
+		데몰리션 송		
+		그라인드 풀링		
+		스터너		
+		리플렉션		
+		데스 마크		
+		콘퓨젼		
+		엑스퍼트		
+	Passive	파 홀드		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		스펠 크리티컬		
+		마나 이펙트		
+		피지컬 게인		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-Orc Berserker				
-	Battle	Dual Slash		
-		Linear Blow		
-		Shield Bash		
-		Triple Slash		
-		Blade Sting		
-		Stun Shock		
-		Swing shot		
-		Axe Smash		
-		Strike Of Death		
-		Hook		
-		Big Wheel		
-		Dragon Divide		
-		Normal Attack		
-	Enchant	Speed Attack		
-		Combat Echo		
-		Power Blade		
-		Power Axe		
-		Bludgeon		
-		Brute Force		
-		Faith Defender		
-		Stun Protection		
-	Special	Lethal Attack		
-		Debilitate		
-		Vital Charge		
-		Berserker		
-		Natural Warrior		
-		Body Break		
-		Panic		
-		Power Drain		
-	Passive	Supreme Damage		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Red Heat		
-		Counter Attack		
-		Death Strike		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+오크 전사				
+	Battle	듀얼 슬래시		
+		리니어 블로우		
+		실드 어택		
+		트리플 슬래시		
+		블레이드 스팅		
+		스턴 스매셔		
+		스윙 암즈		
+		브리드 액스		
+		데스 모멘트		
+		후크		
+		빅 휠		
+		드래곤 디바이드		
+		일반공격		
+	Enchant	퀵커		
+		컴뱃 에코		
+		굿 블레이드		
+		굿 액스		
+		굿 블런트		
+		굿 암즈		
+		페이스 디펜더		
+		스턴 프로텍트		
+	Special	리썰 어택		
+		위크 엔드		
+		바이탈 차지		
+		버서크		
+		네츄럴 워리어		
+		브레이크 바디		
+		페닉		
+		파워레스 쇼		
+	Passive	대미지 맥시마		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		레드 히트		
+		카운터 어택		
+		데스 스트라이크		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-Orc Hunter				
-	Battle	Dual Shot		
-		Piercing Shot		
-		Magic Arrow		
-		Triple Shot		
-		Chain Action		
-		Blinding Strike		
-		Fire Shot		
-		Charge Shot		
-		Sniper Shot		
-		Burst Shot		
-		Arrow Hail		
-		Phoenix		
-		Normal Attack		
-	Enchant	Forces of Nature		
-		Animal Soul		
-		Power Bow		
-		Power Crossbow		
-		Snare Shot		
-	Special	Misleader		
-		Defiance		
-		Pain Arrow		
-		Cure		
-		Pulverize		
-		Hustler		
-		Nightwalk		
-		Earth Attack		
-	Passive	Dash		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Evade		
-		Dodge		
-		Sprite Protect		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+오크 궁수				
+	Battle	듀얼샷		
+		피어스샷		
+		마나체이서		
+		트리플샷		
+		체인 액션		
+		블링크샷		
+		파이어샷		
+		파워샷		
+		스나이프샷		
+		스틸바스터		
+		멀티플 애로우		
+		피닉스샷		
+		일반공격		
+	Enchant	네이쳐샷		
+		소울 오브 애니멀		
+		굿 보우		
+		굿 크로스보우		
+		스네어샷		
+	Special	미스 리더		
+		어게인스트		
+		페인 애로우		
+		큐어		
+		그레이트 바스터		
+		치터		
+		나이트워크		
+		어스 빌		
+	Passive	스커드		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		이베이드		
+		다지		
+		스프라이트 콜링		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-Orc Sorcerer				
-	Battle	Flame Core		
-		Blaze Wall		
-		Magic Bolt		
-		Water Spout		
-		Napalm Flame		
-		Mass Snare		
-		Whirlwind		
-		Hell Typhoon		
-		Earthquake		
-		Acid Rain		
-		Whirlpool		
-		Soul Chaos		
-		Normal Attack		
-		Force		
-	Enchant	Vital Conversion		
-		Geo Shards		
-		Power Staff		
-		Power Wand		
-		Wind Quake		
-	Special	Life Restore		
-		Testament		
-		Quagmire		
-		Mana Sequence		
-		Halt		
-		Optimum		
-		Mana Pull		
-		Assimilate		
-	Passive	Hawk Eye		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Intense Magic		
-		Mind Control		
-		Armament		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+오크 마법사				
+	Battle	플레임 코어		
+		블레이즈 월		
+		매직 볼트		
+		워터 스파우트		
+		네이팜 플레임		
+		멀티플 스프린터		
+		윈드 스매쉬		
+		헬 타이푼		
+		어스퀘이크		
+		애시드 레인		
+		휠 기어		
+		소울 케오스		
+		일반공격		
+		포스		
+	Enchant	바이탈 컨버젼		
+		지오 샤드		
+		굿 스태프		
+		굿 완드		
+		윈드 쉐이크		
+	Special	세이브 미니츠		
+		테스타먼트		
+		콜 스웜프		
+		마나 시퀀스		
+		할트		
+		옵티멈		
+		풀링 마나		
+		멘탈 서킷		
+	Passive	파 홀드		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		인텐스 매직		
+		마인드 콘트롤		
+		인사이드 펌		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-MoonElf Warrior				
-	Battle	Enlarge Fierce		
-		Acrobatic Charge		
-		Braking Arms		
-		Close Skirmish		
-		Precise Assault		
-		Blue Dire		
-		Recite of Breeze		
-		Insightful X		
-		Explosion Image		
-		Water Dream		
-		Wounding Critical		
-		Barrage Strike		
-		Normal Attack		
-	Enchant	Smart Force		
-		Shout of Insight		
-		Smart Blade		
-		Smart Weapon		
-		Sword Stopper		
-		Force Armour		
-		Unseeable		
-	Special	Lunar Masquerade		
-		Chant Masquerade		
-		Dauntless Masquerade		
-		Fires Masquerade		
-		Fallen Masquerade		
-		Masquerade Master		
-	Passive	Kin Sense		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Dodge Form		
-		Grace		
-		Improved Strike		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+문엘프 전사				
+	Battle	인라지 피어스		
+		아크로바틱 차지		
+		브레이킹 암즈		
+		크로스 스커미쉬		
+		프리사이즈 어설트		
+		블루 다이어		
+		리사이트 오브 브리즈		
+		인사이트풀 엑스		
+		익스플로젼 이미지		
+		워터 드림		
+		운딩 크리티컬		
+		버라지 스트라이크		
+		일반공격		
+	Enchant	스마트 포스		
+		샤웃트 오브 인사이트		
+		스마트 블레이드		
+		스마트 웨폰		
+		소드 스톱퍼		
+		포스 아머		
+		언씨어블		
+	Special	루나 마스커레이드		
+		찬트 마스커레이드		
+		돈틀리스 마스커레이드		
+		파이어스 마스커레이드		
+		폴른 마스커레이드		
+		마스커레이드 마스터		
+	Passive	킨 센스		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		닷지 폼		
+		그레이스		
+		임프루브드 스트라이크		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-MoonElf Ranger				
-	Battle	Hell Bound		
-		Arrow Spear		
-		True Impact		
-		Jumping Shot		
-		Chain Reaction		
-		Multi Strike		
-		Power Kataria		
-		Sniper		
-		Sequence Attack		
-		Time Attack		
-		Shadow Chaser		
-		Elemental Core		
-		Normal Attack		
-	Enchant	Air Walk		
-		Elemental Defense		
-		Fine Bow		
-		Fine Kataria		
-		Flame Force		
-	Special	Mana Absorb		
-		Life Extinction		
-		Eternal Soul		
-		Moonlight Fever		
-		Bad Friends		
-		Mortal Dagger		
-		Invisibility		
-		Lightning Trap		
-	Passive	Intention		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Acute Shot		
-		Moonlight Breath		
-		Life Grow		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+문엘프 궁수				
+	Battle	헬 바운드		
+		스피어 애로우		
+		트루 임펙트		
+		점핑 샷		
+		체인 리액션		
+		멀티 스트라이크		
+		파워 카타리아		
+		스나이프		
+		시퀀스 어택		
+		타임 어택		
+		쉐도우 체이서		
+		엘리멘탈 코어		
+		일반공격		
+	Enchant	에어 워크		
+		엘리멘탈 디펜스		
+		파인 보우		
+		파인 카타리아		
+		플레임 포스		
+	Special	마나 익스팅션		
+		라이프 익스팅션		
+		이터널 소울		
+		문라잇 피버		
+		배드 프렌즈		
+		모탈 대거		
+		인비저블		
+		라이트닝 트랩		
+	Passive	인텐션		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		샤프 포인트		
+		문라잇 브레스		
+		그로스 오브 라이프		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-MoonElf Elementalist				
-	Battle	Griolli		
-		Tuuga		
-		Silpid		
-		Snow Hazard		
-		Gradion		
-		Mercury		
-		Thunder Descent		
-		Poison Vapor		
-		Elemental Storm		
-		Venom		
-		Cygnus		
-		Silver		
-		Normal Attack		
-		Might		
-	Enchant	Holy Ground		
-		Moonlight Blessing		
-		Fine Staff		
-		Fine Chakram		
-		Fairy Bless		
-	Special	Frost Armor		
-		Soul Barrier		
-		Lightning Strike		
-		Hyper Soul		
-		Increase Gate		
-		Descent of Luna		
-		Mutation		
-	Passive	Elemental Heal		
-		Power Surge		
-		Nimbleness		
-		Intellect		
-		Mind Boost		
-		Endurance		
-		Recovery Time		
-		Defense Master		
-		Combat Master		
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+문엘프 마법사				
+	Battle	콜 오브 워터		
+		콜 오브 파이어		
+		콜 오브 윈드		
+		스노우 헤저드		
+		콜 오브 어스		
+		콜 오브 매직		
+		디센트 오브 썬더		
+		포이즌 에어		
+		엘리멘탈 스톰		
+		콜 오브 베놈		
+		콜 오브 아이스		
+		콜 오브 라이트닝		
+		일반공격		
+		마이트		
+	Enchant	홀리 그라운드		
+		블레싱 오브 문라잇		
+		파인 스태프		
+		파인 차크람		
+		블레스 오브 페어리		
+	Special	프로스트 아머		
+		소울 바리어		
+		라이트닝 피어		
+		하이퍼 소울 디펜스		
+		인크리즈 게이트		
+		디센트 오브 루나		
+		뮤테이션		
+	Passive	엘리먼트 힐		
+		파워서지		
+		리스마트		
+		샤프센스		
+		마인드붐		
+		빌드업		
+		타임 리커버리		
+		디펜스 마스터		
+		컴뱃 마스터		
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
-DragonScion Monk				
-	Produce	Collection Skill		
-		Cooking		
-		Alchemy		
+드래곤시온 수도승				
+	Produce	수집 스킬		
+		요리하기		
+		연금술		
 				
 Archlord				
-		Day and Night		
-		Rain Control		
-		Snow Control		
-		Evil Light		
-		Lord Howling		
-		Call Dragon		
-		Call Royal Knight		
-		Meteoric Shower		
-		Bitter Concussion		
-		Lightning Javelin		
-		Energy Buffer		
-		Righteous Plating		
-		Heightened Reflexes		
-		Imperceptible		
-		Aura of Decay		
-		Redemption		
-		Holy Bliss		
+		데이 앤 나이트		
+		레인 컨트롤		
+		스노우 컨트롤		
+		이블 라이트		
+		로드 하울링		
+		콜 드래곤		
+		콜 로얄 나이츠		
+		메테오릭 샤워		
+		프리징 포스		
+		디바이드 라이트닝		
+		소울 아크		
+		프로텍션 아크		
+		셀베이션 아크		
+		임퍼셉터블		
+		포이즌 아머		
+		리바이벌		
+		홀리 브리스		
 				
 Race				
-		RaceWarBuff		
+		종족전버프		
 				

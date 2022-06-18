@@ -17,12 +17,15 @@
     </div>
     <script>
         document.addEventListener('livewire:load', function () {
+            let timer;
             @this.on('moved', () => {
-                setTimeout(() => {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
                     @this.move('right');
                 }, 5000);
             });
-            setTimeout(() => {
+
+            timer = setTimeout(() => {
                 @this.move('right');
             }, 5000);
         });

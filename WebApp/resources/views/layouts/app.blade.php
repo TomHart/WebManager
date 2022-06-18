@@ -14,15 +14,14 @@
     @livewireStyles
 </head>
 
-<body class="antialiased">
-<livewire:frontend.component.nav-bar/>
-<livewire:frontend.component.carousel loadFrom="carousel"/>
-<div id="app">
-    @yield('content')
-</div>
+<body class="antialiased min-h-screen">
+    <livewire:frontend.component.nav-bar />
+    <livewire:frontend.component.carousel loadFrom="carousel" />
 
-@yield('scripts')
-@livewireScripts
+    @yield('content')
+
+    @yield('scripts')
+    @livewireScripts
 </body>
 
 </html>

@@ -3,9 +3,8 @@ $navBackgroundColour: #020202 !default;
 .carousel {
     overflow-x: hidden;
     position: relative;
-    width: 100vw;
-    border-bottom: solid 3px $navBackgroundColour;
-    box-shadow: 0 0.125rem 0.25rem #000;
+    width: 100%;
+    box-shadow: 0 0.125rem 0.125rem #666;
     z-index: 5;
 
     &__wrapper {

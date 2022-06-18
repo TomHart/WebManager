@@ -3,13 +3,13 @@ $height: 80px;
 $linkColour: #AAAAAA;
 $linkBorderWidth: 2px;
 
-.navbar {
+.frontend-navbar {
     min-height: $height;
     display: flex;
     background-color: $navBackgroundColour;
     position: relative;
     z-index: 10;
-    box-shadow: 0 0.125rem 0.25rem #000;
+    box-shadow: 0 0.125rem 0.125rem #666;
 
     &__links {
         list-style: none;
@@ -18,7 +18,7 @@ $linkBorderWidth: 2px;
     }
 
     &__link {
-        height: calc(100% - #{$linkBorderWidth});
+        height: calc(100% + #{$linkBorderWidth});
         border-bottom: solid $linkBorderWidth $linkColour;
         align-items: center;
         display: flex;

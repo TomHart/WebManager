@@ -1,0 +1,24 @@
+[851]
+ModuleData1=ApmObject
+Name=수정얼음2
+ObjectType=257
+ModuleData2=AgcmObject
+Category=필드데코_그외 요소
+ObjectType=24832
+COLLISION_DFF=Ice_stone_002.rws
+RidableMaterialType=0
+OCTREE_MAXBBOX=-122.332138:161.515305:-113.530243:-122.332138:161.515305:113.530266:122.332138:161.515305:-113.530243:122.332138:161.515305:113.530266
+DFF=0:Ice_stone_002.rws
+BSPHERE=0:0:78.901978:0.000011:150.802582
+PRE_LIGHT=127 127 127 255
+DID_NOT_FINISH_KOREA=0
+DID_NOT_FINISH_CHINA=0
+DID_NOT_FINISH_WESTERN=0
+DID_NOT_FINISH_JAPAN=0
+ModuleData3=ApmEventManager
+ModuleData4=AgcmEventEffect
+EnumEnd=0
+ModuleData5=AgcmPreLODManager
+EnumEnd=0
+ModuleData6=AgcmGeometryDataManager
+EnumEnd=0

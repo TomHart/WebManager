@@ -1,0 +1,24 @@
+[849]
+ModuleData1=ApmObject
+Name=뱀파이어마을_필라_b
+ObjectType=257
+ModuleData2=AgcmObject
+Category=뱀파이어마을
+ObjectType=1073408
+COLLISION_DFF=Silan_VamVillage_Pillar_b_Coll.rws
+RidableMaterialType=0
+OCTREE_MAXBBOX=-170.919647:2102.142334:-519.974243:-170.919647:2102.142334:519.97406:170.920212:2102.142334:-519.974243:170.920212:2102.142334:519.97406
+DFF=0:Silan_VamVillage_Pillar_b.rws
+BSPHERE=0:0.000282:1016.63324:-0.000092:1217.005249
+PRE_LIGHT=127 127 127 255
+DID_NOT_FINISH_KOREA=0
+DID_NOT_FINISH_CHINA=0
+DID_NOT_FINISH_WESTERN=0
+DID_NOT_FINISH_JAPAN=0
+ModuleData3=ApmEventManager
+ModuleData4=AgcmEventEffect
+EnumEnd=0
+ModuleData5=AgcmPreLODManager
+EnumEnd=0
+ModuleData6=AgcmGeometryDataManager
+EnumEnd=0
